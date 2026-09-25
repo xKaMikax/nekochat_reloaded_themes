@@ -1,3 +1,25 @@
 {
-  "themes": []
+  "themes": [
+    {
+      "theme_id": "Embedded",
+      "directory": "themes/embedded",
+      "DisplayName": "Embedded",
+      "ColorSchemes": ["Default"],
+      "Details": { "Author": "NekoChat Reloaded", "Version": "1.0", "Type": "CSS" }
+    },
+    {
+      "theme_id": "Royale",
+      "directory": "themes/royale",
+      "DisplayName": "Royale",
+      "ColorSchemes": ["Default"],
+      "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "CSS" }
+    },
+    {
+      "theme_id": "Zune",
+      "directory": "themes/zune",
+      "DisplayName": "Zune",
+      "ColorSchemes": ["Default"],
+      "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "CSS" }
+    }
+  ]
 }
