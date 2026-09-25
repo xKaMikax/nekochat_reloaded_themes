@@ -5,21 +5,21 @@
       "directory": "themes/embedded",
       "DisplayName": "Embedded",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "NekoChat Reloaded", "Version": "1.0", "Type": "CSS" }
+      "Details": { "Author": "NekoChat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
     },
     {
       "theme_id": "Royale",
       "directory": "themes/royale",
       "DisplayName": "Royale",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "CSS" }
+      "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
     },
     {
       "theme_id": "Zune",
       "directory": "themes/zune",
       "DisplayName": "Zune",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "CSS" }
+      "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
     }
   ]
 }
