@@ -135,34 +135,9 @@ To share it in the catalog, put the whole theme folder into a ZIP named `Theme.Z
 
 ## Share your theme with everyone
 
-Want your theme in the in-app **Theme Browser**? Send it to this repository:
+Want your theme in the in-app **Theme Browser**? Follow the step-by-step guide:
 
-1. Fork this repository.
-2. Create a folder `themes/<your-theme-id>/` with these files:
-   - `Theme.ZIP` — your packed theme
-   - `Preview.png` — a screenshot of NekoChat with your theme
-   - `Description.md`
-   - `Details.json`
-3. Add your theme to [`themes.json`](../themes.json):
-
-   ```json
-   {
-     "theme_id": "my-theme",
-     "directory": "themes/my-theme",
-     "DisplayName": "My Theme",
-     "ColorSchemes": ["Default"],
-     "Details": { "Author": "Your name", "Version": "1.0", "Type": "CSS" }
-   }
-   ```
-
-   The app finds `Theme.ZIP`, `Preview.png` and `Description.md` in that folder automatically.
-4. Open a pull request.
-
-**Rules for the catalog**
-
-- `theme_id` must be unique and use only letters, numbers, `-`, `_` and `.`.
-- Don't add **Classic** or **Luna** — they're already built into the app.
-- Only share themes you made or are allowed to share.
+👉 **[Publishing your theme](PUBLISHING_THEMES.md)**
 
 ---
 

@@ -37,6 +37,8 @@ You don't need to be a programmer: start from a ready-made template and change a
 
 👉 **[Start from the template](template/)**
 
+👉 **[Publish your theme to the Theme Browser](docs/PUBLISHING_THEMES.md)**
+
 ## What's in this repository
 
 | Path | What it is |
