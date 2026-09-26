@@ -1,44 +1,47 @@
 # NekoChat Reloaded Themes
 
-This repository is the online catalog used by **Theme Browser** in the NekoChat Reloaded PC client.
+Make NekoChat look the way you like! 🎨
 
-The client downloads [`themes.json`](themes.json), shows every listed theme in the **Discovery** tab, and installs its `Theme.ZIP` file. **Classic** and **Luna** are built into the client, so they do not belong in this catalog.
+This is the official theme collection for **NekoChat Reloaded** on PC, Android and iPhone.
+Every theme here shows up in the app's **Theme Browser**, ready to install in one click.
 
-## Adding a theme
+## Install a theme
 
-Create a directory for the theme and include these files:
+1. Open NekoChat Reloaded.
+2. Go to **Theme Browser** → **Discovery**.
+3. Pick a theme you like and click **Install**.
 
-- `Theme.ZIP` — the downloadable package;
-- `Preview.png` — preview image;
-- `Description.md` — short description;
-- `Details.json` — author, version, and type.
+That's it. No downloads, no copying files.
 
-`Theme.ZIP` must contain either a Windows `.theme`/`.msstyles` file or a `theme.css` file.
+**Classic** and **Luna** are already built into the app, so you won't find them here.
 
-- `WindowsThemeFile` means a Windows visual-style theme (`.theme` or `.msstyles`).
-- `CSS` means a NekoChat CSS theme (`theme.css`).
+## Available themes
 
-Then add the theme to [`themes.json`](themes.json):
+| Theme | Author |
+|---|---|
+| Embedded | NekoChat Reloaded |
+| Royale | Microsoft / NekoChat Reloaded |
+| Zune | Microsoft / NekoChat Reloaded |
 
-```json
-{
-  "themes": [
-    {
-      "theme_id": "example-theme",
-      "directory": "themes/example-theme",
-      "DisplayName": "Example Theme",
-      "ColorSchemes": ["NormalColor"],
-      "Preview": "https://raw.githubusercontent.com/xKaMikax/nekochat_reloaded_themes/main/themes/example-theme/Preview.png",
-      "Description": "https://raw.githubusercontent.com/xKaMikax/nekochat_reloaded_themes/main/themes/example-theme/Description.md",
-      "Details": {
-        "Author": "Author name",
-        "Version": "1.0",
-        "Type": "WindowsThemeFile"
-      },
-      "ThemeZIP": "https://raw.githubusercontent.com/xKaMikax/nekochat_reloaded_themes/main/themes/example-theme/Theme.ZIP"
-    }
-  ]
-}
-```
+## Already have a Windows XP theme?
 
-The client also accepts `ColorShemas` for compatibility with older catalog files.
+You can use it directly. In NekoChat, open **Display Properties** → **Themes** → **Add Theme…** and pick a `.msstyles` or `.theme` file.
+NekoChat converts it automatically, and it works on your phone too.
+
+## Make your own theme
+
+Change colors, title bars and buttons, then share your theme with everyone.
+You don't need to be a programmer: start from a ready-made template and change a few colors.
+
+👉 **[Read the guide: Creating themes](docs/CREATING_THEMES.md)**
+
+👉 **[Start from the template](template/)**
+
+## What's in this repository
+
+| Path | What it is |
+|---|---|
+| [`themes/`](themes) | All catalog themes, one folder per theme |
+| [`themes.json`](themes.json) | The list of themes the app shows |
+| [`template/`](template) | A starter theme you can copy |
+| [`docs/`](docs) | Guides for theme creators |
