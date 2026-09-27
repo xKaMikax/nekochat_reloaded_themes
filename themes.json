@@ -20,6 +20,13 @@
       "DisplayName": "Zune",
       "ColorSchemes": ["Default"],
       "Details": { "Author": "Microsoft / NekoChat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
+    },
+    {
+      "theme_id": "ios27-liquid-glass-dark",
+      "directory": "themes/ios27-liquid-glass-dark",
+      "DisplayName": "iOS 27 Liquid Glass Dark",
+      "ColorSchemes": ["Default"],
+      "Details": { "Author": "SWIZZY", "Version": "1.0", "Type": "CSS" }
     }
   ]
 }
