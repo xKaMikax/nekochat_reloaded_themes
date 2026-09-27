@@ -1,13 +1,13 @@
-# NekoChat Reloaded Themes
+# Nekochat Reloaded Themes
 
-Make NekoChat look the way you like! 🎨
+Make Nekochat look the way you like! 🎨
 
-This is the official theme collection for **NekoChat Reloaded** on PC, Android and iPhone.
+This is the official theme collection for **Nekochat Reloaded** on PC, Android and iPhone.
 Every theme here shows up in the app's **Theme Browser**, ready to install in one click.
 
 ## Install a theme
 
-1. Open NekoChat Reloaded.
+1. Open Nekochat Reloaded.
 2. Go to **Theme Browser** → **Discovery**.
 3. Pick a theme you like and click **Install**.
 
@@ -19,14 +19,14 @@ That's it. No downloads, no copying files.
 
 | Theme | Author |
 |---|---|
-| Embedded | NekoChat Reloaded |
-| Royale | Microsoft / NekoChat Reloaded |
-| Zune | Microsoft / NekoChat Reloaded |
+| Embedded | Nekochat Reloaded |
+| Royale | Microsoft / Nekochat Reloaded |
+| Zune | Microsoft / Nekochat Reloaded |
 
 ## Already have a Windows XP theme?
 
-You can use it directly. In NekoChat, open **Display Properties** → **Themes** → **Add Theme…** and pick a `.msstyles` or `.theme` file.
-NekoChat converts it automatically, and it works on your phone too.
+You can use it directly. In Nekochat, open **Display Properties** → **Themes** → **Add Theme…** and pick a `.msstyles` or `.theme` file.
+Nekochat converts it automatically, and it works on your phone too.
 
 ## Make your own theme
 

@@ -1,6 +1,6 @@
-# Creating themes for NekoChat Reloaded
+# Creating themes for Nekochat Reloaded
 
-Want NekoChat to look your way? There are two kinds of themes you can make:
+Want Nekochat to look your way? There are two kinds of themes you can make:
 
 | Kind | Best for | What you need |
 |---|---|---|
@@ -100,9 +100,9 @@ Put `theme.css` (and any pictures it uses) into a ZIP file named **`Theme.ZIP`**
 ### Step 5. Try it
 
 - **Android / iPhone:** *Display Properties* → *Themes* → **Add Theme…** → pick `Theme.ZIP` (or just `theme.css`).
-- **PC:** copy your theme folder (the one with `theme.css`) into the NekoChat themes folder and restart the app:
-  - Windows: `%APPDATA%\NekoChat Reloaded\themes\`
-  - Linux: `~/.config/NekoChat Reloaded/themes/`
+- **PC:** copy your theme folder (the one with `theme.css`) into the Nekochat themes folder and restart the app:
+  - Windows: `%APPDATA%\Nekochat Reloaded\themes\`
+  - Linux: `~/.config/Nekochat Reloaded/themes/`
 
   Your theme then appears in *Display Properties* → *Themes*.
 
@@ -122,12 +122,12 @@ Don't use folders or web links for images — just the file name.
 
 ## Option 2: Use a Windows theme
 
-Have a Windows XP visual style? NekoChat can use it directly.
+Have a Windows XP visual style? Nekochat can use it directly.
 
 1. Find the theme's `.msstyles` file (and the `.theme` file, if it has one).
-2. In NekoChat, open *Display Properties* → *Themes* → **Add Theme…** and pick that file.
+2. In Nekochat, open *Display Properties* → *Themes* → **Add Theme…** and pick that file.
 
-That's it — NekoChat converts it automatically.
+That's it — Nekochat converts it automatically.
 
 To share it in the catalog, put the whole theme folder into a ZIP named `Theme.ZIP` and set `"Type": "WindowsThemeFile"` in `Details.json`.
 

@@ -1,3 +1,3 @@
 # Zune
 
-A dark Zune-inspired NekoChat Reloaded theme.
+A dark Zune-inspired Nekochat Reloaded theme.

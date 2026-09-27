@@ -15,7 +15,7 @@ Get these four files ready in one folder on your computer:
 | File | What it is | Tips |
 |---|---|---|
 | `Theme.ZIP` | Your packed theme | See [Step 4 of the creation guide](CREATING_THEMES.md#step-4-pack-it) |
-| `Preview.png` | A screenshot of NekoChat with your theme | About **807 × 559** px, so it looks like the other previews |
+| `Preview.png` | A screenshot of Nekochat with your theme | About **807 × 559** px, so it looks like the other previews |
 | `Description.md` | A short description | One heading and one or two sentences |
 | `Details.json` | Author, version and type | See below |
 

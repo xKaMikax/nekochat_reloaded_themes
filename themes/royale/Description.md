@@ -1,3 +1,3 @@
 # Royale
 
-A blue Windows XP Royale-inspired NekoChat Reloaded theme.
+A blue Windows XP Royale-inspired Nekochat Reloaded theme.
