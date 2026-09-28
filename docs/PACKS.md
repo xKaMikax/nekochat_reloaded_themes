@@ -7,13 +7,15 @@ Besides themes, the **Theme Browser** installs **packs**. There are four types:
 | `cursors` | The mouse pointers | [`cursors/`](../cursors) |
 | `sounds` | The sounds of the app (new message, calls, clicks…) | [`sounds/`](../sounds) |
 | `icons` | The icons of the app's buttons and windows | [`icons/`](../icons) |
-| `combo` | Any mix of the above, and optionally a theme | [`combos/`](../combos) |
+| `combo` | A list of items from this catalog: a theme and cursor, sound and icon packs | [`combos/`](../combos) |
 
-People choose installed packs in **Display Properties**: sounds on the **Sounds** tab, cursors and icons on the **Display** tab. A combo installs everything it contains in one click; its theme appears among the installed themes.
+People choose installed packs in **Display Properties**: sounds on the **Sounds** tab, cursors and icons on the **Display** tab.
+
+A **combo** has no files of its own: it is an entry in `packs.json` that names a theme and packs **from this catalog**. Installing it installs each of them (skipping what is already installed); removing it removes them again. Its sounds, cursors and icons can be chosen like those of any pack.
 
 ## The pack archive
 
-Each pack is a folder with three files:
+Each cursors, sounds or icons pack is a folder with three files:
 
 ```
 sounds/my-sounds/
@@ -26,10 +28,9 @@ Inside `Pack.ZIP`:
 
 ```
 pack.json           name, author, type
-sounds/             sound files (sounds and combo packs)
-cursors/            cursors.json + cursor files (cursors and combo packs)
-icons/              icons.json + pictures (icons and combo packs)
-theme/              a theme, exactly like a Theme.ZIP (combo packs only)
+sounds/             sound files (sounds packs)
+cursors/            cursors.json + cursor files (cursors packs)
+icons/              icons.json + pictures (icons packs)
 ```
 
 Start from the [template](../template/pack).
@@ -37,7 +38,7 @@ Start from the [template](../template/pack).
 ### `pack.json`
 
 ```json
-{ "name": "My pack", "author": "Your name", "type": "combo", "contains": ["sounds", "cursors"] }
+{ "name": "My sounds", "author": "Your name", "type": "sounds" }
 ```
 
 ### Sounds
@@ -81,6 +82,24 @@ Square PNG pictures, 32×32 or larger.
 ```
 
 Icon names: `app` (window icon), `personalize`, `change-user`, `sign-out`, `room` (rooms in the chat list), `add` (new chat), `call`, `members`, `notifications`.
+
+## Combos
+
+A combo is only a `packs.json` entry. `Includes` lists what it is made of, by the `theme_id` of
+a theme in `themes.json` and the `pack_id` of packs in `packs.json`:
+
+```json
+{
+  "pack_id": "zune-complete",
+  "type": "combo",
+  "DisplayName": "Zune — theme, cursors and sounds",
+  "Includes": { "theme": "Zune", "cursors": "zune-cursors", "sounds": "zune-sounds" },
+  "Details": { "Author": "Your name", "Version": "1.0", "Added": "2026-09-28" }
+}
+```
+
+Any part can be left out. A combo can have a `Preview.png` and `Description.md` in `combos/<id>/`
+(set `"directory": "combos/<id>"`), but it has no `Pack.ZIP`.
 
 ## Publishing
 
