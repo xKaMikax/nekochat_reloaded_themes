@@ -1,21 +1,24 @@
-# Cursors, sounds, icons and combos
+# Cursors, sounds, icons, chat wallpapers and combos
 
-Besides themes, the **Theme Browser** installs **packs**. There are four types:
+Besides themes, the **Catalog** installs **packs**. There are five types:
 
 | Type | What it changes | Folder in this repository |
 |---|---|---|
 | `cursors` | The mouse pointers | [`cursors/`](../cursors) |
 | `sounds` | The sounds of the app (new message, calls, clicks…) | [`sounds/`](../sounds) |
 | `icons` | The icons of the app's buttons and windows | [`icons/`](../icons) |
+| `wallpapers` | Pictures for the chat background | [`wallpapers/`](../wallpapers) |
 | `combo` | A list of items from this catalog: a theme and cursor, sound and icon packs | [`combos/`](../combos) |
 
-People choose installed packs in **Display Properties**: sounds on the **Sounds** tab, cursors and icons on the **Display** tab.
+People choose installed packs in **Display Properties**: sounds on the **Sounds** tab; cursors, icons and the chat background on the **Display** tab.
 
 A **combo** has no files of its own: it is an entry in `packs.json` that names a theme and packs **from this catalog**. Installing it installs each of them (skipping what is already installed); removing it removes them again. Its sounds, cursors and icons can be chosen like those of any pack.
 
 ## The pack archive
 
-Each cursors, sounds or icons pack is a folder with three files:
+A pack can be published in two ways: as plain files (see [Without Pack.ZIP](#without-packzip)) or as an archive.
+
+With an archive, each pack is a folder with three files:
 
 ```
 sounds/my-sounds/
@@ -31,6 +34,7 @@ pack.json           name, author, type
 sounds/             sound files (sounds packs)
 cursors/            cursors.json + cursor files (cursors packs)
 icons/              icons.json + pictures (icons packs)
+wallpapers/         .jpg, .png or .webp pictures (wallpapers packs)
 ```
 
 Start from the [template](../template/pack).
@@ -83,10 +87,39 @@ Square PNG pictures, 32×32 or larger.
 
 Icon names: `app` (window icon), `personalize`, `change-user`, `sign-out`, `room` (rooms in the chat list), `add` (new chat), `call`, `members`, `notifications`.
 
+### Chat wallpapers
+
+Put `.jpg`, `.png` or `.webp` pictures in `wallpapers/`. Each picture appears under **Chat background** by its file name. A large picture (1920×1200 or so) looks best; it is scaled to cover the chat.
+
+## Without Pack.ZIP
+
+You do not have to make an archive. Put the files straight into the pack's folder and list them in `Files`:
+
+```
+wallpapers/autumn/
+├── Autumn.jpg
+└── Description.md
+```
+
+```json
+{
+  "pack_id": "autumn-wallpaper",
+  "type": "wallpapers",
+  "directory": "wallpapers/autumn",
+  "DisplayName": "Autumn",
+  "Files": ["Autumn.jpg"],
+  "Details": { "Author": "Microsoft", "Version": "1.0", "Added": "2026-09-28" }
+}
+```
+
+The app downloads each listed file into the folder of the pack's type, as if it came from `Pack.ZIP` (`Autumn.jpg` becomes `wallpapers/Autumn.jpg`). The files must sit directly in the pack's folder, with no subfolders. For cursors and icons, list `cursors.json` or `icons.json` too.
+
+`Preview.png` is optional here: a wallpapers pack without one shows its first picture in the catalog.
+
 ## Combos
 
 A combo is only a `packs.json` entry. `Includes` lists what it is made of, by the `theme_id` of
-a theme in `themes.json` and the `pack_id` of packs in `packs.json`:
+a theme in `themes.json` and the `pack_id` of packs in `packs.json` (`cursors`, `sounds`, `icons`, `wallpapers`):
 
 ```json
 {

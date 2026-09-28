@@ -1679,6 +1679,398 @@
         "Version": "1.0",
         "Added": "2026-09-28"
       }
+    },
+    {
+      "pack_id": "autumn-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/autumn",
+      "DisplayName": "Autumn",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Autumn.jpg"
+      ]
+    },
+    {
+      "pack_id": "azul-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/azul",
+      "DisplayName": "Azul",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Azul.jpg"
+      ]
+    },
+    {
+      "pack_id": "bliss-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/bliss",
+      "DisplayName": "Bliss",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Bliss.jpg"
+      ]
+    },
+    {
+      "pack_id": "coffee-bean-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/coffee-bean",
+      "DisplayName": "Coffee Bean",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Coffee Bean.jpg"
+      ]
+    },
+    {
+      "pack_id": "crystal-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/crystal",
+      "DisplayName": "Crystal",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Crystal.jpg"
+      ]
+    },
+    {
+      "pack_id": "feathertexture-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/feathertexture",
+      "DisplayName": "FeatherTexture",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "FeatherTexture.jpg"
+      ]
+    },
+    {
+      "pack_id": "follow-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/follow",
+      "DisplayName": "Follow",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Follow.jpg"
+      ]
+    },
+    {
+      "pack_id": "friend-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/friend",
+      "DisplayName": "Friend",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Friend.jpg"
+      ]
+    },
+    {
+      "pack_id": "gone-fishing-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/gone-fishing",
+      "DisplayName": "Gone Fishing",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Gone Fishing.jpg"
+      ]
+    },
+    {
+      "pack_id": "greenstone-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/greenstone",
+      "DisplayName": "Greenstone",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Greenstone.jpg"
+      ]
+    },
+    {
+      "pack_id": "home-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/home",
+      "DisplayName": "Home",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Home.jpg"
+      ]
+    },
+    {
+      "pack_id": "moon-flower-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/moon-flower",
+      "DisplayName": "Moon flower",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Moon flower.jpg"
+      ]
+    },
+    {
+      "pack_id": "peace-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/peace",
+      "DisplayName": "Peace",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Peace.jpg"
+      ]
+    },
+    {
+      "pack_id": "power-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/power",
+      "DisplayName": "Power",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Power.jpg"
+      ]
+    },
+    {
+      "pack_id": "prairie-wind-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/prairie-wind",
+      "DisplayName": "Prairie Wind",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Prairie Wind.jpg"
+      ]
+    },
+    {
+      "pack_id": "purple-flower-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/purple-flower",
+      "DisplayName": "Purple flower",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Purple flower.jpg"
+      ]
+    },
+    {
+      "pack_id": "radiance-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/radiance",
+      "DisplayName": "Radiance",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Radiance.jpg"
+      ]
+    },
+    {
+      "pack_id": "red-moon-desert-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/red-moon-desert",
+      "DisplayName": "Red moon desert",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Red moon desert.jpg"
+      ]
+    },
+    {
+      "pack_id": "ripple-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/ripple",
+      "DisplayName": "Ripple",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Ripple.jpg"
+      ]
+    },
+    {
+      "pack_id": "river-sumida-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/river-sumida",
+      "DisplayName": "River Sumida",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "River Sumida.jpg"
+      ]
+    },
+    {
+      "pack_id": "santa-fe-stucco-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/santa-fe-stucco",
+      "DisplayName": "Santa Fe Stucco",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Santa Fe Stucco.jpg"
+      ]
+    },
+    {
+      "pack_id": "soap-bubbles-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/soap-bubbles",
+      "DisplayName": "Soap Bubbles",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Soap Bubbles.jpg"
+      ]
+    },
+    {
+      "pack_id": "stonehenge-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/stonehenge",
+      "DisplayName": "Stonehenge",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Stonehenge.jpg"
+      ]
+    },
+    {
+      "pack_id": "tulips-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/tulips",
+      "DisplayName": "Tulips",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Tulips.jpg"
+      ]
+    },
+    {
+      "pack_id": "vortec-space-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/vortec-space",
+      "DisplayName": "Vortec space",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Vortec space.jpg"
+      ]
+    },
+    {
+      "pack_id": "wind-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/wind",
+      "DisplayName": "Wind",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Wind.jpg"
+      ]
+    },
+    {
+      "pack_id": "windows-xp-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/windows-xp",
+      "DisplayName": "Windows XP",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Windows XP.jpg"
+      ]
+    },
+    {
+      "pack_id": "zapotec-wallpaper",
+      "type": "wallpapers",
+      "directory": "wallpapers/zapotec",
+      "DisplayName": "Zapotec",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      },
+      "Files": [
+        "Zapotec.jpg"
+      ]
     }
   ]
 }

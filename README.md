@@ -3,12 +3,12 @@
 Make Nekochat look the way you like! 🎨
 
 This is the official theme collection for **Nekochat Reloaded** on PC, Android and iPhone.
-Every theme here shows up in the app's **Theme Browser**, ready to install in one click.
+Every theme here shows up in the app's **Catalog**, ready to install in one click.
 
 ## Install a theme
 
 1. Open Nekochat Reloaded.
-2. Go to **Theme Browser** → **Discovery**.
+2. Go to **Catalog** → **Discovery**.
 3. Pick a theme you like and click **Install**.
 
 That's it. No downloads, no copying files.
@@ -25,9 +25,9 @@ That's it. No downloads, no copying files.
 
 ## Cursors, sounds and combos
 
-Besides themes, the Theme Browser has **Cursors**, **Sounds**, **Icons** and **Combos**. Pick an installed pack in **Display Properties**: sounds on the **Sounds** tab, cursors and icons on the **Display** tab.
+Besides themes, the Catalog has **Cursors**, **Sounds**, **Icons**, **Chat wallpapers** and **Combos**. Pick an installed pack in **Display Properties**: sounds on the **Sounds** tab; cursors, icons and the chat background on the **Display** tab.
 
-The catalog includes the cursors and sounds of Microsoft's official Windows XP downloadable themes (Nile, Halo, Christmas, Dogs, Danish Winter and many more). Each theme is a cursors pack, a sounds pack, and a combo that installs both in one click.
+The catalog includes the cursors and sounds of Microsoft's official Windows XP downloadable themes (Nile, Halo, Christmas, Dogs, Danish Winter and many more). Each theme is a cursors pack, a sounds pack, and a combo that installs both in one click. All 28 standard Windows XP wallpapers are there too, as chat backgrounds.
 
 👉 **[How packs and combos are made](docs/PACKS.md)**
 
@@ -45,7 +45,7 @@ You don't need to be a programmer: start from a ready-made template and change a
 
 👉 **[Start from the template](template/)**
 
-👉 **[Publish your theme to the Theme Browser](docs/PUBLISHING_THEMES.md)**
+👉 **[Publish your theme to the Catalog](docs/PUBLISHING_THEMES.md)**
 
 ## What's in this repository
 
@@ -53,7 +53,7 @@ You don't need to be a programmer: start from a ready-made template and change a
 |---|---|
 | [`themes/`](themes) | All catalog themes, one folder per theme |
 | [`themes.json`](themes.json) | The list of themes the app shows |
-| [`cursors/`](cursors), [`sounds/`](sounds), [`icons/`](icons), [`combos/`](combos) | Cursor, sound and icon packs, and combos |
+| [`cursors/`](cursors), [`sounds/`](sounds), [`icons/`](icons), [`wallpapers/`](wallpapers), [`combos/`](combos) | Cursor, sound, icon and wallpaper packs, and combos |
 | [`packs.json`](packs.json) | The list of packs and combos the app shows |
 | [`template/`](template) | A starter theme you can copy |
 | [`docs/`](docs) | Guides for theme creators |
