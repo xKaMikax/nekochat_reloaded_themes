@@ -1,0 +1,6 @@
+{
+  "name": "My pack",
+  "author": "Your name",
+  "type": "combo",
+  "contains": ["sounds", "cursors", "icons"]
+}

@@ -1,0 +1,9 @@
+{
+  "default": { "file": "arrow.cur", "x": 0, "y": 0 },
+  "pointer": { "file": "hand.cur", "x": 6, "y": 0 },
+  "text": { "file": "ibeam.cur", "x": 8, "y": 9 },
+  "wait": { "file": "busy.png", "x": 16, "y": 16 },
+  "progress": { "file": "working.png", "x": 0, "y": 0 },
+  "not-allowed": { "file": "unavailable.cur", "x": 8, "y": 8 },
+  "help": { "file": "help.cur", "x": 0, "y": 0 }
+}

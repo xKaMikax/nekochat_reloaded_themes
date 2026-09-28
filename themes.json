@@ -5,28 +5,28 @@
       "directory": "themes/embedded",
       "DisplayName": "Embedded",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "Nekochat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
+      "Details": { "Author": "Nekochat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile", "Added": "2026-09-25" }
     },
     {
       "theme_id": "Royale",
       "directory": "themes/royale",
       "DisplayName": "Royale",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "Microsoft / Nekochat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
+      "Details": { "Author": "Microsoft / Nekochat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile", "Added": "2026-09-25" }
     },
     {
       "theme_id": "Zune",
       "directory": "themes/zune",
       "DisplayName": "Zune",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "Microsoft / Nekochat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile" }
+      "Details": { "Author": "Microsoft / Nekochat Reloaded", "Version": "1.0", "Type": "WindowsThemeFile", "Added": "2026-09-25" }
     },
     {
       "theme_id": "ios27-liquid-glass-dark",
       "directory": "themes/ios27-liquid-glass-dark",
       "DisplayName": "iOS 27 Liquid Glass Dark",
       "ColorSchemes": ["Default"],
-      "Details": { "Author": "SWIZZY", "Version": "1.0", "Type": "CSS" }
+      "Details": { "Author": "SWIZZY", "Version": "1.0", "Type": "CSS", "Added": "2026-09-27" }
     }
   ]
 }

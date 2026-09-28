@@ -1,0 +1,11 @@
+{
+  "app": "app.png",
+  "personalize": "personalize.png",
+  "change-user": "change-user.png",
+  "sign-out": "sign-out.png",
+  "room": "room.png",
+  "add": "add.png",
+  "call": "call.png",
+  "members": "members.png",
+  "notifications": "notifications.png"
+}
