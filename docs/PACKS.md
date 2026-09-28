@@ -1,6 +1,6 @@
-# Cursors, sounds, icons, chat wallpapers and combos
+# Cursors, sounds, icons, chat wallpapers, assistants and combos
 
-Besides themes, the **Catalog** installs **packs**. There are five types:
+Besides themes, the **Catalog** installs **packs**. There are six types:
 
 | Type | What it changes | Folder in this repository |
 |---|---|---|
@@ -8,6 +8,7 @@ Besides themes, the **Catalog** installs **packs**. There are five types:
 | `sounds` | The sounds of the app (new message, calls, clicks…) | [`sounds/`](../sounds) |
 | `icons` | The icons of the app's buttons and windows | [`icons/`](../icons) |
 | `wallpapers` | Pictures for the chat background | [`wallpapers/`](../wallpapers) |
+| `assistants` | A Microsoft Agent character in the chat window, like Rover | [`assistants/`](../assistants) |
 | `combo` | A list of items from this catalog: a theme and cursor, sound and icon packs | [`combos/`](../combos) |
 
 People choose installed packs in **Display Properties**: sounds on the **Sounds** tab; cursors, icons and the chat background on the **Display** tab.
@@ -90,6 +91,26 @@ Icon names: `app` (window icon), `personalize`, `change-user`, `sign-out`, `room
 ### Chat wallpapers
 
 Put `.jpg`, `.png` or `.webp` pictures in `wallpapers/`. Each picture appears under **Chat background** by its file name. A large picture (1920×1200 or so) looks best; it is scaled to cover the chat.
+
+### Assistants
+
+An assistant is a Microsoft Agent character (a `.acs` file, like Merlin or the Windows XP search
+companions) that lives in the chat window. A click on it opens a balloon: search all chats,
+unread chats, change your status, tips. Rover is built into the app.
+
+Turn a `.acs` file into a pack with [`tools/acs2pack.py`](../tools/acs2pack.py) (needs Pillow):
+
+```
+python3 tools/acs2pack.py Merlin.acs assistants/merlin
+```
+
+It writes `agent.json` (the animations), `frames.png` (every image), `sound<N>.wav` and
+`Preview.png`, and prints the `Files` list for `packs.json`. Add a `Description.md` and an entry with
+`"type": "assistants"`; the files go to the pack's `assistant/` folder. The app plays the usual
+animations when it has them: `Show`, `Hide`, `Idle…`, `Searching`, `ClickedOn`, `GetAttention`,
+`Pleased`, `Thinking`, `Acknowledge`, `Congratulate`.
+
+Only publish characters you may share.
 
 ## Without Pack.ZIP
 

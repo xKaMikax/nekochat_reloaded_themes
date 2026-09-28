@@ -25,9 +25,9 @@ That's it. No downloads, no copying files.
 
 ## Cursors, sounds and combos
 
-Besides themes, the Catalog has **Cursors**, **Sounds**, **Icons**, **Chat wallpapers** and **Combos**. Pick an installed pack in **Display Properties**: sounds on the **Sounds** tab; cursors, icons and the chat background on the **Display** tab.
+Besides themes, the Catalog has **Cursors**, **Sounds**, **Icons**, **Chat wallpapers**, **Assistants** and **Combos**. Pick an installed pack in **Display Properties**: sounds on the **Sounds** tab; cursors, icons and the chat background on the **Display** tab.
 
-The catalog includes the cursors and sounds of Microsoft's official Windows XP downloadable themes (Nile, Halo, Christmas, Dogs, Danish Winter and many more). Each theme is a cursors pack, a sounds pack, and a combo that installs both in one click. All 28 standard Windows XP wallpapers are there too, as chat backgrounds.
+The catalog includes the cursors and sounds of Microsoft's official Windows XP downloadable themes (Nile, Halo, Christmas, Dogs, Danish Winter and many more). Each theme is a cursors pack, a sounds pack, and a combo that installs both in one click. All 28 standard Windows XP wallpapers are there too, as chat backgrounds, and the Microsoft Agent characters of Windows XP (Courtney, Earl, Merlin) as assistants.
 
 👉 **[How packs and combos are made](docs/PACKS.md)**
 
@@ -53,7 +53,7 @@ You don't need to be a programmer: start from a ready-made template and change a
 |---|---|
 | [`themes/`](themes) | All catalog themes, one folder per theme |
 | [`themes.json`](themes.json) | The list of themes the app shows |
-| [`cursors/`](cursors), [`sounds/`](sounds), [`icons/`](icons), [`wallpapers/`](wallpapers), [`combos/`](combos) | Cursor, sound, icon and wallpaper packs, and combos |
+| [`cursors/`](cursors), [`sounds/`](sounds), [`icons/`](icons), [`wallpapers/`](wallpapers), [`assistants/`](assistants), [`combos/`](combos) | Cursor, sound, icon, wallpaper and assistant packs, and combos |
 | [`packs.json`](packs.json) | The list of packs and combos the app shows |
 | [`template/`](template) | A starter theme you can copy |
 | [`docs/`](docs) | Guides for theme creators |
