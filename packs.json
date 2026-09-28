@@ -1,3 +1,1684 @@
 {
-  "packs": []
+  "packs": [
+    {
+      "pack_id": "animal-cursors",
+      "type": "cursors",
+      "directory": "cursors/animal",
+      "DisplayName": "Animal — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "animal-sounds",
+      "type": "sounds",
+      "directory": "sounds/animal",
+      "DisplayName": "Animal — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "argentinian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/argentinian-soccer",
+      "DisplayName": "Argentinian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beaches-of-brazil-buzios-cursors",
+      "type": "cursors",
+      "directory": "cursors/beaches-of-brazil-buzios",
+      "DisplayName": "Beaches of Brazil - Búzios — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beaches-of-brazil-buzios-sounds",
+      "type": "sounds",
+      "directory": "sounds/beaches-of-brazil-buzios",
+      "DisplayName": "Beaches of Brazil - Búzios — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beijing-opera-mask-cursors",
+      "type": "cursors",
+      "directory": "cursors/beijing-opera-mask",
+      "DisplayName": "Beijing Opera Mask — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beijing-opera-mask-sounds",
+      "type": "sounds",
+      "directory": "sounds/beijing-opera-mask",
+      "DisplayName": "Beijing Opera Mask — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "bolivian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/bolivian-soccer",
+      "DisplayName": "Bolivian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazil-505-cursors",
+      "type": "cursors",
+      "directory": "cursors/brazil-505",
+      "DisplayName": "Brazil 505 — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-carnivals-olinda-cursors",
+      "type": "cursors",
+      "directory": "cursors/brazilian-carnivals-olinda",
+      "DisplayName": "Brazilian Carnivals - Olinda — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-carnivals-olinda-sounds",
+      "type": "sounds",
+      "directory": "sounds/brazilian-carnivals-olinda",
+      "DisplayName": "Brazilian Carnivals - Olinda — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-football-cursors",
+      "type": "cursors",
+      "directory": "cursors/brazilian-football",
+      "DisplayName": "Brazilian Football — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "canadian-nature-cursors",
+      "type": "cursors",
+      "directory": "cursors/canadian-nature",
+      "DisplayName": "Canadian Nature — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "canadian-nature-sounds",
+      "type": "sounds",
+      "directory": "sounds/canadian-nature",
+      "DisplayName": "Canadian Nature — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chilean-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/chilean-soccer",
+      "DisplayName": "Chilean Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chinese-mountain-cursors",
+      "type": "cursors",
+      "directory": "cursors/chinese-mountain",
+      "DisplayName": "Chinese Mountain — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chinese-mountain-sounds",
+      "type": "sounds",
+      "directory": "sounds/chinese-mountain",
+      "DisplayName": "Chinese Mountain — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chinese-paper-cut-cursors",
+      "type": "cursors",
+      "directory": "cursors/chinese-paper-cut",
+      "DisplayName": "Chinese Paper-cut — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chinese-paper-cut-sounds",
+      "type": "sounds",
+      "directory": "sounds/chinese-paper-cut",
+      "DisplayName": "Chinese Paper-cut — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "christmas-cursors",
+      "type": "cursors",
+      "directory": "cursors/christmas",
+      "DisplayName": "Christmas — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "christmas-sounds",
+      "type": "sounds",
+      "directory": "sounds/christmas",
+      "DisplayName": "Christmas — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "colombian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/colombian-soccer",
+      "DisplayName": "Colombian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "cricket-trinidad-and-tobago-theme-1-cursors",
+      "type": "cursors",
+      "directory": "cursors/cricket-trinidad-and-tobago-theme-1",
+      "DisplayName": "Cricket Trinidad and Tobago - Theme 1 — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-autumn-cursors",
+      "type": "cursors",
+      "directory": "cursors/danish-autumn",
+      "DisplayName": "Danish Autumn — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-autumn-sounds",
+      "type": "sounds",
+      "directory": "sounds/danish-autumn",
+      "DisplayName": "Danish Autumn — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-spring-cursors",
+      "type": "cursors",
+      "directory": "cursors/danish-spring",
+      "DisplayName": "Danish Spring — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-spring-sounds",
+      "type": "sounds",
+      "directory": "sounds/danish-spring",
+      "DisplayName": "Danish Spring — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-summer-cursors",
+      "type": "cursors",
+      "directory": "cursors/danish-summer",
+      "DisplayName": "Danish Summer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-summer-sounds",
+      "type": "sounds",
+      "directory": "sounds/danish-summer",
+      "DisplayName": "Danish Summer — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-winter-cursors",
+      "type": "cursors",
+      "directory": "cursors/danish-winter",
+      "DisplayName": "Danish Winter — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-winter-sounds",
+      "type": "sounds",
+      "directory": "sounds/danish-winter",
+      "DisplayName": "Danish Winter — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dogs-boxer-cursors",
+      "type": "cursors",
+      "directory": "cursors/dogs-boxer",
+      "DisplayName": "Dogs - Boxer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dogs-boxer-sounds",
+      "type": "sounds",
+      "directory": "sounds/dogs-boxer",
+      "DisplayName": "Dogs - Boxer — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dominican-baseball-cursors",
+      "type": "cursors",
+      "directory": "cursors/dominican-baseball",
+      "DisplayName": "Dominican Baseball — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "ecotourism-cursors",
+      "type": "cursors",
+      "directory": "cursors/ecotourism",
+      "DisplayName": "Ecotourism — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "ecuadorian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/ecuadorian-soccer",
+      "DisplayName": "Ecuadorian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "el-salvadorian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/el-salvadorian-soccer",
+      "DisplayName": "El Salvadorian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "fauna-cursors",
+      "type": "cursors",
+      "directory": "cursors/fauna",
+      "DisplayName": "Fauna — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "final-fantasy-xi-cursors",
+      "type": "cursors",
+      "directory": "cursors/final-fantasy-xi",
+      "DisplayName": "Final Fantasy XI — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "final-fantasy-xi-sounds",
+      "type": "sounds",
+      "directory": "sounds/final-fantasy-xi",
+      "DisplayName": "Final Fantasy XI — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "finnish-autumn-cursors",
+      "type": "cursors",
+      "directory": "cursors/finnish-autumn",
+      "DisplayName": "Finnish Autumn — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "finnish-winter-cursors",
+      "type": "cursors",
+      "directory": "cursors/finnish-winter",
+      "DisplayName": "Finnish Winter — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "flowers-cursors",
+      "type": "cursors",
+      "directory": "cursors/flowers",
+      "DisplayName": "Flowers — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "german-xmas-snowman-1024-x-768-cursors",
+      "type": "cursors",
+      "directory": "cursors/german-xmas-snowman-1024-x-768",
+      "DisplayName": "German Xmas - Snowman - 1024 x 768 — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "guatemalan-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/guatemalan-soccer",
+      "DisplayName": "Guatemalan Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "halo-theme-1-cursors",
+      "type": "cursors",
+      "directory": "cursors/halo-theme-1",
+      "DisplayName": "Halo - Theme 1 — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "halo-theme-1-sounds",
+      "type": "sounds",
+      "directory": "sounds/halo-theme-1",
+      "DisplayName": "Halo - Theme 1 — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "historical-monuments-cursors",
+      "type": "cursors",
+      "directory": "cursors/historical-monuments",
+      "DisplayName": "Historical Monuments — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "historical-monuments-sounds",
+      "type": "sounds",
+      "directory": "sounds/historical-monuments",
+      "DisplayName": "Historical Monuments — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "hondurasian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/hondurasian-soccer",
+      "DisplayName": "Hondurasian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "hungarian-landscapes-cursors",
+      "type": "cursors",
+      "directory": "cursors/hungarian-landscapes",
+      "DisplayName": "Hungarian Landscapes — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "jamacian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/jamacian-soccer",
+      "DisplayName": "Jamacian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "japan-new-years-cursors",
+      "type": "cursors",
+      "directory": "cursors/japan-new-years",
+      "DisplayName": "Japan New Years — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "japan-new-years-sounds",
+      "type": "sounds",
+      "directory": "sounds/japan-new-years",
+      "DisplayName": "Japan New Years — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "ldn-linkdotnet-cursors",
+      "type": "cursors",
+      "directory": "cursors/ldn-linkdotnet",
+      "DisplayName": "LDN (LinkDotNet) — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "mexican-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/mexican-soccer",
+      "DisplayName": "Méxican Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "nile-cursors",
+      "type": "cursors",
+      "directory": "cursors/nile",
+      "DisplayName": "Nile — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "nile-sounds",
+      "type": "sounds",
+      "directory": "sounds/nile",
+      "DisplayName": "Nile — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-autumn-cursors",
+      "type": "cursors",
+      "directory": "cursors/norwegian-autumn",
+      "DisplayName": "Norwegian Autumn — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-spring-cursors",
+      "type": "cursors",
+      "directory": "cursors/norwegian-spring",
+      "DisplayName": "Norwegian Spring — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-summer-cursors",
+      "type": "cursors",
+      "directory": "cursors/norwegian-summer",
+      "DisplayName": "Norwegian Summer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-winter-cursors",
+      "type": "cursors",
+      "directory": "cursors/norwegian-winter",
+      "DisplayName": "Norwegian Winter — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "nunavut-animals-cursors",
+      "type": "cursors",
+      "directory": "cursors/nunavut-animals",
+      "DisplayName": "Nunavut - Animals — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "ontario-animals-cursors",
+      "type": "cursors",
+      "directory": "cursors/ontario-animals",
+      "DisplayName": "Ontario - Animals — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "panamanian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/panamanian-soccer",
+      "DisplayName": "Panamanian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "pasta-cursors",
+      "type": "cursors",
+      "directory": "cursors/pasta",
+      "DisplayName": "Pasta — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "pasta-sounds",
+      "type": "sounds",
+      "directory": "sounds/pasta",
+      "DisplayName": "Pasta — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "peruvian-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/peruvian-soccer",
+      "DisplayName": "Peruvian Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-autumn-cursors",
+      "type": "cursors",
+      "directory": "cursors/polish-composition-autumn",
+      "DisplayName": "Polish Composition - Autumn — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-spring-cursors",
+      "type": "cursors",
+      "directory": "cursors/polish-composition-spring",
+      "DisplayName": "Polish Composition - Spring — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-summer-cursors",
+      "type": "cursors",
+      "directory": "cursors/polish-composition-summer",
+      "DisplayName": "Polish Composition - Summer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-winter-cursors",
+      "type": "cursors",
+      "directory": "cursors/polish-composition-winter",
+      "DisplayName": "Polish Composition - Winter — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "portuguese-discoveries-theme-1-cursors",
+      "type": "cursors",
+      "directory": "cursors/portuguese-discoveries-theme-1",
+      "DisplayName": "Portuguese Discoveries - Theme 1 — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "portuguese-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/portuguese-soccer",
+      "DisplayName": "Portuguese Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "portuguese-soccer-sounds",
+      "type": "sounds",
+      "directory": "sounds/portuguese-soccer",
+      "DisplayName": "Portuguese Soccer — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "puerto-rican-baseball-cursors",
+      "type": "cursors",
+      "directory": "cursors/puerto-rican-baseball",
+      "DisplayName": "Puerto Rican Baseball — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "quebec-cursors",
+      "type": "cursors",
+      "directory": "cursors/quebec",
+      "DisplayName": "Quebec — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "quebec-sounds",
+      "type": "sounds",
+      "directory": "sounds/quebec",
+      "DisplayName": "Quebec — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "ree-ree-khao-san-cursors",
+      "type": "cursors",
+      "directory": "cursors/ree-ree-khao-san",
+      "DisplayName": "Ree Ree Khao San — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "san-fermin-cursors",
+      "type": "cursors",
+      "directory": "cursors/san-fermin",
+      "DisplayName": "San Fermín — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "san-fermin-sounds",
+      "type": "sounds",
+      "directory": "sounds/san-fermin",
+      "DisplayName": "San Fermín — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "songkran-cursors",
+      "type": "cursors",
+      "directory": "cursors/songkran",
+      "DisplayName": "Songkran — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-coastal-landscape-cursors",
+      "type": "cursors",
+      "directory": "cursors/swedish-coastal-landscape",
+      "DisplayName": "Swedish Coastal Landscape — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-coastal-landscape-sounds",
+      "type": "sounds",
+      "directory": "sounds/swedish-coastal-landscape",
+      "DisplayName": "Swedish Coastal Landscape — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-cultural-landscape-cursors",
+      "type": "cursors",
+      "directory": "cursors/swedish-cultural-landscape",
+      "DisplayName": "Swedish Cultural Landscape — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-forest-landscape-cursors",
+      "type": "cursors",
+      "directory": "cursors/swedish-forest-landscape",
+      "DisplayName": "Swedish Forest Landscape — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-forest-landscape-sounds",
+      "type": "sounds",
+      "directory": "sounds/swedish-forest-landscape",
+      "DisplayName": "Swedish Forest Landscape — sounds",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-winter-landscape-cursors",
+      "type": "cursors",
+      "directory": "cursors/swedish-winter-landscape",
+      "DisplayName": "Swedish Winter Landscape — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "uruguayan-soccer-cursors",
+      "type": "cursors",
+      "directory": "cursors/uruguayan-soccer",
+      "DisplayName": "Uruguayan Soccer — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "venezuelan-baseball-cursors",
+      "type": "cursors",
+      "directory": "cursors/venezuelan-baseball",
+      "DisplayName": "Venezuelan Baseball — cursors",
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "animal",
+      "type": "combo",
+      "directory": "combos/animal",
+      "DisplayName": "Animal",
+      "Includes": {
+        "cursors": "animal-cursors",
+        "sounds": "animal-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beaches-of-brazil-buzios",
+      "type": "combo",
+      "directory": "combos/beaches-of-brazil-buzios",
+      "DisplayName": "Beaches of Brazil - Búzios",
+      "Includes": {
+        "cursors": "beaches-of-brazil-buzios-cursors",
+        "sounds": "beaches-of-brazil-buzios-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beaches-of-brazil-florianopolis",
+      "type": "combo",
+      "directory": "combos/beaches-of-brazil-florianopolis",
+      "DisplayName": "Beaches of Brazil - Florianópolis",
+      "Includes": {
+        "cursors": "beaches-of-brazil-buzios-cursors",
+        "sounds": "beaches-of-brazil-buzios-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beaches-of-brazil-jericoacoara",
+      "type": "combo",
+      "directory": "combos/beaches-of-brazil-jericoacoara",
+      "DisplayName": "Beaches of Brazil - Jericoacoara",
+      "Includes": {
+        "cursors": "beaches-of-brazil-buzios-cursors",
+        "sounds": "beaches-of-brazil-buzios-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beaches-of-brazil-noronha",
+      "type": "combo",
+      "directory": "combos/beaches-of-brazil-noronha",
+      "DisplayName": "Beaches of Brazil - Noronha",
+      "Includes": {
+        "cursors": "beaches-of-brazil-buzios-cursors",
+        "sounds": "beaches-of-brazil-buzios-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "beijing-opera-mask",
+      "type": "combo",
+      "directory": "combos/beijing-opera-mask",
+      "DisplayName": "Beijing Opera Mask",
+      "Includes": {
+        "cursors": "beijing-opera-mask-cursors",
+        "sounds": "beijing-opera-mask-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-carnivals-olinda",
+      "type": "combo",
+      "directory": "combos/brazilian-carnivals-olinda",
+      "DisplayName": "Brazilian Carnivals - Olinda",
+      "Includes": {
+        "cursors": "brazilian-carnivals-olinda-cursors",
+        "sounds": "brazilian-carnivals-olinda-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-carnivals-rio",
+      "type": "combo",
+      "directory": "combos/brazilian-carnivals-rio",
+      "DisplayName": "Brazilian Carnivals - Rio",
+      "Includes": {
+        "cursors": "brazilian-carnivals-olinda-cursors",
+        "sounds": "brazilian-carnivals-olinda-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-carnivals-salvador",
+      "type": "combo",
+      "directory": "combos/brazilian-carnivals-salvador",
+      "DisplayName": "Brazilian Carnivals - Salvador",
+      "Includes": {
+        "cursors": "brazilian-carnivals-olinda-cursors",
+        "sounds": "brazilian-carnivals-olinda-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "brazilian-carnivals",
+      "type": "combo",
+      "directory": "combos/brazilian-carnivals",
+      "DisplayName": "Brazilian Carnivals",
+      "Includes": {
+        "cursors": "brazilian-carnivals-olinda-cursors",
+        "sounds": "brazilian-carnivals-olinda-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "canadian-nature",
+      "type": "combo",
+      "directory": "combos/canadian-nature",
+      "DisplayName": "Canadian Nature",
+      "Includes": {
+        "cursors": "canadian-nature-cursors",
+        "sounds": "canadian-nature-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chinese-mountain",
+      "type": "combo",
+      "directory": "combos/chinese-mountain",
+      "DisplayName": "Chinese Mountain",
+      "Includes": {
+        "cursors": "chinese-mountain-cursors",
+        "sounds": "chinese-mountain-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "chinese-paper-cut",
+      "type": "combo",
+      "directory": "combos/chinese-paper-cut",
+      "DisplayName": "Chinese Paper-cut",
+      "Includes": {
+        "cursors": "chinese-paper-cut-cursors",
+        "sounds": "chinese-paper-cut-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "christmas",
+      "type": "combo",
+      "directory": "combos/christmas",
+      "DisplayName": "Christmas",
+      "Includes": {
+        "cursors": "christmas-cursors",
+        "sounds": "christmas-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-autumn",
+      "type": "combo",
+      "directory": "combos/danish-autumn",
+      "DisplayName": "Danish Autumn",
+      "Includes": {
+        "cursors": "danish-autumn-cursors",
+        "sounds": "danish-autumn-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-spring",
+      "type": "combo",
+      "directory": "combos/danish-spring",
+      "DisplayName": "Danish Spring",
+      "Includes": {
+        "cursors": "danish-spring-cursors",
+        "sounds": "danish-spring-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-summer",
+      "type": "combo",
+      "directory": "combos/danish-summer",
+      "DisplayName": "Danish Summer",
+      "Includes": {
+        "cursors": "danish-summer-cursors",
+        "sounds": "danish-summer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "danish-winter",
+      "type": "combo",
+      "directory": "combos/danish-winter",
+      "DisplayName": "Danish Winter",
+      "Includes": {
+        "cursors": "danish-winter-cursors",
+        "sounds": "danish-winter-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dogs-boxer",
+      "type": "combo",
+      "directory": "combos/dogs-boxer",
+      "DisplayName": "Dogs - Boxer",
+      "Includes": {
+        "cursors": "dogs-boxer-cursors",
+        "sounds": "dogs-boxer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dogs-golden-retriever",
+      "type": "combo",
+      "directory": "combos/dogs-golden-retriever",
+      "DisplayName": "Dogs - Golden Retriever",
+      "Includes": {
+        "cursors": "dogs-boxer-cursors",
+        "sounds": "dogs-boxer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dogs-puppies",
+      "type": "combo",
+      "directory": "combos/dogs-puppies",
+      "DisplayName": "Dogs - Puppies",
+      "Includes": {
+        "cursors": "dogs-boxer-cursors",
+        "sounds": "dogs-boxer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "dogs-weimaraner",
+      "type": "combo",
+      "directory": "combos/dogs-weimaraner",
+      "DisplayName": "Dogs - Weimaraner",
+      "Includes": {
+        "cursors": "dogs-boxer-cursors",
+        "sounds": "dogs-boxer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "final-fantasy-xi",
+      "type": "combo",
+      "directory": "combos/final-fantasy-xi",
+      "DisplayName": "Final Fantasy XI",
+      "Includes": {
+        "cursors": "final-fantasy-xi-cursors",
+        "sounds": "final-fantasy-xi-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "finnish-autumn",
+      "type": "combo",
+      "directory": "combos/finnish-autumn",
+      "DisplayName": "Finnish Autumn",
+      "Includes": {
+        "cursors": "finnish-autumn-cursors",
+        "sounds": "danish-autumn-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "finnish-winter",
+      "type": "combo",
+      "directory": "combos/finnish-winter",
+      "DisplayName": "Finnish Winter",
+      "Includes": {
+        "cursors": "finnish-winter-cursors",
+        "sounds": "danish-winter-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "halo-theme-1",
+      "type": "combo",
+      "directory": "combos/halo-theme-1",
+      "DisplayName": "Halo - Theme 1",
+      "Includes": {
+        "cursors": "halo-theme-1-cursors",
+        "sounds": "halo-theme-1-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "halo-theme-2",
+      "type": "combo",
+      "directory": "combos/halo-theme-2",
+      "DisplayName": "Halo - Theme 2",
+      "Includes": {
+        "cursors": "halo-theme-1-cursors",
+        "sounds": "halo-theme-1-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "historical-monuments",
+      "type": "combo",
+      "directory": "combos/historical-monuments",
+      "DisplayName": "Historical Monuments",
+      "Includes": {
+        "cursors": "historical-monuments-cursors",
+        "sounds": "historical-monuments-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "japan-new-years",
+      "type": "combo",
+      "directory": "combos/japan-new-years",
+      "DisplayName": "Japan New Years",
+      "Includes": {
+        "cursors": "japan-new-years-cursors",
+        "sounds": "japan-new-years-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "nile",
+      "type": "combo",
+      "directory": "combos/nile",
+      "DisplayName": "Nile",
+      "Includes": {
+        "cursors": "nile-cursors",
+        "sounds": "nile-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-autumn",
+      "type": "combo",
+      "directory": "combos/norwegian-autumn",
+      "DisplayName": "Norwegian Autumn",
+      "Includes": {
+        "cursors": "norwegian-autumn-cursors",
+        "sounds": "danish-autumn-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-spring",
+      "type": "combo",
+      "directory": "combos/norwegian-spring",
+      "DisplayName": "Norwegian Spring",
+      "Includes": {
+        "cursors": "norwegian-spring-cursors",
+        "sounds": "danish-spring-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-summer",
+      "type": "combo",
+      "directory": "combos/norwegian-summer",
+      "DisplayName": "Norwegian Summer",
+      "Includes": {
+        "cursors": "norwegian-summer-cursors",
+        "sounds": "danish-summer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "norwegian-winter",
+      "type": "combo",
+      "directory": "combos/norwegian-winter",
+      "DisplayName": "Norwegian Winter",
+      "Includes": {
+        "cursors": "norwegian-winter-cursors",
+        "sounds": "danish-winter-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "pasta",
+      "type": "combo",
+      "directory": "combos/pasta",
+      "DisplayName": "Pasta",
+      "Includes": {
+        "cursors": "pasta-cursors",
+        "sounds": "pasta-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-autumn",
+      "type": "combo",
+      "directory": "combos/polish-composition-autumn",
+      "DisplayName": "Polish Composition - Autumn",
+      "Includes": {
+        "cursors": "polish-composition-autumn-cursors",
+        "sounds": "danish-autumn-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-spring",
+      "type": "combo",
+      "directory": "combos/polish-composition-spring",
+      "DisplayName": "Polish Composition - Spring",
+      "Includes": {
+        "cursors": "polish-composition-spring-cursors",
+        "sounds": "danish-spring-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-summer",
+      "type": "combo",
+      "directory": "combos/polish-composition-summer",
+      "DisplayName": "Polish Composition - Summer",
+      "Includes": {
+        "cursors": "polish-composition-summer-cursors",
+        "sounds": "danish-summer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "polish-composition-winter",
+      "type": "combo",
+      "directory": "combos/polish-composition-winter",
+      "DisplayName": "Polish Composition - Winter",
+      "Includes": {
+        "cursors": "polish-composition-winter-cursors",
+        "sounds": "danish-winter-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "portuguese-soccer",
+      "type": "combo",
+      "directory": "combos/portuguese-soccer",
+      "DisplayName": "Portuguese Soccer",
+      "Includes": {
+        "cursors": "portuguese-soccer-cursors",
+        "sounds": "portuguese-soccer-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "quebec",
+      "type": "combo",
+      "directory": "combos/quebec",
+      "DisplayName": "Quebec",
+      "Includes": {
+        "cursors": "quebec-cursors",
+        "sounds": "quebec-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "san-fermin",
+      "type": "combo",
+      "directory": "combos/san-fermin",
+      "DisplayName": "San Fermín",
+      "Includes": {
+        "cursors": "san-fermin-cursors",
+        "sounds": "san-fermin-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-coastal-landscape",
+      "type": "combo",
+      "directory": "combos/swedish-coastal-landscape",
+      "DisplayName": "Swedish Coastal Landscape",
+      "Includes": {
+        "cursors": "swedish-coastal-landscape-cursors",
+        "sounds": "swedish-coastal-landscape-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-cultural-landscape",
+      "type": "combo",
+      "directory": "combos/swedish-cultural-landscape",
+      "DisplayName": "Swedish Cultural Landscape",
+      "Includes": {
+        "cursors": "swedish-cultural-landscape-cursors",
+        "sounds": "danish-spring-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-forest-landscape",
+      "type": "combo",
+      "directory": "combos/swedish-forest-landscape",
+      "DisplayName": "Swedish Forest Landscape",
+      "Includes": {
+        "cursors": "swedish-forest-landscape-cursors",
+        "sounds": "swedish-forest-landscape-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    },
+    {
+      "pack_id": "swedish-winter-landscape",
+      "type": "combo",
+      "directory": "combos/swedish-winter-landscape",
+      "DisplayName": "Swedish Winter Landscape",
+      "Includes": {
+        "cursors": "swedish-winter-landscape-cursors",
+        "sounds": "danish-winter-sounds"
+      },
+      "Details": {
+        "Author": "Microsoft",
+        "Version": "1.0",
+        "Added": "2026-09-28"
+      }
+    }
+  ]
 }

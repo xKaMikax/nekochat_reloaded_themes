@@ -23,6 +23,14 @@ That's it. No downloads, no copying files.
 | Royale | Microsoft / Nekochat Reloaded |
 | Zune | Microsoft / Nekochat Reloaded |
 
+## Cursors, sounds and combos
+
+Besides themes, the Theme Browser has **Cursors**, **Sounds**, **Icons** and **Combos**. Pick an installed pack in **Display Properties**: sounds on the **Sounds** tab, cursors and icons on the **Display** tab.
+
+The catalog includes the cursors and sounds of Microsoft's official Windows XP downloadable themes (Nile, Halo, Christmas, Dogs, Danish Winter and many more). Each theme is a cursors pack, a sounds pack, and a combo that installs both in one click.
+
+👉 **[How packs and combos are made](docs/PACKS.md)**
+
 ## Already have a Windows XP theme?
 
 You can use it directly. In Nekochat, open **Display Properties** → **Themes** → **Add Theme…** and pick a `.msstyles` or `.theme` file.
@@ -45,5 +53,7 @@ You don't need to be a programmer: start from a ready-made template and change a
 |---|---|
 | [`themes/`](themes) | All catalog themes, one folder per theme |
 | [`themes.json`](themes.json) | The list of themes the app shows |
+| [`cursors/`](cursors), [`sounds/`](sounds), [`icons/`](icons), [`combos/`](combos) | Cursor, sound and icon packs, and combos |
+| [`packs.json`](packs.json) | The list of packs and combos the app shows |
 | [`template/`](template) | A starter theme you can copy |
 | [`docs/`](docs) | Guides for theme creators |
