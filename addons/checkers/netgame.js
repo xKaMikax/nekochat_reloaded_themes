@@ -14,13 +14,14 @@
     const log = read();
     if (log) {
       if (log.host) api.hostId = Number(log.host); else if (api.isHost) api.hostId = me;
-      for (const entry of log.entries || []) if (entry.seq > applied) { applied = entry.seq; handler?.onEntry?.(entry); }
+      for (const entry of log.entries || []) if (entry.seq > applied) { applied = entry.seq; handler?.onEntry?.(entry, ready); }
       if (log.ended && !ended) { ended = true; handler?.onEnd?.(); }
     } else if (api.isHost) api.hostId = me;
     if (!ready && (log || pumps > 2)) { ready = true; handler?.onReady?.(); }
   }
   let pumps = 0;
   const post = message => { try { localStorage.setItem('nk_game_out', JSON.stringify({ session, me, ...message, at: Date.now(), n: ++counter, r: Math.random() })); } catch {} };
+  api.seq = () => applied;
   api.send = (kind, payload, to) => post({ kind, payload: payload ?? null, ...(to ? { to } : {}) });
   api.end = () => post({ cmd: 'end' });
   api.connect = h => {
