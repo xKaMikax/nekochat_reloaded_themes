@@ -1,0 +1,137 @@
+{
+ "title": {
+  "ru": "Паук",
+  "en": "Spider Solitaire"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Паук",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Пауке»",
+      "keys": [
+       "Паук",
+       "пасьянс"
+      ],
+      "html": "<h1>Общие сведения о «Пауке»</h1><p>Цель игры — собрать восемь стопок карт одной масти от короля до туза. Каждая собранная стопка уходит со стола. Когда уйдут все восемь, вы выиграли.</p>",
+      "related": [
+       "play",
+       "difficulty",
+       "hints"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть в «Паука»",
+      "keys": [
+       "игра",
+       "ход",
+       "колода",
+       "сдать"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть</p><ol><li>В меню <b>Игра</b> выберите <b>Новая игра</b> и укажите сложность.</li><li>Перетаскивайте карты на карту старше на одну ступень. Масть при этом не важна.</li><li>Когда ходов не осталось, щёлкните колоду внизу справа: в каждый столбец ляжет по карте.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Вместе можно двигать только карты одной масти, идущие подряд по убыванию.</li><li>Пока в каком-то столбце нет карт, сдавать из колоды нельзя.</li><li>В пустой столбец можно положить любую карту или стопку.</li><li>Двойной щелчок переносит карту в подходящий столбец.</li><li>Ход стоит одно очко; каждая собранная стопка приносит 100 очков.</li></ul>",
+      "related": [
+       "object",
+       "difficulty",
+       "hints"
+      ]
+     },
+     {
+      "id": "difficulty",
+      "title": "Уровни сложности",
+      "keys": [
+       "сложность",
+       "масти"
+      ],
+      "html": "<p class=\"hh-proc\">Как выбрать сложность</p><ol><li>В меню <b>Игра</b> выберите <b>Новая игра</b>.</li><li>Выберите <b>Лёгкая</b> (одна масть), <b>Средняя</b> (две масти) или <b>Сложная</b> (четыре масти).</li></ol>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "hints",
+      "title": "Подсказка и отмена хода",
+      "keys": [
+       "подсказка",
+       "отмена",
+       "Ctrl+H",
+       "Ctrl+Z"
+      ],
+      "html": "<p class=\"hh-proc\">Как получить подсказку</p><ol><li>В меню <b>Игра</b> выберите <b>Показать ход</b> или нажмите Ctrl+H.</li></ol><p class=\"hh-proc\">Как отменить ход</p><ol><li>Выберите <b>Отменить ход</b> или нажмите Ctrl+Z.</li></ol><p class=\"hh-note\">Примечание</p><ul><li>Чтобы сыграть ту же раскладку заново, выберите <b>Начать эту игру заново</b>.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Spider Solitaire",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Spider Solitaire overview",
+      "keys": [
+       "Spider",
+       "Solitaire"
+      ],
+      "html": "<h1>Spider Solitaire overview</h1><p>The goal is to build eight runs of cards in one suit, from king down to ace. Each finished run leaves the table. When all eight are gone, you win.</p>",
+      "related": [
+       "play",
+       "difficulty",
+       "hints"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play Spider Solitaire",
+      "keys": [
+       "play",
+       "move",
+       "stock",
+       "deal"
+      ],
+      "html": "<p class=\"hh-proc\">To play</p><ol><li>On the <b>Game</b> menu, click <b>New Game</b> and pick a difficulty.</li><li>Drag cards onto a card that is one rank higher. The suit does not matter.</li><li>When you are out of moves, click the stock at the bottom right: one card goes to every column.</li></ol><p class=\"hh-note\">Notes</p><ul><li>Only cards of one suit, in a row and descending, move together.</li><li>You cannot deal while a column is empty.</li><li>Any card or run can be put on an empty column.</li><li>Double-click moves a card to a fitting column.</li><li>Each move costs one point; each finished run gives 100 points.</li></ul>",
+      "related": [
+       "object",
+       "difficulty",
+       "hints"
+      ]
+     },
+     {
+      "id": "difficulty",
+      "title": "Difficulty levels",
+      "keys": [
+       "difficulty",
+       "suits"
+      ],
+      "html": "<p class=\"hh-proc\">To choose a difficulty</p><ol><li>On the <b>Game</b> menu, click <b>New Game</b>.</li><li>Click <b>Easy</b> (one suit), <b>Medium</b> (two suits) or <b>Difficult</b> (four suits).</li></ol>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "hints",
+      "title": "Hints and undo",
+      "keys": [
+       "hint",
+       "undo",
+       "Ctrl+H",
+       "Ctrl+Z"
+      ],
+      "html": "<p class=\"hh-proc\">To get a hint</p><ol><li>On the <b>Game</b> menu, click <b>Show a Move</b>, or press Ctrl+H.</li></ol><p class=\"hh-proc\">To undo a move</p><ol><li>Click <b>Undo</b>, or press Ctrl+Z.</li></ol><p class=\"hh-note\">Note</p><ul><li>To play the same deal again, click <b>Restart This Game</b>.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

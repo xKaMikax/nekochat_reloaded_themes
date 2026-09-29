@@ -2270,6 +2270,35 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "spider-addon",
+      "type": "addons",
+      "directory": "addons/spider",
+      "DisplayName": "Spider Solitaire",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "cards.css",
+        "cards.png",
+        "cardshell.js",
+        "deal.wav",
+        "drop.wav",
+        "felt.png",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "sequence.wav",
+        "spider.css",
+        "spider.html",
+        "spider.js",
+        "win.wav"
+      ],
+      "Details": {
+        "Author": "Microsoft (Windows XP), KaMika",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }
