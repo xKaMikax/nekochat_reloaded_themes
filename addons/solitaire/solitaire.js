@@ -5,11 +5,11 @@ const WORDS = {
   ru: { title: 'Косынка', deal: 'Сдать', undo: 'Отменить ход', deck: 'Колода...', options: 'Параметры...', score: 'Очки: {n}', time: 'Время: {n}',
     rulesText: 'Переложите все карты на четыре основные стопки сверху, от туза до короля одной масти. В нижних стопках карты кладутся по убыванию, чередуя цвета. Двойной щелчок отправляет карту на основу.',
     optionsTitle: 'Параметры', drawGroup: 'Взять', drawOne: 'Одну карту', drawThree: 'Три карты', scoring: 'Подсчёт очков', standard: 'Стандартный', vegas: 'Вегас', none: 'Нет', outline: 'Показывать', timed: 'С таймером', status: 'Строка состояния',
-    deckTitle: 'Выбор колоды', winTitle: 'Косынка', winText: 'Поздравляем, вы выиграли!\nОчки: {score}\n\nСыграть ещё раз?', lostText: 'Больше ходов нет.' },
+    winTitle: 'Косынка', winText: 'Поздравляем, вы выиграли!\nОчки: {score}\n\nСыграть ещё раз?', lostText: 'Больше ходов нет.' },
   en: { title: 'Solitaire', deal: 'Deal', undo: 'Undo', deck: 'Deck...', options: 'Options...', score: 'Score: {n}', time: 'Time: {n}',
     rulesText: 'Move all the cards to the four foundation piles at the top, from ace to king in one suit. On the tableau, build down in alternating colors. Double-click sends a card to a foundation.',
     optionsTitle: 'Options', drawGroup: 'Draw', drawOne: 'Draw one', drawThree: 'Draw three', scoring: 'Scoring', standard: 'Standard', vegas: 'Vegas', none: 'None', outline: 'Show', timed: 'Timed game', status: 'Status bar',
-    deckTitle: 'Select Card Back', winTitle: 'Solitaire', winText: 'Congratulations, you won!\nScore: {score}\n\nPlay again?', lostText: 'No more moves.' },
+    winTitle: 'Solitaire', winText: 'Congratulations, you won!\nScore: {score}\n\nPlay again?', lostText: 'No more moves.' },
 };
 let g, undoStack = [], seconds = 0, timer = null, won = false, animation = null;
 const shell = window.CardShell.init({
@@ -201,24 +201,9 @@ table.addEventListener('dblclick', event => { const cardEl = event.target.closes
 
 // The cascade of bouncing cards after a win.
 function celebrate() {
-  const canvas = document.createElement('canvas'); canvas.className = 'win-canvas'; canvas.width = table.clientWidth; canvas.height = table.clientHeight; table.append(canvas);
-  const ctx = canvas.getContext('2d'), sheet = new Image(); sheet.src = window.NK_ADDON?.files?.['cards.png'] || 'cards.png';
-  const { left } = geometry(); const queue = [];
-  for (let r = 12; r >= 0; r -= 1) for (let f = 0; f < 4; f += 1) queue.push({ index: g.found[f][r].s * 13 + g.found[f][r].r - 1, x: left(3 + f), y: TOP });
-  let current = null, alive = true;
-  animation = { stop: () => { alive = false; canvas.remove(); } };
-  const step = () => {
-    if (!alive) return;
-    if (!current) { current = queue.shift(); if (!current) return; current.dx = (Math.random() * 4 + 2) * (Math.random() < .5 ? -1 : 1); current.dy = -Math.random() * 4; }
-    for (let i = 0; i < 4 && current; i += 1) {
-      current.x += current.dx; current.y += current.dy; current.dy += .5;
-      if (current.y + CARD.height > canvas.height) { current.y = canvas.height - CARD.height; current.dy = -current.dy * .85; }
-      ctx.drawImage(sheet, (current.index % 13) * CARD.width, Math.floor(current.index / 13) * CARD.height, CARD.width, CARD.height, Math.round(current.x), Math.round(current.y), CARD.width, CARD.height);
-      if (current.x < -CARD.width || current.x > canvas.width) current = null;
-    }
-    requestAnimationFrame(step);
-  };
-  sheet.onload = () => requestAnimationFrame(step);
+  const { left } = geometry(); const cards = [];
+  for (let r = 12; r >= 0; r -= 1) for (let f = 0; f < 4; f += 1) cards.push({ index: cardIndex(g.found[f][r]), x: left(3 + f), y: TOP });
+  animation = shell.celebrate(table, cards);
 }
 function stopAnimation() { animation?.stop(); animation = null; }
 async function askAgain() {
@@ -228,15 +213,7 @@ async function askAgain() {
 }
 
 // Deck and Options dialogs.
-async function chooseDeck() {
-  let picked = options.back;
-  const body = `<div class="cs-backs">${Array.from({ length: 12 }, (_, i) => `<button type="button" data-back="${i}" class="${i === picked ? 'chosen' : ''}" style="background-position:${backOffset(i)}"></button>`).join('')}</div>`;
-  const pending = shell.dialog({ title: t('deckTitle'), body, buttons: [['ok', t('ok')], ['cancel', t('cancel')]], width: 380 });
-  document.querySelector('.cs-backs').addEventListener('click', event => { const button = event.target.closest('[data-back]'); if (!button) return; picked = +button.dataset.back; document.querySelectorAll('.cs-backs button').forEach(b => b.classList.toggle('chosen', b === button)); });
-  document.querySelector('.cs-backs').addEventListener('dblclick', event => { if (event.target.closest('[data-back]')) document.querySelector('.cs-dialog footer .default').click(); });
-  const result = await pending; if (result.key !== 'ok') return;
-  options.back = picked; saveOptions(); render();
-}
+async function chooseDeck() { const back = await shell.chooseDeck(options.back); if (back === null) return; options.back = back; saveOptions(); render(); }
 async function showOptions() {
   const radio = (name, value, label, checked) => `<label><input type="radio" name="${name}" value="${value}"${checked ? ' checked' : ''}> ${label}</label>`;
   const body = `<form><fieldset><legend>${t('drawGroup')}</legend>${radio('draw', 1, t('drawOne'), options.draw === 1)}${radio('draw', 3, t('drawThree'), options.draw === 3)}</fieldset>

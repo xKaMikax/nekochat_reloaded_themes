@@ -5,8 +5,8 @@
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const common = {
-    ru: { game: 'Игра', help: 'Справка', rules: 'Вызов справки', about: 'О программе «{title}»', exit: 'Выход', close: 'Закрыть', minimize: 'Свернуть', maximize: 'Развернуть', ok: 'ОК', cancel: 'Отмена', yes: 'Да', no: 'Нет' },
-    en: { game: 'Game', help: 'Help', rules: 'Help Topics', about: 'About {title}', exit: 'Exit', close: 'Close', minimize: 'Minimize', maximize: 'Maximize', ok: 'OK', cancel: 'Cancel', yes: 'Yes', no: 'No' },
+    ru: { deckTitle: 'Выбор колоды', game: 'Игра', help: 'Справка', rules: 'Вызов справки', about: 'О программе «{title}»', exit: 'Выход', close: 'Закрыть', minimize: 'Свернуть', maximize: 'Развернуть', ok: 'ОК', cancel: 'Отмена', yes: 'Да', no: 'Нет' },
+    en: { deckTitle: 'Select Card Back', game: 'Game', help: 'Help', rules: 'Help Topics', about: 'About {title}', exit: 'Exit', close: 'Close', minimize: 'Minimize', maximize: 'Maximize', ok: 'OK', cancel: 'Cancel', yes: 'Yes', no: 'No' },
   };
   const store = {
     get(key, fallback) { try { const value = localStorage.getItem(key); return value === null ? fallback : JSON.parse(value); } catch { return fallback; } },
@@ -56,6 +56,43 @@
       veil.addEventListener('click', event => { const button = event.target.closest('[data-key]'); if (button) done(button.dataset.key); });
       document.addEventListener('keydown', onKey, true); document.body.append(veil); veil.querySelector('.default')?.focus();
     });
+
+    // Deck dialog: pick one of the 12 card backs; resolves to its number or null.
+    api.chooseDeck = async current => {
+      let picked = current;
+      const body = `<div class="cs-backs">${Array.from({ length: 12 }, (_, i) => `<button type="button" data-back="${i}" class="${i === picked ? 'chosen' : ''}" style="background-position:${backOffset(i)}"></button>`).join('')}</div>`;
+      const pending = api.dialog({ title: t('deckTitle'), body, buttons: [['ok', t('ok')], ['cancel', t('cancel')]], width: 380 });
+      const backs = document.querySelector('.cs-backs');
+      backs.addEventListener('click', event => { const button = event.target.closest('[data-back]'); if (!button) return; picked = +button.dataset.back; backs.querySelectorAll('button').forEach(b => b.classList.toggle('chosen', b === button)); });
+      backs.addEventListener('dblclick', event => { if (event.target.closest('[data-back]')) document.querySelector('.cs-dialog footer .default').click(); });
+      return (await pending).key === 'ok' ? picked : null;
+    };
+
+    // The cascade of bouncing cards after a win. cards: [{ index, x, y }] in the order they are thrown.
+    api.celebrate = (table, cards) => {
+      const canvas = document.createElement('canvas'); canvas.className = 'win-canvas'; canvas.width = table.clientWidth; canvas.height = table.clientHeight; table.append(canvas);
+      const ctx = canvas.getContext('2d'), sheet = new Image(); sheet.src = window.NK_ADDON?.files?.['cards.png'] || 'cards.png';
+      const queue = cards.map(card => ({ ...card })); let current = null, alive = true;
+      const step = () => {
+        if (!alive) return;
+        if (!current) { current = queue.shift(); if (!current) return; current.dx = (Math.random() * 4 + 2) * (Math.random() < .5 ? -1 : 1); current.dy = -Math.random() * 4 - (current.y > canvas.height / 2 ? 12 : 0); }
+        for (let i = 0; i < 4 && current; i += 1) {
+          current.x += current.dx; current.y += current.dy; current.dy += .5;
+          if (current.y + CARD.height > canvas.height) { current.y = canvas.height - CARD.height; current.dy = -current.dy * .85; }
+          ctx.drawImage(sheet, (current.index % 13) * CARD.width, Math.floor(current.index / 13) * CARD.height, CARD.width, CARD.height, Math.round(current.x), Math.round(current.y), CARD.width, CARD.height);
+          if (current.x < -CARD.width || current.x > canvas.width) current = null;
+        }
+        requestAnimationFrame(step);
+      };
+      sheet.onload = () => requestAnimationFrame(step);
+      return { stop: () => { alive = false; canvas.remove(); } };
+    };
+
+    // Sound effects from the game (a .wav in the add-on folder). Off when the client's sounds are off.
+    api.play = name => {
+      let volume = 72; try { volume = Number(localStorage.getItem('nk_sound_volume') ?? 72); if (localStorage.getItem('nk_sound_scheme') === 'none') return; } catch {}
+      const audio = new Audio(window.NK_ADDON?.files?.[`${name}.wav`] || `${name}.wav`); audio.volume = Math.min(1, volume / 100); audio.play().catch(() => {});
+    };
 
     function applyText() {
       document.documentElement.lang = language; document.title = t('title'); $('.xp-title').textContent = t('title');
