@@ -1,0 +1,14 @@
+{
+ "id": "backgammon",
+ "name": { "ru": "Нарды", "en": "Backgammon" },
+ "version": "1.0",
+ "entry": "backgammon.html",
+ "icon": "icon.png",
+ "icon32": "icon-32.png",
+ "multiplayer": { "players": 2 },
+ "window": { "width": 656, "height": 472, "resizable": false, "background": "#000000" },
+ "about": {
+  "ru": { "credits": "Из Windows XP: Internet Backgammon, Microsoft Corporation" },
+  "en": { "credits": "From Windows XP: Internet Backgammon, by Microsoft Corporation" }
+ }
+}

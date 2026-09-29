@@ -1,0 +1,27 @@
+/* Internet Backgammon, like Zone's: the 640 x 379 picture, checkers of 27 x 29, dice of 44 x 44. */
+.bg-table { display: grid; place-items: center; background: #000; overflow: hidden; }
+.bg-stage { position: relative; width: 640px; height: 379px; background: url('{{ADDON}}board.png') no-repeat; user-select: none; }
+.card-status { justify-content: flex-start; }
+.bg-point { position: absolute; width: 34px; height: 148px; cursor: default; }
+.bg-point.top { top: 14px; }
+.bg-point.bottom { top: 216px; }
+.bg-point.source { cursor: pointer; }
+.bg-point.picked { box-shadow: inset 0 0 0 2px #ffd800; }
+.bg-point.target { cursor: pointer; background: rgba(255, 216, 0, .22); box-shadow: inset 0 0 0 2px rgba(255, 216, 0, .8); }
+.bg-chk { position: absolute; width: 27px; height: 29px; background-size: 27px 29px; pointer-events: none; }
+.bg-chk.light { background-image: url('{{ADDON}}checker-light.png'); }
+.bg-chk.dark { background-image: url('{{ADDON}}checker-dark.png'); }
+.bg-chk.last { filter: drop-shadow(0 0 3px #ff0); }
+.bg-chk.bar { pointer-events: auto; cursor: pointer; }
+.bg-chk.picked { filter: drop-shadow(0 0 4px #ffd800); }
+.bg-dice { position: absolute; left: 318px; top: 168px; display: flex; gap: 10px; pointer-events: none; }
+.bg-die { display: block; width: 44px; height: 44px; background: url('{{ADDON}}dice.png') no-repeat; }
+.bg-roll { position: absolute; left: 340px; top: 176px; min-width: 96px; height: 28px; padding: 0 14px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: var(--xp-theme-windowtext, #000); font: 700 12px Tahoma, Arial, sans-serif; cursor: default; }
+.bg-roll:hover { border-image-source: var(--xp-button-hover, var(--xp-button-normal)); }
+.bg-panel { position: absolute; left: 512px; top: 14px; width: 118px; color: #f2d9a6; font: 11px Tahoma, Arial, sans-serif; }
+.bg-side { margin-bottom: 14px; padding: 6px 8px; border: 1px solid #7a3d12; background: rgba(90, 40, 8, .55); }
+.bg-side b { display: block; margin-bottom: 3px; overflow: hidden; color: #fff; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.bg-side span { display: block; }
+.bg-side.dark { border-left: 5px solid #5a2c0c; }
+.bg-side.light { border-left: 5px solid #f2d9a6; }
+.bg-off { position: absolute; left: 514px; top: 300px; min-width: 112px; height: 26px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: var(--xp-theme-windowtext, #000); font: 11px Tahoma, Arial, sans-serif; cursor: default; }

@@ -2416,6 +2416,40 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "backgammon-addon",
+      "type": "addons",
+      "directory": "addons/backgammon",
+      "DisplayName": "Backgammon",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "backgammon.css",
+        "backgammon.html",
+        "backgammon.js",
+        "board.png",
+        "cards.css",
+        "cardshell.js",
+        "checker-dark.png",
+        "checker-light.png",
+        "cube.png",
+        "dice.png",
+        "duel.js",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "lose.wav",
+        "move.wav",
+        "netgame.js",
+        "roll.wav",
+        "win.wav"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }

@@ -1,0 +1,101 @@
+{
+ "title": {
+  "ru": "Нарды",
+  "en": "Backgammon"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Нарды",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Нардах»",
+      "keys": [
+       "Нарды"
+      ],
+      "html": "<h1>Общие сведения о «Нардах»</h1><p>Игра на двоих. Выиграет тот, кто первым переведёт все свои шашки в дом и снимет их с доски.</p>",
+      "related": [
+       "play",
+       "friend"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть",
+      "keys": [
+       "кости",
+       "бар",
+       "ход"
+      ],
+      "html": "<p class=\"hh-proc\">Как сделать ход</p><ol><li>Нажмите <b>Бросить кости</b>.</li><li>Щёлкните пункт со своей шашкой: подсветятся пункты, куда она может пойти. Щёлкните пункт назначения.</li><li>Так сыграйте оба числа (при дубле четыре раза).</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Светлые ходят с 24-го пункта к 1-му, тёмные с 1-го к 24-му.</li><li>Нельзя ставить шашку на пункт, где стоят две и больше шашки соперника. Одинокую шашку соперника можно выбить: она уходит на бар.</li><li>Шашки на баре нужно вернуть на доску раньше всех остальных ходов.</li><li>Снимать шашки можно, когда все они в доме. Если играть нечем, ход передаётся.</li></ul>",
+      "related": [
+       "object",
+       "friend"
+      ]
+     },
+     {
+      "id": "friend",
+      "title": "Игра с другом",
+      "keys": [
+       "друг",
+       "приглашение",
+       "чат"
+      ],
+      "html": "<p class=\"hh-proc\">Как пригласить друга</p><ol><li>Щёлкните правой кнопкой чат с другом и выберите <b>Играть: Нарды</b>.</li><li>Друг получит приглашение с кнопкой <b>Играть</b>.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Нужен сервер Nekochat Reloaded версии 0.9 или новее.</li><li>Цвета выбираются случайно. Меню <b>Игра → Сдаться</b> заканчивает партию, а <b>Сыграть ещё раз</b> начинает новую с обменом цветов.</li></ul>",
+      "related": [
+       "play"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Backgammon",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Backgammon overview",
+      "keys": [
+       "Backgammon"
+      ],
+      "html": "<h1>Backgammon overview</h1><p>A game for two. The first player to bring all their checkers home and bear them off wins.</p>",
+      "related": [
+       "play",
+       "friend"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play",
+      "keys": [
+       "dice",
+       "bar",
+       "move"
+      ],
+      "html": "<p class=\"hh-proc\">To make a move</p><ol><li>Click <b>Roll</b>.</li><li>Click a point with your checker: the points it can go to light up. Click the point to go to.</li><li>Play both numbers this way (four times on doubles).</li></ol><p class=\"hh-note\">Notes</p><ul><li>Light moves from point 24 to 1, dark from 1 to 24.</li><li>You cannot land on a point with two or more of your opponent's checkers. A lone opponent checker can be hit: it goes to the bar.</li><li>Checkers on the bar must come back in before any other move.</li><li>You can bear off once all your checkers are home. If you cannot play, the turn passes.</li></ul>",
+      "related": [
+       "object",
+       "friend"
+      ]
+     },
+     {
+      "id": "friend",
+      "title": "Play a friend",
+      "keys": [
+       "friend",
+       "invitation",
+       "chat"
+      ],
+      "html": "<p class=\"hh-proc\">To invite a friend</p><ol><li>Right-click the chat with your friend and choose <b>Play Backgammon</b>.</li><li>Your friend gets an invitation with a <b>Play</b> button.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The Nekochat Reloaded server must be version 0.9 or later.</li><li>Colors are chosen at random. <b>Game → Resign</b> ends the game and <b>Rematch</b> starts another with the colors swapped.</li></ul>",
+      "related": [
+       "play"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
