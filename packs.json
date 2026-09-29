@@ -2299,6 +2299,31 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "freecell-addon",
+      "type": "addons",
+      "directory": "addons/freecell",
+      "DisplayName": "FreeCell",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "cards.css",
+        "cards.png",
+        "cardshell.js",
+        "freecell.css",
+        "freecell.html",
+        "freecell.js",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "king.png"
+      ],
+      "Details": {
+        "Author": "Microsoft (Windows XP), KaMika",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }

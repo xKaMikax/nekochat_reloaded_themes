@@ -1,0 +1,13 @@
+{
+ "id": "freecell",
+ "name": { "ru": "ФриСелл", "en": "FreeCell" },
+ "version": "1.0",
+ "entry": "freecell.html",
+ "icon": "icon.png",
+ "icon32": "icon-32.png",
+ "window": { "width": 700, "height": 560, "minWidth": 660, "minHeight": 420, "background": "#008000" },
+ "about": {
+  "ru": { "credits": "Из Windows XP: Paul Alfille, Jim Horne и Microsoft" },
+  "en": { "credits": "From Windows XP, by Paul Alfille, Jim Horne and Microsoft" }
+ }
+}

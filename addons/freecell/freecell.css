@@ -1,0 +1,2 @@
+/* FreeCell: the little king between the free cells and the foundations. */
+.king { position: absolute; top: 12px; width: 32px; height: 32px; background: url('{{ADDON}}king.png') no-repeat; image-rendering: pixelated; pointer-events: none; z-index: 3000; }

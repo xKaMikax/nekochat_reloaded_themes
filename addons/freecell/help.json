@@ -1,0 +1,131 @@
+{
+ "title": {
+  "ru": "ФриСелл",
+  "en": "FreeCell"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "ФриСелл",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «ФриСелле»",
+      "keys": [
+       "ФриСелл",
+       "пасьянс"
+      ],
+      "html": "<h1>Общие сведения о «ФриСелле»</h1><p>Цель игры — переложить все карты на четыре основные стопки справа: по одной на масть, от туза до короля. Почти каждая раздача решаема.</p>",
+      "related": [
+       "play",
+       "cells",
+       "games"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть в «ФриСелл»",
+      "keys": [
+       "игра",
+       "ход",
+       "столбец"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть</p><ol><li>В меню <b>Игра</b> выберите <b>Новая игра</b>.</li><li>Перетащите карту на столбец, свободную ячейку или основную стопку. Можно щёлкнуть карту, а потом место назначения.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>В столбцах карты кладутся по убыванию, цвета чередуются.</li><li>Двойной щелчок отправляет карту на основную стопку, а если нельзя, то в свободную ячейку.</li><li>Ход отменяется через <b>Игра → Отменить ход</b> или Ctrl+Z.</li></ul>",
+      "related": [
+       "object",
+       "cells",
+       "games"
+      ]
+     },
+     {
+      "id": "cells",
+      "title": "Свободные ячейки и стопки карт",
+      "keys": [
+       "ячейки",
+       "стопка"
+      ],
+      "html": "<p class=\"hh-proc\">Сколько карт можно перенести сразу</p><p>Число карт зависит от свободных ячеек и пустых столбцов: (свободные ячейки + 1) × 2<sup>пустые столбцы</sup>. Если карт слишком много, игра сообщит об этом.</p>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "games",
+      "title": "Номера игр и статистика",
+      "keys": [
+       "номер игры",
+       "статистика"
+      ],
+      "html": "<p class=\"hh-proc\">Как сыграть раздачу по номеру</p><ol><li>В меню <b>Игра</b> выберите <b>Выбор игры</b>.</li><li>Введите номер от 1 до 32000.</li></ol><p class=\"hh-note\">Примечание</p><ul><li>Номера раздач такие же, как в оригинальном «ФриСелле» из Windows.</li><li>Статистику выигрышей и проигрышей показывает <b>Игра → Статистика</b>.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "FreeCell",
+    "topics": [
+     {
+      "id": "object",
+      "title": "FreeCell overview",
+      "keys": [
+       "FreeCell",
+       "solitaire"
+      ],
+      "html": "<h1>FreeCell overview</h1><p>The goal is to move all the cards to the four foundation piles on the right: one per suit, from ace to king. Almost every deal can be won.</p>",
+      "related": [
+       "play",
+       "cells",
+       "games"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play FreeCell",
+      "keys": [
+       "play",
+       "move",
+       "column"
+      ],
+      "html": "<p class=\"hh-proc\">To play</p><ol><li>On the <b>Game</b> menu, click <b>New Game</b>.</li><li>Drag a card to a column, a free cell or a foundation. You can also click a card and then where it goes.</li></ol><p class=\"hh-note\">Notes</p><ul><li>In the columns, build down in alternating colors.</li><li>Double-click sends a card to a foundation, or to a free cell if it cannot go there.</li><li>To take back a move, click <b>Game → Undo</b> or press Ctrl+Z.</li></ul>",
+      "related": [
+       "object",
+       "cells",
+       "games"
+      ]
+     },
+     {
+      "id": "cells",
+      "title": "Free cells and moving several cards",
+      "keys": [
+       "cells",
+       "stack"
+      ],
+      "html": "<p class=\"hh-proc\">How many cards you can move at once</p><p>The number depends on the free cells and empty columns: (free cells + 1) × 2<sup>empty columns</sup>. If you try to move more, the game tells you.</p>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "games",
+      "title": "Game numbers and statistics",
+      "keys": [
+       "game number",
+       "statistics"
+      ],
+      "html": "<p class=\"hh-proc\">To play a numbered deal</p><ol><li>On the <b>Game</b> menu, click <b>Select Game</b>.</li><li>Type a number from 1 to 32000.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The deals are numbered as in the original Windows FreeCell.</li><li>Your wins and losses are shown by <b>Game → Statistics</b>.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
