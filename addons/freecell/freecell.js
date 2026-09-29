@@ -1,21 +1,22 @@
 // FreeCell, like Windows XP's: the same numbered deals (Microsoft's shuffle), four free cells, four foundations,
 // moves of several cards limited by the free cells, statistics, and the king who smiles when you win.
-const { CARD, cardOffset, store } = window.CardShell;
+const { CARD, cardOffset, store, challenge, report: sendResult } = window.CardShell;
 const WORDS = {
   ru: { title: 'ФриСелл', newGame: 'Новая игра', select: 'Выбор игры...', restart: 'Начать эту игру заново', undo: 'Отменить ход', stats: 'Статистика...',
     rulesText: 'Переложите все карты на четыре основные стопки справа, от туза до короля одной масти. В столбцах карты кладутся по убыванию, чередуя цвета. Четыре свободные ячейки хранят по одной карте.',
     selectTitle: 'Выбор игры', selectText: 'Номер игры (от 1 до 32000):', badNumber: 'Введите число от 1 до 32000.',
     winTitle: 'ФриСелл', winText: 'Поздравляем! Вы выиграли!\n\nСыграть ещё раз?', loseTitle: 'ФриСелл', loseText: 'Вы проиграли: ходов больше нет.\n\nНачать новую игру?',
     statsTitle: 'Статистика ФриСелл', won: 'Выиграно', lost: 'Проиграно', streak: 'Серия', best: 'Лучшая серия', reset: 'Сбросить', currentGame: 'Игра №{n}',
-    moveCols: 'Нельзя переложить столько карт: не хватает свободных ячеек.' },
+    challengeWon: '🃏 ФриСелл, игра №{n}: выигрыш за {moves} ходов', moveCols: 'Нельзя переложить столько карт: не хватает свободных ячеек.' },
   en: { title: 'FreeCell', newGame: 'New Game', select: 'Select Game...', restart: 'Restart Game', undo: 'Undo', stats: 'Statistics...',
     rulesText: 'Move all the cards to the four foundation piles on the right, from ace to king in one suit. In the columns, build down in alternating colors. The four free cells each hold one card.',
     selectTitle: 'Select Game', selectText: 'Game number (1 to 32000):', badNumber: 'Enter a number from 1 to 32000.',
     winTitle: 'FreeCell', winText: 'Congratulations! You won!\n\nPlay again?', loseTitle: 'FreeCell', loseText: 'You lose: there are no more moves.\n\nStart a new game?',
     statsTitle: 'FreeCell Statistics', won: 'Won', lost: 'Lost', streak: 'Streak', best: 'Best streak', reset: 'Clear', currentGame: 'Game #{n}',
-    moveCols: 'You cannot move that many cards: not enough free cells.' },
+    challengeWon: '🃏 FreeCell, game #{n}: won in {moves} moves', moveCols: 'You cannot move that many cards: not enough free cells.' },
 };
-let g, undoStack = [], won = false, animation = null, selection = null, king = 0;
+let g, undoStack = [], won = false, animation = null, selection = null, king = 0, challengeUsed = false;
+const challengeNumber = challenge ? Math.min(32000, Math.max(1, challenge.seed)) : 0;
 const shell = window.CardShell.init({
   id: 'freecell', words: WORDS,
   menu: [['newGame', 'new', null, null, 'F2'], ['select', 'select', null, null, 'F3'], ['restart', 'restart'], ['undo', 'undo', null, () => undoStack.length > 0, 'Ctrl+Z'], null, ['stats', 'stats']],
@@ -39,7 +40,8 @@ function deckFor(number) {
 }
 function start(number) {
   stopAnimation(); won = false; undoStack = []; selection = null; king = 0;
-  g = { number, cols: deckFor(number), cells: [null, null, null, null], found: [[], [], [], []], moves: 0 };
+  g = { number, cols: deckFor(number), cells: [null, null, null, null], found: [[], [], [], []], moves: 0, challenge: number === challengeNumber && !challengeUsed };
+  if (g.challenge) challengeUsed = true;
   open = number; render(); renderStatus();
 }
 function newGame() { countLoss(); start(1 + Math.floor(Math.random() * 32000)); }
@@ -125,6 +127,7 @@ function hasMoves() {
 }
 function win() {
   won = true; king = 2; render();
+  if (g.challenge) sendResult(t('challengeWon', { n: g.number, moves: g.moves }));
   const s = stats(); s.won += 1; s.streak += 1; s.best = Math.max(s.best, s.streak); store.set(statsKey, s);
   const { left } = geometry(), cards = [];
   for (let r = 12; r >= 0; r -= 1) for (let f = 0; f < 4; f += 1) cards.push({ index: g.found[f][r].s * 13 + g.found[f][r].r - 1, x: left(4 + f), y: TOP });
@@ -206,4 +209,4 @@ table.addEventListener('dblclick', event => {
   toFoundOrCell(cardEl.dataset.kind === 'cell' ? { kind: 'cell', c: +cardEl.dataset.c } : { kind: 'col', c: +cardEl.dataset.c, i: +cardEl.dataset.i });
 });
 
-start(1 + Math.floor(Math.random() * 32000));
+start(challenge ? challengeNumber : 1 + Math.floor(Math.random() * 32000));

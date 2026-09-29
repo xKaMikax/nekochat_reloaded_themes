@@ -1,17 +1,17 @@
 // Solitaire (Klondike), like Windows XP's: cards from cards.dll, Draw One/Three, Standard/Vegas scoring,
 // double-click or right-click sends a card to the foundations, and the cards bounce when you win.
-const { CARD, cardOffset, backOffset, store } = window.CardShell;
+const { CARD, cardOffset, backOffset, store, challenge, seeded, report } = window.CardShell;
 const WORDS = {
   ru: { title: 'Косынка', deal: 'Сдать', undo: 'Отменить ход', deck: 'Колода...', options: 'Параметры...', score: 'Очки: {n}', time: 'Время: {n}',
     rulesText: 'Переложите все карты на четыре основные стопки сверху, от туза до короля одной масти. В нижних стопках карты кладутся по убыванию, чередуя цвета. Двойной щелчок отправляет карту на основу.',
     optionsTitle: 'Параметры', drawGroup: 'Взять', drawOne: 'Одну карту', drawThree: 'Три карты', scoring: 'Подсчёт очков', standard: 'Стандартный', vegas: 'Вегас', none: 'Нет', outline: 'Показывать', timed: 'С таймером', status: 'Строка состояния',
-    winTitle: 'Косынка', winText: 'Поздравляем, вы выиграли!\nОчки: {score}\n\nСыграть ещё раз?', lostText: 'Больше ходов нет.' },
+    challengeWon: '🃏 Косынка: выигрыш, {score} очков за {time} с', winTitle: 'Косынка', winText: 'Поздравляем, вы выиграли!\nОчки: {score}\n\nСыграть ещё раз?', lostText: 'Больше ходов нет.' },
   en: { title: 'Solitaire', deal: 'Deal', undo: 'Undo', deck: 'Deck...', options: 'Options...', score: 'Score: {n}', time: 'Time: {n}',
     rulesText: 'Move all the cards to the four foundation piles at the top, from ace to king in one suit. On the tableau, build down in alternating colors. Double-click sends a card to a foundation.',
     optionsTitle: 'Options', drawGroup: 'Draw', drawOne: 'Draw one', drawThree: 'Draw three', scoring: 'Scoring', standard: 'Standard', vegas: 'Vegas', none: 'None', outline: 'Show', timed: 'Timed game', status: 'Status bar',
-    winTitle: 'Solitaire', winText: 'Congratulations, you won!\nScore: {score}\n\nPlay again?', lostText: 'No more moves.' },
+    challengeWon: '🃏 Solitaire: won with {score} points in {time} s', winTitle: 'Solitaire', winText: 'Congratulations, you won!\nScore: {score}\n\nPlay again?', lostText: 'No more moves.' },
 };
-let g, undoStack = [], seconds = 0, timer = null, won = false, animation = null;
+let g, undoStack = [], seconds = 0, timer = null, won = false, animation = null, inChallenge = Boolean(challenge);
 const shell = window.CardShell.init({
   id: 'solitaire', words: WORDS,
   menu: [['deal', 'deal', null, null, 'F2'], ['undo', 'undo', null, () => undoStack.length > 0, 'Ctrl+Z'], null, ['deck', 'deck'], ['options', 'options']],
@@ -34,11 +34,15 @@ const pile = name => name === 'stock' ? g.stock : name === 'waste' ? g.waste : n
 
 function deal() {
   stopAnimation(); won = false; undoStack = [];
+  // A challenge from a chat: the first deal is the shared one, with the same rules for everyone.
+  const rng = inChallenge ? seeded(challenge.seed) : Math.random;
+  if (inChallenge) { options.draw = challenge.option === 'draw3' ? 3 : 1; options.scoring = 'standard'; options.timed = true; }
   const deck = []; for (let s = 0; s < 4; s += 1) for (let r = 1; r <= 13; r += 1) deck.push({ s, r, up: false });
-  for (let i = deck.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
+  for (let i = deck.length - 1; i > 0; i -= 1) { const j = Math.floor(rng() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
   g = { stock: [], waste: [], found: [[], [], [], []], tab: [[], [], [], [], [], [], []], score: options.scoring === 'vegas' ? -52 : 0, passes: 0, started: false };
   for (let i = 0; i < 7; i += 1) for (let j = 0; j <= i; j += 1) { const card = deck.pop(); card.up = j === i; g.tab[i].push(card); }
   g.stock = deck; seconds = 0; clearInterval(timer); timer = null;
+  g.challenge = inChallenge; inChallenge = false;
   render(); renderStatus();
 }
 function snapshot() { undoStack.push(JSON.stringify({ g, seconds })); if (undoStack.length > 500) undoStack.shift(); }
@@ -146,6 +150,7 @@ function checkWin() {
   if (g.found.every(cards => cards.length === 13)) {
     won = true; clearInterval(timer);
     if (options.scoring === 'standard' && options.timed && seconds > 30) g.score += Math.floor(700000 / seconds);
+    if (g.challenge) report(t('challengeWon', { score: g.score, time: seconds }));
     renderStatus(); celebrate();
   }
 }

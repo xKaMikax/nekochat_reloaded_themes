@@ -1,13 +1,51 @@
 {
  "id": "spider",
- "name": { "ru": "Паук", "en": "Spider Solitaire" },
+ "name": {
+  "ru": "Паук",
+  "en": "Spider Solitaire"
+ },
  "version": "1.0",
  "entry": "spider.html",
  "icon": "icon.png",
  "icon32": "icon-32.png",
- "window": { "width": 820, "height": 620, "minWidth": 780, "minHeight": 460, "background": "#008000" },
+ "window": {
+  "width": 820,
+  "height": 620,
+  "minWidth": 780,
+  "minHeight": 460,
+  "background": "#008000"
+ },
  "about": {
-  "ru": { "credits": "Из Windows XP: Microsoft Corporation" },
-  "en": { "credits": "From Windows XP, by Microsoft Corporation" }
+  "ru": {
+   "credits": "Из Windows XP: Microsoft Corporation"
+  },
+  "en": {
+   "credits": "From Windows XP, by Microsoft Corporation"
+  }
+ },
+ "challenge": {
+  "options": [
+   {
+    "id": "s1",
+    "name": {
+     "ru": "Лёгкая (одна масть)",
+     "en": "Easy (one suit)"
+    }
+   },
+   {
+    "id": "s2",
+    "name": {
+     "ru": "Средняя (две масти)",
+     "en": "Medium (two suits)"
+    }
+   },
+   {
+    "id": "s4",
+    "name": {
+     "ru": "Сложная (четыре масти)",
+     "en": "Difficult (four suits)"
+    }
+   }
+  ]
  }
 }

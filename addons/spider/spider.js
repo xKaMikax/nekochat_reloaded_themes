@@ -1,19 +1,19 @@
 // Spider Solitaire, like Windows XP's: 104 cards on ten columns, one, two or four suits, runs from king to ace
 // leave the table, Deal gives one more card to every column, Hint shows a move, Undo and Restart.
-const { CARD, cardOffset, backOffset, store } = window.CardShell;
+const { CARD, cardOffset, backOffset, store, challenge, seeded, report } = window.CardShell;
 const WORDS = {
   ru: { title: 'Паук', newGame: 'Новая игра...', restart: 'Начать эту игру заново', undo: 'Отменить ход', hint: 'Показать ход', deck: 'Колода...', sound: 'Звук', status: 'Строка состояния',
     score: 'Очки: {n}', moves: 'Ходы: {n}',
     rulesText: 'Соберите восемь стопок от короля до туза одной масти. Карту можно положить на карту старше на одну ступень, любой масти, а двигать вместе можно только карты одной масти подряд. Щёлкните колоду внизу справа, чтобы добавить по карте в каждый столбец.',
     difficultyTitle: 'Сложность', easy: 'Лёгкая (одна масть)', medium: 'Средняя (две масти)', hard: 'Сложная (четыре масти)', difficulty: 'Выберите сложность:',
-    emptyColumn: 'Нельзя сдавать карты, пока есть пустой столбец.', noHint: 'Подходящих ходов нет. Попробуйте сдать карты из колоды.', winText: 'Поздравляем, вы выиграли!\nОчки: {score}\n\nСыграть ещё раз?' },
+    challengeWon: '🕷 Паук (мастей: {suits}): выигрыш, {score} очков за {moves} ходов', emptyColumn: 'Нельзя сдавать карты, пока есть пустой столбец.', noHint: 'Подходящих ходов нет. Попробуйте сдать карты из колоды.', winText: 'Поздравляем, вы выиграли!\nОчки: {score}\n\nСыграть ещё раз?' },
   en: { title: 'Spider Solitaire', newGame: 'New Game...', restart: 'Restart This Game', undo: 'Undo', hint: 'Show a Move', deck: 'Deck...', sound: 'Sound', status: 'Status Bar',
     score: 'Score: {n}', moves: 'Moves: {n}',
     rulesText: 'Build eight runs from king down to ace in one suit. A card goes on a card one rank higher, of any suit, but only cards of one suit in a row move together. Click the stock at the bottom right to add a card to every column.',
     difficultyTitle: 'Difficulty', easy: 'Easy (one suit)', medium: 'Medium (two suits)', hard: 'Difficult (four suits)', difficulty: 'Select a difficulty level:',
-    emptyColumn: 'You cannot deal while there is an empty column.', noHint: 'There are no moves to show. Try dealing from the stock.', winText: 'Congratulations, you won!\nScore: {score}\n\nPlay again?' },
+    challengeWon: '🕷 Spider ({suits} suits): won with {score} points in {moves} moves', emptyColumn: 'You cannot deal while there is an empty column.', noHint: 'There are no moves to show. Try dealing from the stock.', winText: 'Congratulations, you won!\nScore: {score}\n\nPlay again?' },
 };
-let g, first, undoStack = [], won = false, animation = null;
+let g, first, undoStack = [], won = false, animation = null, challengeSuits = 0;
 const shell = window.CardShell.init({
   id: 'spider', words: WORDS,
   menu: [['newGame', 'new', null, null, 'F2'], ['restart', 'restart'], ['undo', 'undo', null, () => undoStack.length > 0, 'Ctrl+Z'], ['hint', 'hint', null, null, 'Ctrl+H'], null, ['deck', 'deck'], ['sound', 'sound', () => options.sound], ['status', 'status', () => options.status]],
@@ -34,16 +34,17 @@ const cardIndex = card => card.s * 13 + card.r - 1;
 const clone = value => JSON.parse(JSON.stringify(value));
 
 // A new game: 104 cards; with one suit all spades, with two spades and hearts, with four all suits (twice each).
-function makeDeck(suits) {
+function makeDeck(suits, rng = Math.random) {
   const order = suits === 1 ? [3] : suits === 2 ? [3, 2] : [3, 2, 1, 0], deck = [];
   for (let copy = 0; copy < 8; copy += 1) { const suit = order[copy % order.length]; for (let r = 1; r <= 13; r += 1) deck.push({ s: suit, r, up: false }); }
-  for (let i = deck.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
+  for (let i = deck.length - 1; i > 0; i -= 1) { const j = Math.floor(rng() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
   return deck;
 }
 function start(deck) {
   stopAnimation(); won = false; undoStack = [];
   const cards = clone(deck); first = clone(deck);
-  g = { cols: Array.from({ length: 10 }, () => []), stock: [], done: [], score: 500, moves: 0 };
+  g = { cols: Array.from({ length: 10 }, () => []), stock: [], done: [], score: 500, moves: 0, challenge: challengeSuits };
+  challengeSuits = 0;
   for (let c = 0; c < 10; c += 1) for (let i = 0; i < (c < 4 ? 6 : 5); i += 1) g.cols[c].push(cards.pop());
   g.cols.forEach(col => { col[col.length - 1].up = true; });
   g.stock = cards; render(); renderStatus();
@@ -119,6 +120,7 @@ async function dealRow() {
 function checkWin() {
   if (g.done.length < 8) return;
   won = true; sound('win'); renderStatus();
+  if (g.challenge) report(t('challengeWon', { suits: g.challenge, score: g.score, moves: g.moves }));
   const cards = []; const { left } = geometry();
   for (let r = 12; r >= 0; r -= 1) for (let i = 0; i < 8; i += 1) cards.push({ index: g.done[i] * 13 + r, x: M + i * 16, y: bottomY() });
   animation = shell.celebrate(table, cards);
@@ -211,4 +213,4 @@ table.addEventListener('dblclick', event => {
   if (pick) move(col, index, pick.to);
 });
 
-start(makeDeck(options.suits));
+if (challenge) { const suits = { s1: 1, s2: 2, s4: 4 }[challenge.option] || 1; options.suits = suits; challengeSuits = suits; start(makeDeck(suits, seeded(challenge.seed))); } else start(makeDeck(options.suits));

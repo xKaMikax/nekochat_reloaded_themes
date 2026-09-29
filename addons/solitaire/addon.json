@@ -1,13 +1,44 @@
 {
  "id": "solitaire",
- "name": { "ru": "Косынка", "en": "Solitaire" },
+ "name": {
+  "ru": "Косынка",
+  "en": "Solitaire"
+ },
  "version": "1.0",
  "entry": "solitaire.html",
  "icon": "icon.png",
  "icon32": "icon-32.png",
- "window": { "width": 660, "height": 560, "minWidth": 480, "minHeight": 400, "background": "#008000" },
+ "window": {
+  "width": 660,
+  "height": 560,
+  "minWidth": 480,
+  "minHeight": 400,
+  "background": "#008000"
+ },
  "about": {
-  "ru": { "credits": "Из Windows XP: Wes Cherry и Susan Kare" },
-  "en": { "credits": "From Windows XP, by Wes Cherry and Susan Kare" }
+  "ru": {
+   "credits": "Из Windows XP: Wes Cherry и Susan Kare"
+  },
+  "en": {
+   "credits": "From Windows XP, by Wes Cherry and Susan Kare"
+  }
+ },
+ "challenge": {
+  "options": [
+   {
+    "id": "draw1",
+    "name": {
+     "ru": "Одна карта",
+     "en": "Draw one"
+    }
+   },
+   {
+    "id": "draw3",
+    "name": {
+     "ru": "Три карты",
+     "en": "Draw three"
+    }
+   }
+  ]
  }
 }
