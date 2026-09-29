@@ -1,0 +1,135 @@
+{
+ "title": {
+  "ru": "Червы",
+  "en": "Hearts"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Червы",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Червах»",
+      "keys": [
+       "Червы",
+       "карточная игра"
+      ],
+      "html": "<h1>Общие сведения о «Червах»</h1><p>«Червы» — карточная игра для четырёх игроков. Цель — набрать как можно меньше очков. Игра заканчивается, когда у кого-то из игроков 100 очков или больше; выигрывает тот, у кого очков меньше всего.</p>",
+      "related": [
+       "play",
+       "passing",
+       "scoring"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть в «Червы»",
+      "keys": [
+       "игра",
+       "ход",
+       "взятка"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть</p><ol><li>В меню <b>Игра</b> выберите <b>Новая игра</b>.</li><li>Выберите три карты и нажмите кнопку передачи (кроме каждого четвёртого кона).</li><li>Первым ходит игрок с двойкой треф. Затем щёлкайте карты, чтобы ходить.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Нужно ходить в масть, если она есть.</li><li>В первой взятке нельзя класть червы и даму пик.</li><li>Ходить червой можно только после того, как черви открыты (кто-то положил черву), или если других карт нет.</li></ul>",
+      "related": [
+       "object",
+       "passing",
+       "scoring"
+      ]
+     },
+     {
+      "id": "passing",
+      "title": "Передача карт",
+      "keys": [
+       "передача",
+       "влево",
+       "вправо"
+      ],
+      "html": "<p class=\"hh-proc\">Как передать карты</p><ol><li>Щёлкните три карты, которые хотите отдать: они приподнимутся.</li><li>Нажмите кнопку <b>Влево</b>, <b>Вправо</b> или <b>Напротив</b>.</li></ol><p class=\"hh-note\">Примечание</p><ul><li>Направление передачи меняется каждый кон: влево, вправо, напротив, без передачи.</li></ul>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "scoring",
+      "title": "Подсчёт очков",
+      "keys": [
+       "очки",
+       "Луна",
+       "дама пик"
+      ],
+      "html": "<p class=\"hh-proc\">Как считаются очки</p><ul><li>Каждая черва — 1 очко.</li><li>Дама пик — 13 очков.</li><li>Если взять все черви и даму пик («Луна»), вы получаете 0, а остальные по 26.</li></ul><p class=\"hh-note\">Примечание</p><ul><li>Чтобы посмотреть очки, выберите <b>Игра → Счёт</b> или нажмите F9.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Hearts",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Hearts overview",
+      "keys": [
+       "Hearts",
+       "card game"
+      ],
+      "html": "<h1>Hearts overview</h1><p>Hearts is a card game for four players. The goal is to score as few points as you can. The game ends when a player reaches 100 points or more; the lowest score wins.</p>",
+      "related": [
+       "play",
+       "passing",
+       "scoring"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play Hearts",
+      "keys": [
+       "play",
+       "trick",
+       "move"
+      ],
+      "html": "<p class=\"hh-proc\">To play</p><ol><li>On the <b>Game</b> menu, click <b>New Game</b>.</li><li>Select three cards and click the pass button (except every fourth hand).</li><li>The player with the two of clubs leads. Then click a card to play it.</li></ol><p class=\"hh-note\">Notes</p><ul><li>You must follow suit if you can.</li><li>You cannot play hearts or the queen of spades on the first trick.</li><li>Hearts cannot be led until hearts have been broken (someone played a heart), unless you have nothing else.</li></ul>",
+      "related": [
+       "object",
+       "passing",
+       "scoring"
+      ]
+     },
+     {
+      "id": "passing",
+      "title": "Passing cards",
+      "keys": [
+       "pass",
+       "left",
+       "right"
+      ],
+      "html": "<p class=\"hh-proc\">To pass cards</p><ol><li>Click the three cards you want to give away: they rise up.</li><li>Click <b>Pass Left</b>, <b>Pass Right</b> or <b>Pass Across</b>.</li></ol><p class=\"hh-note\">Note</p><ul><li>The direction changes every hand: left, right, across, no pass.</li></ul>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "scoring",
+      "title": "Scoring",
+      "keys": [
+       "score",
+       "moon",
+       "queen of spades"
+      ],
+      "html": "<p class=\"hh-proc\">How points are counted</p><ul><li>Each heart is 1 point.</li><li>The queen of spades is 13 points.</li><li>If you take every heart and the queen of spades (shooting the moon), you get 0 and the others get 26 each.</li></ul><p class=\"hh-note\">Note</p><ul><li>To see the scores, click <b>Game → Score</b> or press F9.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="{{APP}}">
+  <title>Hearts</title><link id="frame-style" rel="stylesheet" href="assets/css/style.css"><link id="frame-theme" rel="stylesheet" href="data:text/css,"><link rel="stylesheet" href="assets/css/control-panel.css"><link rel="stylesheet" href="{{ADDON}}cards.css"><link rel="stylesheet" href="{{ADDON}}hearts.css">
+{{BRIDGE}}
+</head>
+<body>
+  <div class="xp-window card-window">
+    <header class="xp-titlebar"><span class="xp-app-icon has-icon" style="background-image:url('{{ADDON}}icon.png')"></span><span class="xp-title">Червы</span><div class="xp-window-controls"><button id="close"></button></div></header>
+    <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="control-panel card-app">
+      <nav class="cp-menu" id="card-menu"><button type="button" data-menu="game"></button><button type="button" data-menu="help"></button></nav>
+      <div class="card-table" id="table"></div>
+      <div class="card-status" id="status"></div>
+    </main><i class="xp-side xp-side-right"></i></div>
+    <i class="xp-bottom"></i>
+  </div>
+  <script src="assets/js/packs.js"></script>
+  <script src="{{ADDON}}cardshell.js"></script>
+  <script src="{{ADDON}}hearts.js"></script>
+</body>
+</html>

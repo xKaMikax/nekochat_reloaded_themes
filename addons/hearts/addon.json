@@ -1,0 +1,13 @@
+{
+ "id": "hearts",
+ "name": { "ru": "Червы", "en": "Hearts" },
+ "version": "1.0",
+ "entry": "hearts.html",
+ "icon": "icon.png",
+ "icon32": "icon-32.png",
+ "window": { "width": 720, "height": 560, "minWidth": 640, "minHeight": 480, "background": "#008000" },
+ "about": {
+  "ru": { "credits": "Из Windows XP: Microsoft Corporation" },
+  "en": { "credits": "From Windows XP, by Microsoft Corporation" }
+ }
+}
