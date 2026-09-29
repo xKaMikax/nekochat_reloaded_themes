@@ -2247,6 +2247,29 @@
       "Platforms": [
         "desktop"
       ]
+    },
+    {
+      "pack_id": "solitaire-addon",
+      "type": "addons",
+      "directory": "addons/solitaire",
+      "DisplayName": "Solitaire",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "cards.css",
+        "cards.png",
+        "cardshell.js",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "solitaire.html",
+        "solitaire.js"
+      ],
+      "Details": {
+        "Author": "Microsoft (Windows XP), KaMika",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }

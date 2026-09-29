@@ -1,0 +1,133 @@
+{
+ "title": {
+  "ru": "Косынка",
+  "en": "Solitaire"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Косынка",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Косынке»",
+      "keys": [
+       "Косынка",
+       "пасьянс"
+      ],
+      "html": "<h1>Общие сведения о «Косынке»</h1><p>Цель игры — переложить все карты на четыре основные стопки в правом верхнем углу: по одной на масть, от туза до короля.</p>",
+      "related": [
+       "play",
+       "moves",
+       "scoring"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть в «Косынку»",
+      "keys": [
+       "игра",
+       "ход",
+       "колода"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть</p><ol><li>В меню <b>Игра</b> выберите <b>Сдать</b>.</li><li>Щёлкните колоду в левом верхнем углу, чтобы открыть карту (или три карты).</li><li>Перетаскивайте карты на нижние стопки или на основные стопки.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>В нижних стопках карты кладутся по убыванию, цвета чередуются. На пустое место можно положить только короля.</li><li>Двойной щелчок или щелчок правой кнопкой отправляет карту на основную стопку.</li><li>Когда колода закончится, щёлкните пустое место, чтобы перевернуть стопку открытых карт.</li></ul>",
+      "related": [
+       "object",
+       "moves",
+       "scoring"
+      ]
+     },
+     {
+      "id": "moves",
+      "title": "Отмена хода",
+      "keys": [
+       "отмена",
+       "Ctrl+Z"
+      ],
+      "html": "<p class=\"hh-proc\">Как отменить ход</p><ol><li>В меню <b>Игра</b> выберите <b>Отменить ход</b> или нажмите Ctrl+Z.</li></ol>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "scoring",
+      "title": "Подсчёт очков",
+      "keys": [
+       "очки",
+       "Вегас",
+       "таймер"
+      ],
+      "html": "<p class=\"hh-proc\">Как менять подсчёт очков</p><ol><li>В меню <b>Игра</b> выберите <b>Параметры</b>.</li><li>Выберите <b>Стандартный</b>, <b>Вегас</b> или <b>Нет</b>.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Стандартный: +10 за карту на основную стопку, +5 за карту из колоды в нижнюю стопку и за открытую карту, −15 за возврат карты с основной стопки.</li><li>Вегас: старт с −52, +5 за каждую карту на основной стопке. В режиме «Вегас» число проходов по колоде ограничено.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Solitaire",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Solitaire overview",
+      "keys": [
+       "Solitaire",
+       "Klondike"
+      ],
+      "html": "<h1>Solitaire overview</h1><p>The goal is to move all the cards to the four foundation piles at the top right: one per suit, from ace to king.</p>",
+      "related": [
+       "play",
+       "moves",
+       "scoring"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play Solitaire",
+      "keys": [
+       "play",
+       "move",
+       "deck"
+      ],
+      "html": "<p class=\"hh-proc\">To play</p><ol><li>On the <b>Game</b> menu, click <b>Deal</b>.</li><li>Click the deck in the upper-left corner to turn over a card (or three cards).</li><li>Drag cards to the tableau piles or to the foundation piles.</li></ol><p class=\"hh-note\">Notes</p><ul><li>On the tableau, build down in alternating colors. Only a king can go on an empty space.</li><li>Double-click or right-click a card to send it to a foundation.</li><li>When the deck runs out, click the empty space to turn the waste pile over again.</li></ul>",
+      "related": [
+       "object",
+       "moves",
+       "scoring"
+      ]
+     },
+     {
+      "id": "moves",
+      "title": "To undo a move",
+      "keys": [
+       "undo",
+       "Ctrl+Z"
+      ],
+      "html": "<p class=\"hh-proc\">To undo a move</p><ol><li>On the <b>Game</b> menu, click <b>Undo</b>, or press Ctrl+Z.</li></ol>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "scoring",
+      "title": "Scoring",
+      "keys": [
+       "score",
+       "Vegas",
+       "timer"
+      ],
+      "html": "<p class=\"hh-proc\">To change the scoring</p><ol><li>On the <b>Game</b> menu, click <b>Options</b>.</li><li>Click <b>Standard</b>, <b>Vegas</b> or <b>None</b>.</li></ol><p class=\"hh-note\">Notes</p><ul><li>Standard: +10 for a card to a foundation, +5 for a card from the deck to the tableau and for a turned-over card, −15 for taking a card back from a foundation.</li><li>Vegas: you start at −52 and get +5 for each card on a foundation. The number of passes through the deck is limited.</li></ul>",
+      "related": [
+       "play",
+       "object"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
