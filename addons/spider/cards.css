@@ -32,9 +32,9 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; font: 11px 
 .cs-x { background-image: var(--xp-close-normal); }
 .cs-x:hover { background-image: var(--xp-close-hover, var(--xp-close-normal)); }
 .cs-x:active { background-image: var(--xp-close-pressed, var(--xp-close-normal)); }
-.cs-x::after { background-image: var(--xp-close-glyph); }
-.cs-x:hover::after { background-image: var(--xp-close-glyph-hover, var(--xp-close-glyph)); }
-.cs-x:active::after { background-image: var(--xp-close-glyph-pressed, var(--xp-close-glyph)); }
+.cs-dialog .xp-window-controls .cs-x::after { background-image: var(--xp-close-glyph); }
+.cs-dialog .xp-window-controls .cs-x:hover::after { background-image: var(--xp-close-glyph-hover, var(--xp-close-glyph)); }
+.cs-dialog .xp-window-controls .cs-x:active::after { background-image: var(--xp-close-glyph-pressed, var(--xp-close-glyph)); }
 .cs-body { padding: 14px 16px 6px; line-height: 1.4; }
 .cs-body fieldset { margin: 0 0 8px; padding: 4px 10px 8px; border: 1px solid #d0d0bf; border-radius: 3px; }
 .cs-body legend { padding: 0 3px; color: #0046d5; }
