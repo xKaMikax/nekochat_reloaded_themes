@@ -2350,6 +2350,39 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "reversi-addon",
+      "type": "addons",
+      "directory": "addons/reversi",
+      "DisplayName": "Reversi",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "board.png",
+        "cards.css",
+        "cardshell.js",
+        "count-black.png",
+        "count-white.png",
+        "disc-black.png",
+        "disc-white.png",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "netgame.js",
+        "plate-black.png",
+        "plate-white.png",
+        "reversi.css",
+        "reversi.html",
+        "reversi.js",
+        "turn-black.png",
+        "turn-white.png"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }

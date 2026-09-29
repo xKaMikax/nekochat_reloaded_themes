@@ -1,0 +1,99 @@
+{
+ "title": {
+  "ru": "Реверси",
+  "en": "Reversi"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Реверси",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Реверси»",
+      "keys": [
+       "Реверси"
+      ],
+      "html": "<h1>Общие сведения о «Реверси»</h1><p>Игра на двоих на поле 8×8. Ставьте фишки так, чтобы зажать фишки соперника между своими: они перевернутся. Выигрывает тот, у кого больше фишек, когда ходов не осталось.</p>",
+      "related": [
+       "play",
+       "friend"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть",
+      "keys": [
+       "ход",
+       "компьютер"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть с компьютером</p><ol><li>Окно открывается с новой партией: вы играете чёрными и ходите первым.</li><li>Щёлкните клетку, куда хотите поставить фишку. Клетка должна что-то перевернуть.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Если хода нет, он передаётся сопернику.</li><li>Подсказки ходов включаются в меню <b>Игра</b>.</li></ul>",
+      "related": [
+       "object",
+       "friend"
+      ]
+     },
+     {
+      "id": "friend",
+      "title": "Игра с другом",
+      "keys": [
+       "друг",
+       "приглашение",
+       "чат"
+      ],
+      "html": "<p class=\"hh-proc\">Как пригласить друга</p><ol><li>Щёлкните правой кнопкой чат с другом и выберите <b>Играть: Реверси</b>.</li><li>Друг получит приглашение с кнопкой <b>Играть</b>.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Нужен сервер Nekochat Reloaded версии 0.9 или новее.</li><li>Цвета выбираются случайно. Меню <b>Игра → Сдаться</b> заканчивает партию, а <b>Сыграть ещё раз</b> начинает новую с обменом цветов.</li></ul>",
+      "related": [
+       "play"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Reversi",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Reversi overview",
+      "keys": [
+       "Reversi"
+      ],
+      "html": "<h1>Reversi overview</h1><p>A game for two on an 8×8 board. Place discs so that your opponent's discs are trapped between yours: they flip. The player with more discs when no moves are left wins.</p>",
+      "related": [
+       "play",
+       "friend"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play",
+      "keys": [
+       "move",
+       "computer"
+      ],
+      "html": "<p class=\"hh-proc\">To play against the computer</p><ol><li>The window opens with a new game: you play Black and move first.</li><li>Click the square where you want a disc. It must flip something.</li></ol><p class=\"hh-note\">Notes</p><ul><li>If you have no move, the turn passes.</li><li>Turn on move hints on the <b>Game</b> menu.</li></ul>",
+      "related": [
+       "object",
+       "friend"
+      ]
+     },
+     {
+      "id": "friend",
+      "title": "Play a friend",
+      "keys": [
+       "friend",
+       "invitation",
+       "chat"
+      ],
+      "html": "<p class=\"hh-proc\">To invite a friend</p><ol><li>Right-click the chat with your friend and choose <b>Play Reversi</b>.</li><li>Your friend gets an invitation with a <b>Play</b> button.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The Nekochat Reloaded server must be version 0.9 or later.</li><li>Colors are chosen at random. <b>Game → Resign</b> ends the game and <b>Rematch</b> starts another with the colors swapped.</li></ul>",
+      "related": [
+       "play"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

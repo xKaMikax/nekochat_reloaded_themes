@@ -1,0 +1,24 @@
+/* Internet Reversi, like Zone's: the 540 x 360 picture with the board, the BLACK and WHITE plates. */
+.rv-table { display: grid; place-items: center; background: #000; overflow: hidden; }
+.rv-stage { position: relative; width: 540px; height: 360px; background: url('{{ADDON}}board.png') no-repeat; user-select: none; }
+.card-status { justify-content: flex-start; }
+.rv-cell { position: absolute; width: 38px; height: 38px; cursor: default; }
+.rv-cell.mine { cursor: pointer; }
+.rv-cell.mine:hover::after { content: ''; position: absolute; left: 1px; top: 1px; width: 36px; height: 36px; border-radius: 50%; background: var(--hover, rgba(0, 0, 0, .28)); }
+.rv-cell.hint::before { content: ''; position: absolute; left: 15px; top: 15px; width: 8px; height: 8px; border-radius: 50%; background: rgba(0, 0, 0, .45); }
+.rv-disc { position: absolute; left: 1px; top: 1px; width: 37px; height: 37px; background-size: 37px 37px; pointer-events: none; }
+.rv-disc.black { background-image: url('{{ADDON}}disc-black.png'); }
+.rv-disc.white { background-image: url('{{ADDON}}disc-white.png'); }
+.rv-disc.last { filter: drop-shadow(0 0 3px #ff0); }
+.rv-plate { position: absolute; width: 106px; height: 50px; }
+.rv-plate.black { left: 0; top: 24px; background: url('{{ADDON}}plate-black.png'); }
+.rv-plate.white { left: 434px; top: 283px; background: url('{{ADDON}}plate-white.png'); }
+.rv-plate span { position: absolute; left: 6px; right: 4px; top: 29px; overflow: hidden; color: #000; font: 700 11px Tahoma, Arial, sans-serif; white-space: nowrap; text-overflow: ellipsis; }
+.rv-count { position: absolute; width: 60px; height: 22px; }
+.rv-count b { position: absolute; left: 30px; right: 4px; top: 3px; color: #000; font: 700 13px Tahoma, Arial, sans-serif; text-align: right; }
+.rv-count.black { left: 23px; top: 84px; background: url('{{ADDON}}count-black.png'); }
+.rv-count.white { left: 457px; top: 255px; background: url('{{ADDON}}count-white.png'); }
+.rv-turn { position: absolute; width: 39px; height: 39px; visibility: hidden; }
+.rv-turn.on { visibility: visible; }
+.rv-turn.black { left: 33px; top: 118px; background: url('{{ADDON}}turn-black.png'); }
+.rv-turn.white { left: 467px; top: 210px; background: url('{{ADDON}}turn-white.png'); }
