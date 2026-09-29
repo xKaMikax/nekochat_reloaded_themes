@@ -16,11 +16,11 @@ const WORDS = {
 const store = window.CardShell.store;
 const options = { hints: false, ...store.get('nk_reversi_options', {}) };
 const saveOptions = () => store.set('nk_reversi_options', options);
-let booted = false, G = null, notice = '', rematchVotes = new Set(), names = {}, guest = null, ready = false, thinking = false;
+let booted = false, G = null, notice = '', thinking = false, duel;
 const shell = window.CardShell.init({
   id: 'reversi', words: WORDS,
-  menu: [['newGame', 'new'], ['rematch', 'rematch', null, () => Boolean(net.online && G?.over)], ['resign', 'resign', null, () => Boolean(net.online && G?.started && !G.over && mySide())], null, ['hints', 'hints', () => options.hints]],
-  onCommand: command => { if (command === 'new') startLocal(); if (command === 'rematch') askRematch(); if (command === 'resign') resign(); if (command === 'hints') { options.hints = !options.hints; saveOptions(); render(); } },
+  menu: [['newGame', 'new'], ['rematch', 'rematch', null, () => Boolean(net.online && G?.over)], ['resign', 'resign', null, () => Boolean(net.online && G?.started && !G.over && duel.mySide())], null, ['hints', 'hints', () => options.hints]],
+  onCommand: command => { if (command === 'new') startLocal(); if (command === 'rematch') duel.askRematch(); if (command === 'resign') duel.resign(); if (command === 'hints') { options.hints = !options.hints; saveOptions(); render(); } },
   onKey: event => { if (event.key === 'F2') startLocal(); },
   onLanguage: () => { if (booted) render(); },
 });
@@ -48,16 +48,16 @@ const freshBoard = () => { const board = Array.from({ length: 8 }, () => Array(8
 // A game: players[1] is Black (moves first), players[-1] is White. Locally you are Black.
 function begin(players) {
   G = { board: freshBoard(), turn: 1, over: false, started: true, players, last: null, result: '' };
-  notice = ''; rematchVotes = new Set(); thinking = false;
+  notice = ''; thinking = false; duel.over = false;
   render(); afterMove();
 }
 function startLocal() {
   if (net.online) return; // an online game is started from a chat
-  begin({ 1: { id: 'me', name: net.name, key: 'you' }, [-1]: { id: 'cpu', name: '', key: 'computer' } });
+  duel.players = { 1: { id: 'me', name: net.name, key: 'you' }, [-1]: { id: 'cpu', name: '', key: 'computer' } }; duel.started = true;
+  begin(duel.players);
 }
-const hostInfo = () => ({ id: net.hostId, name: names[net.hostId] || net.hostName || '' });
-const mySide = () => (!G?.started ? 0 : G.players[1].id === net.me ? 1 : G.players[-1].id === net.me ? -1 : 0);
-const isMyTurn = () => Boolean(G?.started && !G.over && (net.online ? G.players[G.turn].id === net.me : G.turn === 1));
+const mySide = () => (net.online ? duel.mySide() : 1);
+const isMyTurn = () => Boolean(G?.started && !G.over && (net.online ? duel.mySide() === G.turn : G.turn === 1));
 
 function place(r, c) {
   const taken = flipsOf(G.board, r, c, G.turn); if (!taken.length) return false;
@@ -69,7 +69,7 @@ function place(r, c) {
   render(); afterMove(); return true;
 }
 function finish(resigned = 0) {
-  G.over = true; const { b, w } = count(G.board);
+  G.over = true; duel.over = true; const { b, w } = count(G.board);
   const side = mySide(), values = { a: b, b: w };
   if (resigned) { G.result = resigned === side ? t('youResigned') : t('opponentResigned', { name: G.players[resigned].name }); return; }
   if (b === w) G.result = t('draw', values);
@@ -88,27 +88,15 @@ function afterMove() {
   }, 500);
 }
 
-// Online: entries of the session's log, in order.
-function apply(entry) {
-  if (entry.name) names[entry.from] = entry.name;
-  const p = entry.payload || {};
-  if (entry.kind === 'join') { if (!guest && entry.from !== net.hostId) guest = { id: entry.from, name: entry.name || '' }; if (ready) startIfHost(); }
-  else if (entry.kind === 'start') {
-    if (entry.from === net.hostId && guest && (!G?.started || G.over)) { const host = hostInfo(), other = guest; begin(p.black === host.id ? { 1: host, [-1]: other } : { 1: other, [-1]: host }); }
-  } else if (entry.kind === 'move') {
-    if (!G?.started || G.over || G.players[G.turn].id !== entry.from || !Number.isInteger(p.r) || !Number.isInteger(p.c) || !inside(p.r, p.c)) return;
-    place(p.r, p.c);
-  } else if (entry.kind === 'resign') {
-    if (!G?.started || G.over) return; const side = G.players[1].id === entry.from ? 1 : G.players[-1].id === entry.from ? -1 : 0; if (side) { finish(side); render(); }
-  } else if (entry.kind === 'rematch') {
-    if (!G?.over) return; rematchVotes.add(entry.from);
-    if (rematchVotes.has(G.players[1].id) && rematchVotes.has(G.players[-1].id) && ready && net.isHost) net.send('start', { black: G.players[-1].id });
-    render();
-  }
-}
-function startIfHost() { if (net.isHost && guest && !G?.started) net.send('start', { black: Math.random() < .5 ? net.me : guest.id }); }
-function askRematch() { if (net.online && G?.over && mySide()) { net.send('rematch'); rematchVotes.add(net.me); notice = t('rematchAsked'); render(); } }
-function resign() { if (net.online && G?.started && !G.over && mySide()) net.send('resign'); }
+// Online: the lobby (join, start, resign, rematch) is Duel's; the moves are the game's.
+duel = window.Duel(net, {
+  begin,
+  entry: (entry, side, payload) => { if (entry.kind === 'move' && side === G?.turn && Number.isInteger(payload.r) && Number.isInteger(payload.c) && inside(payload.r, payload.c)) place(payload.r, payload.c); },
+  resigned: side => { finish(side); render(); },
+  refresh: () => render(),
+  local: startLocal,
+  ended: () => { notice = t('gameEnded'); render(); },
+});
 
 // Drawing: the 540 x 360 picture, discs 37 x 37 on 38-pixel squares from (117, 27).
 function render() {
@@ -123,7 +111,7 @@ function render() {
   html += `<div class="rv-plate black"><span>${esc(nameOf(1))}</span></div><div class="rv-count black"><b>${b}</b></div><i class="rv-turn black${!G.over && G.turn === 1 ? ' on' : ''}"></i>`;
   html += `<div class="rv-plate white"><span>${esc(nameOf(-1))}</span></div><div class="rv-count white"><b>${w}</b></div><i class="rv-turn white${!G.over && G.turn === -1 ? ' on' : ''}"></i>`;
   $('#stage').innerHTML = html;
-  setStatus(G.over ? `${G.result} ${rematchVotes.size && net.online ? t('rematchAsked') : ''}`.trim() : notice || (isMyTurn() ? t('yourMove') : mySide() || !net.online ? fillName('theirMove', nameOf(G.turn)) : t('watching')));
+  setStatus(G.over ? `${G.result} ${duel.votes.size && net.online ? t('rematchAsked') : ''}`.trim() : notice || (isMyTurn() ? t('yourMove') : mySide() || !net.online ? fillName('theirMove', nameOf(G.turn)) : t('watching')));
 }
 const fillName = (key, name) => t(key, { name });
 const nameOf = side => G.players[side].name || (G.players[side].key ? t(G.players[side].key) : '');
@@ -135,16 +123,5 @@ $('#stage').addEventListener('click', event => {
   if (net.online) net.send('move', { r, c }); else place(r, c);
 });
 
-net.connect({
-  onEntry: apply,
-  onReady: () => {
-    ready = true;
-    if (net.online) {
-      if (!net.isHost && !guest && net.hostId && net.hostId !== net.me) net.send('join');
-      else if (!net.isHost && guest && guest.id === net.me && !G) { /* already joined: waiting for start */ }
-      startIfHost(); render();
-    } else startLocal();
-  },
-  onEnd: () => { notice = t('gameEnded'); render(); },
-});
+duel.connect();
 render();

@@ -113,5 +113,13 @@
     return api;
   }
 
-  window.CardShell = { init, store, esc, CARD, cardOffset, backOffset };
+
+  // A challenge from a chat (?seed=&level=&chat=): everyone gets the same deal, and the result goes back to
+  // that chat through localStorage (nk_game_result, read by nekochat.js), like Minesweeper's.
+  const query = new URLSearchParams(location.search || location.hash.slice(1));
+  const challenge = /^(room|dm):\d+$/.test(query.get('chat') || '') && /^\d{1,10}$/.test(query.get('seed') || '') ? { seed: Number(query.get('seed')), option: String(query.get('level') || ''), chat: query.get('chat') } : null;
+  // Seeded random numbers (mulberry32): the same seed shuffles the same way for everyone.
+  const seeded = seed => { let state = seed >>> 0; return () => { state += 0x6D2B79F5; let value = state; value = Math.imul(value ^ value >>> 15, value | 1); value ^= value + Math.imul(value ^ value >>> 7, value | 61); return ((value ^ value >>> 14) >>> 0) / 4294967296; }; };
+  const report = text => { if (!challenge) return; try { localStorage.setItem('nk_game_result', JSON.stringify({ chat: challenge.chat, text: String(text).slice(0, 280), at: Date.now() })); } catch {} };
+  window.CardShell = { init, store, esc, CARD, cardOffset, backOffset, challenge, seeded, report };
 })();
