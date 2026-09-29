@@ -64,6 +64,20 @@
        "play",
        "object"
       ]
+     },
+     {
+      "id": "friends",
+      "title": "Игра с друзьями",
+      "keys": [
+       "друзья",
+       "приглашение",
+       "чат"
+      ],
+      "html": "<p class=\"hh-proc\">Как сыграть с друзьями</p><ol><li>Щёлкните правой кнопкой чат с другом (или комнату) и выберите <b>Играть: Червы</b>.</li><li>Друзья получат приглашение с кнопкой <b>Играть</b>. За стол садятся до четырёх человек.</li><li>Когда все пришли, в своём окне нажмите <b>Игра → Начать игру</b> (F2): пустые места займут боты.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Игру ведёт хозяин: его окно должно оставаться открытым.</li><li>Нужен сервер Nekochat Reloaded версии 0.9 или новее.</li></ul>",
+      "related": [
+       "object",
+       "play"
+      ]
      }
     ]
    }
@@ -126,6 +140,20 @@
       "related": [
        "play",
        "object"
+      ]
+     },
+     {
+      "id": "friends",
+      "title": "Play with friends",
+      "keys": [
+       "friends",
+       "invitation",
+       "chat"
+      ],
+      "html": "<p class=\"hh-proc\">To play with friends</p><ol><li>Right-click the chat with a friend (or a room) and choose <b>Play Hearts</b>.</li><li>Friends get an invitation with a <b>Play</b> button. Up to four people sit at the table.</li><li>When everyone is here, click <b>Game → Start Game</b> (F2) in your window: empty seats get bots.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The host runs the game: their window must stay open.</li><li>The Nekochat Reloaded server must be version 0.9 or later.</li></ul>",
+      "related": [
+       "object",
+       "play"
       ]
      }
     ]

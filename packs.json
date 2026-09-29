@@ -2326,32 +2326,6 @@
       }
     },
     {
-      "pack_id": "hearts-addon",
-      "type": "addons",
-      "directory": "addons/hearts",
-      "DisplayName": "Hearts",
-      "Files": [
-        "Preview.png",
-        "addon.json",
-        "cards.css",
-        "cards.png",
-        "cardshell.js",
-        "end.wav",
-        "hearts.css",
-        "hearts.html",
-        "hearts.js",
-        "help.json",
-        "icon-32.png",
-        "icon.png",
-        "play.wav"
-      ],
-      "Details": {
-        "Author": "Nekochat Reloaded Team",
-        "Version": "1.0",
-        "Added": "2026-09-29"
-      }
-    },
-    {
       "pack_id": "reversi-addon",
       "type": "addons",
       "directory": "addons/reversi",
@@ -2444,6 +2418,33 @@
         "netgame.js",
         "roll.wav",
         "win.wav"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
+    },
+    {
+      "pack_id": "hearts-addon",
+      "type": "addons",
+      "directory": "addons/hearts",
+      "DisplayName": "Hearts",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "cards.css",
+        "cards.png",
+        "cardshell.js",
+        "end.wav",
+        "hearts.css",
+        "hearts.html",
+        "hearts.js",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "netgame.js",
+        "play.wav"
       ],
       "Details": {
         "Author": "Nekochat Reloaded Team",
