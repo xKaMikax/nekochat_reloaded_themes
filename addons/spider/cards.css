@@ -24,18 +24,32 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; font: 11px 
 .win-canvas { position: absolute; inset: 0; z-index: 2000; }
 .cs-key { float: right; margin-left: 28px; color: #6d6d6d; }
 .cp-menu-popup button:disabled { color: #aca899; }
-/* Dialogs */
+/* Dialogs: a real themed window (title, frame and buttons come from the theme). */
 .cs-veil { position: fixed; inset: 0; z-index: 5000; display: grid; place-items: center; background: rgba(0, 0, 0, .12); }
-.cs-dialog { max-width: calc(100vw - 16px); box-sizing: border-box; border: 3px solid var(--xp-theme-frame, #0a246a); border-top-width: 0; border-radius: 8px 8px 0 0; background: var(--xp-theme-window, #ece9d8); box-shadow: 2px 3px 8px rgba(0, 0, 0, .45); color: #000; }
-.cs-dialog header { display: flex; align-items: center; justify-content: space-between; height: 26px; padding: 0 4px 0 8px; border-radius: 6px 6px 0 0; background: var(--xp-theme-title, linear-gradient(#0997ff, #0053ee 8%, #0050ee 40%, #06f 88%, #06f 93%, #005bff 95%, #003dd7 96%, #003dd7)); color: #fff; font-weight: 700; }
-.cs-dialog header button { width: 21px; height: 21px; padding: 0; border: 1px solid #fff; border-radius: 3px; background: linear-gradient(#e97a5f, #cc4a2e); color: #fff; font: 700 14px/1 Tahoma; cursor: pointer; }
-.cs-body { padding: 12px 14px 8px; line-height: 1.4; }
+.cs-dialog { width: auto; height: auto; min-width: 0; min-height: 0; max-width: calc(100vw - 16px); max-height: calc(100vh - 16px); box-shadow: 2px 3px 8px rgba(0, 0, 0, .45); color: var(--xp-theme-windowtext, #000); }
+.cs-dialog .xp-body-frame { flex: 0 1 auto; }
+.cs-inner { flex: 1 1 auto; min-width: 0; background: var(--xp-theme-window, #ece9d8); }
+.cs-x { background-image: var(--xp-close-normal); }
+.cs-x:hover { background-image: var(--xp-close-hover, var(--xp-close-normal)); }
+.cs-x:active { background-image: var(--xp-close-pressed, var(--xp-close-normal)); }
+.cs-x::after { background-image: var(--xp-close-glyph); }
+.cs-x:hover::after { background-image: var(--xp-close-glyph-hover, var(--xp-close-glyph)); }
+.cs-x:active::after { background-image: var(--xp-close-glyph-pressed, var(--xp-close-glyph)); }
+.cs-body { padding: 14px 16px 6px; line-height: 1.4; }
 .cs-body fieldset { margin: 0 0 8px; padding: 4px 10px 8px; border: 1px solid #d0d0bf; border-radius: 3px; }
 .cs-body legend { padding: 0 3px; color: #0046d5; }
 .cs-body label { display: block; margin: 3px 0; }
+.cs-body input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 13px; height: 13px; margin: 0 4px 0 0; vertical-align: -2px; background: var(--xp-checkbox-unchecked, linear-gradient(#fff, #ddd)) center / 13px 13px no-repeat; }
+.cs-body input[type="checkbox"]:hover { background-image: var(--xp-checkbox-unchecked-hover, var(--xp-checkbox-unchecked)); }
+.cs-body input[type="checkbox"]:checked { background-image: var(--xp-checkbox-checked, linear-gradient(#fff, #d7f2c8)); }
+.cs-body input[type="checkbox"]:checked:hover { background-image: var(--xp-checkbox-checked-hover, var(--xp-checkbox-checked)); }
+.cs-body input[type="number"], .cs-body input[type="text"] { border: 1px solid #7f9db9; background: #fff; color: #000; font: 11px Tahoma, Arial, sans-serif; padding: 2px 4px; }
 .cs-dialog footer { display: flex; justify-content: center; gap: 8px; padding: 8px 12px 12px; }
-.cs-dialog footer button { min-width: 75px; padding: 3px 10px; border: 1px solid #003c74; border-radius: 3px; background: linear-gradient(#fff, #ece9d8 85%, #d6d0c5); font: 11px Tahoma; cursor: pointer; }
-.cs-dialog footer button.default { box-shadow: inset 0 0 0 2px #98b8ea; }
+.cs-dialog footer button { min-width: 75px; height: 23px; padding: 0 10px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: var(--xp-theme-windowtext, #000); font: 11px Tahoma, Arial, sans-serif; cursor: default; }
+.cs-dialog footer button:hover { border-image-source: var(--xp-button-hover, var(--xp-button-normal, linear-gradient(#fff, #d4d0c8))); }
+.cs-dialog footer button:active { border-image-source: var(--xp-button-pressed, var(--xp-button-normal, linear-gradient(#fff, #d4d0c8))); }
+.cs-dialog footer button.default { outline: 1px solid #000; outline-offset: -3px; }
+.cs-dialog footer button:focus { outline: 1px dotted #000; outline-offset: -4px; }
 .cs-backs { display: grid; grid-template-columns: repeat(4, 71px); gap: 8px; }
 .cs-backs button { width: 71px; height: 96px; padding: 0; border: 2px solid transparent; border-radius: 4px; background: url('{{ADDON}}cards.png') no-repeat; cursor: pointer; }
 .cs-backs button.chosen { border-color: #0a246a; outline: 2px solid #fff; }
