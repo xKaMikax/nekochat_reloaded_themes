@@ -2174,6 +2174,79 @@
         "Version": "1.0",
         "Added": "2026-09-28"
       }
+    },
+    {
+      "pack_id": "minesweeper-addon",
+      "type": "addons",
+      "directory": "addons/minesweeper",
+      "DisplayName": "Minesweeper",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "cells.png",
+        "digits.png",
+        "faces.png",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "lose.wav",
+        "minesweeper.css",
+        "minesweeper.html",
+        "minesweeper.js",
+        "tick.wav",
+        "win.wav"
+      ],
+      "Details": {
+        "Author": "Microsoft (Windows XP), KaMika",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
+    },
+    {
+      "pack_id": "theme-editor-addon",
+      "type": "addons",
+      "directory": "addons/theme-editor",
+      "DisplayName": "Theme Editor",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "help.json",
+        "icon.png",
+        "theme-editor.css",
+        "theme-editor.js",
+        "theme_editor.html"
+      ],
+      "Details": {
+        "Author": "KaMika",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      },
+      "Platforms": [
+        "desktop"
+      ]
+    },
+    {
+      "pack_id": "admin-panel-addon",
+      "type": "addons",
+      "directory": "addons/admin",
+      "DisplayName": "Admin Panel",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "admin.css",
+        "admin.html",
+        "admin.js",
+        "help.json",
+        "icon.png"
+      ],
+      "Details": {
+        "Author": "KaMika",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      },
+      "Platforms": [
+        "desktop"
+      ]
     }
   ]
 }

@@ -1,0 +1,133 @@
+{
+ "title": {
+  "ru": "Редактор тем",
+  "en": "Theme Editor"
+ },
+ "first": "editor-overview",
+ "books": {
+  "ru": [
+   {
+    "title": "Редактор тем",
+    "topics": [
+     {
+      "id": "editor-overview",
+      "title": "Общие сведения о Редакторе тем",
+      "keys": [
+       "Редактор тем",
+       "тема"
+      ],
+      "html": "<h1>Общие сведения о Редакторе тем</h1><p>Редактор тем создаёт новую тему на основе установленной: меняет цвета, размеры и картинки окон, кнопок, флажков, ползунков и полос прокрутки и сразу показывает результат справа.</p><p>Исходная тема не меняется — изменения сохраняются как новая тема.</p>",
+      "related": [
+       "editor-open",
+       "editor-change",
+       "editor-save"
+      ]
+     },
+     {
+      "id": "editor-open",
+      "title": "Как выбрать основу",
+      "keys": [
+       "основа",
+       "загрузить"
+      ],
+      "html": "<p class=\"hh-proc\">Как начать новую тему</p><ol><li>В поле <b>Основа</b> выберите установленную тему и её цветовую схему.</li><li>Нажмите <b>Загрузить</b>.</li><li>В поле <b>Имя темы</b> введите имя новой темы.</li></ol>",
+      "related": [
+       "editor-change",
+       "editor-save"
+      ]
+     },
+     {
+      "id": "editor-change",
+      "title": "Как изменить цвета, размеры и картинки",
+      "keys": [
+       "цвета",
+       "размеры",
+       "картинки",
+       "заменить"
+      ],
+      "html": "<p class=\"hh-proc\">Как изменить тему</p><ol><li>Слева выберите группу: <b>Цвета</b>, <b>Заголовок</b>, <b>Рамка окна</b>, <b>Кнопки окна</b>, <b>Кнопки</b>, <b>Флажки и группы</b>, <b>Ползунки</b>, <b>Полосы прокрутки</b>, <b>Размеры</b>.</li><li>Измените цвет или размер, или нажмите <b>Заменить…</b> у картинки и выберите свою.</li><li>Изменения сразу видны в предпросмотре справа. <b>Вернуть</b> отменяет изменение.</li></ol><p class=\"hh-note\">Примечание</p><ul><li>У картинок с несколькими состояниями (обычное, при наведении, нажатое) новая картинка должна сохранить ту же раскладку.</li></ul>",
+      "related": [
+       "editor-save",
+       "editor-open"
+      ]
+     },
+     {
+      "id": "editor-save",
+      "title": "Как сохранить и применить",
+      "keys": [
+       "сохранить",
+       "применить"
+      ],
+      "html": "<p class=\"hh-proc\">Как сохранить тему</p><ol><li>Нажмите <b>Сохранить</b> — тема появится в списке тем.</li><li>Или нажмите <b>Сохранить и применить</b>, чтобы сразу включить её.</li></ol><p>Выбрать сохранённую тему можно в Панели управления → Экран → Темы.</p>",
+      "related": [
+       "editor-overview",
+       "editor-change"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Theme Editor",
+    "topics": [
+     {
+      "id": "editor-overview",
+      "title": "Theme Editor overview",
+      "keys": [
+       "Theme Editor",
+       "theme"
+      ],
+      "html": "<h1>Theme Editor overview</h1><p>The Theme Editor makes a new theme from an installed one: it changes the colours, sizes and pictures of windows, buttons, check boxes, sliders and scroll bars, and shows the result on the right at once.</p><p>The original theme does not change; your changes are saved as a new theme.</p>",
+      "related": [
+       "editor-open",
+       "editor-change",
+       "editor-save"
+      ]
+     },
+     {
+      "id": "editor-open",
+      "title": "Choose the base theme",
+      "keys": [
+       "base",
+       "load"
+      ],
+      "html": "<p class=\"hh-proc\">To start a new theme</p><ol><li>In <b>Based on</b>, choose an installed theme and its colour scheme.</li><li>Click <b>Load</b>.</li><li>In <b>Theme name</b>, type the name of the new theme.</li></ol>",
+      "related": [
+       "editor-change",
+       "editor-save"
+      ]
+     },
+     {
+      "id": "editor-change",
+      "title": "Change colours, sizes and pictures",
+      "keys": [
+       "colours",
+       "sizes",
+       "pictures",
+       "replace"
+      ],
+      "html": "<p class=\"hh-proc\">To change the theme</p><ol><li>On the left, choose a group: <b>Colours</b>, <b>Title bar</b>, <b>Window frame</b>, <b>Caption buttons</b>, <b>Buttons</b>, <b>Check boxes and groups</b>, <b>Sliders</b>, <b>Scroll bars</b>, <b>Sizes</b>.</li><li>Change a colour or size, or click <b>Replace…</b> next to a picture and choose your own.</li><li>Changes show in the preview at once. <b>Reset</b> undoes a change.</li></ol><p class=\"hh-note\">Note</p><ul><li>Pictures with several states (normal, hot, pressed) must keep the same layout.</li></ul>",
+      "related": [
+       "editor-save",
+       "editor-open"
+      ]
+     },
+     {
+      "id": "editor-save",
+      "title": "Save and apply",
+      "keys": [
+       "save",
+       "apply"
+      ],
+      "html": "<p class=\"hh-proc\">To save the theme</p><ol><li>Click <b>Save</b>: the theme appears in the list of themes.</li><li>Or click <b>Save and apply</b> to turn it on at once.</li></ol><p>Choose a saved theme in Control Panel → Display → Themes.</p>",
+      "related": [
+       "editor-overview",
+       "editor-change"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

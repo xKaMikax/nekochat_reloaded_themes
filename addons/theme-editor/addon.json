@@ -1,0 +1,16 @@
+{
+ "id": "theme-editor",
+ "name": {
+  "ru": "Редактор тем",
+  "en": "Theme Editor"
+ },
+ "version": "1.0",
+ "entry": "theme_editor.html",
+ "icon": "icon.png",
+ "window": {
+  "width": 860,
+  "height": 600,
+  "minWidth": 620,
+  "minHeight": 420
+ }
+}

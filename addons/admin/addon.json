@@ -1,0 +1,16 @@
+{
+ "id": "admin",
+ "name": {
+  "ru": "Панель администратора",
+  "en": "Admin Panel"
+ },
+ "version": "1.0",
+ "entry": "admin.html",
+ "icon": "icon.png",
+ "window": {
+  "width": 860,
+  "height": 600,
+  "minWidth": 620,
+  "minHeight": 420
+ }
+}

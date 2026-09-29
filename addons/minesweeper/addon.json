@@ -1,0 +1,26 @@
+{
+ "id": "minesweeper",
+ "name": {
+  "ru": "Сапёр",
+  "en": "Minesweeper"
+ },
+ "version": "1.0",
+ "entry": "minesweeper.html",
+ "icon": "icon.png",
+ "icon32": "icon-32.png",
+ "window": {
+  "width": 230,
+  "height": 320,
+  "minWidth": 120,
+  "minHeight": 150,
+  "background": "#c0c0c0"
+ },
+ "about": {
+  "ru": {
+   "credits": "Из Windows XP: Robert Donner и Curt Johnson"
+  },
+  "en": {
+   "credits": "From Windows XP, by Robert Donner and Curt Johnson"
+  }
+ }
+}

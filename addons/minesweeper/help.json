@@ -1,0 +1,139 @@
+{
+ "title": {
+  "ru": "Сапёр",
+  "en": "Minesweeper"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Сапёр",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Сапёре»",
+      "keys": [
+       "Сапёр",
+       "игры"
+      ],
+      "html": "<h1>Общие сведения о «Сапёре»</h1><p>Цель игры «Сапёр» — как можно быстрее найти все мины, не открыв ни одной из них. Если открыть мину, игра проиграна.</p>",
+      "related": [
+       "customize",
+       "play",
+       "tips"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть в «Сапёр»",
+      "keys": [
+       "игра в Сапёр",
+       "таймер",
+       "счётчик мин"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть в «Сапёр»</p><ol><li>В меню <b>Игра</b> выберите <b>Новая игра</b>.</li><li>Чтобы запустить таймер, щёлкните любую клетку игрового поля.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Клетка открывается щелчком. Если открыть мину, игра проиграна.</li><li>Цифра на клетке показывает, сколько мин в восьми соседних клетках.</li><li>Чтобы пометить клетку, в которой, по-вашему, мина, щёлкните её правой кнопкой.</li><li>Игровое поле состоит из клеток, счётчика мин и таймера.</li></ul>",
+      "related": [
+       "customize",
+       "object",
+       "tips"
+      ]
+     },
+     {
+      "id": "customize",
+      "title": "Настройка игрового поля",
+      "keys": [
+       "игровое поле",
+       "уровни"
+      ],
+      "html": "<p class=\"hh-proc\">Как настроить игровое поле</p><ol><li>В меню <b>Игра</b> выберите <b>Новичок</b>, <b>Любитель</b> или <b>Профессионал</b>.</li><li>Новичок — поле 9 × 9 и 10 мин, Любитель — 16 × 16 и 40 мин, Профессионал — 30 × 16 и 99 мин.</li></ol>",
+      "related": [
+       "play",
+       "object",
+       "tips"
+      ]
+     },
+     {
+      "id": "tips",
+      "title": "Стратегии и советы",
+      "keys": [
+       "стратегия",
+       "вопросительный знак",
+       "советы"
+      ],
+      "html": "<h1>Стратегии и советы</h1><ul><li>Если вы не уверены насчёт клетки, дважды щёлкните её правой кнопкой, чтобы пометить вопросительным знаком (?). Потом можно пометить клетку как мину или снять пометку, щёлкнув её правой кнопкой ещё раз или два.</li><li>Если вокруг клетки с цифрой помечены все мины, остальные соседние клетки можно открыть, щёлкнув цифру левой и правой кнопками одновременно (или дважды щёлкнув её).</li><li>Ищите знакомые сочетания цифр — они подсказывают, где мины. Например, 2-3-2 у края открытой области означает три мины подряд рядом с этими цифрами.</li></ul>",
+      "related": [
+       "customize",
+       "object",
+       "play"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Minesweeper",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Minesweeper overview",
+      "keys": [
+       "Minesweeper",
+       "games"
+      ],
+      "html": "<h1>Minesweeper overview</h1><p>The object of Minesweeper is to locate all the mines as quickly as possible without uncovering any of them. If you uncover a mine, you lose the game.</p>",
+      "related": [
+       "customize",
+       "play",
+       "tips"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Play Minesweeper",
+      "keys": [
+       "playing Minesweeper",
+       "timer",
+       "mine counter"
+      ],
+      "html": "<p class=\"hh-proc\">To play Minesweeper</p><ol><li>On the <b>Game</b> menu, click <b>New</b>.</li><li>To start the timer, click any square on the playing field.</li></ol><p class=\"hh-note\">Notes</p><ul><li>You can uncover a square by clicking it. If you uncover a mine, you lose the game.</li><li>If a number appears on a square, it indicates how many mines are in the eight squares that surround the numbered one.</li><li>To mark a square you suspect contains a mine, right-click it.</li><li>The game area consists of the playing field, a mine counter, and a timer.</li></ul>",
+      "related": [
+       "customize",
+       "object",
+       "tips"
+      ]
+     },
+     {
+      "id": "customize",
+      "title": "Customize the playing field",
+      "keys": [
+       "playing field",
+       "levels"
+      ],
+      "html": "<p class=\"hh-proc\">To customize the playing field</p><ol><li>On the <b>Game</b> menu, click <b>Beginner</b>, <b>Intermediate</b> or <b>Expert</b>.</li><li>Beginner is 9 × 9 squares with 10 mines, Intermediate 16 × 16 with 40, Expert 30 × 16 with 99.</li></ol>",
+      "related": [
+       "play",
+       "object",
+       "tips"
+      ]
+     },
+     {
+      "id": "tips",
+      "title": "Strategies and tips",
+      "keys": [
+       "strategies",
+       "question mark",
+       "tips"
+      ],
+      "html": "<h1>Strategies and tips</h1><ul><li>If you are uncertain about a square, right-click it twice to mark it with a question mark (?). Later, you can either mark the square as a mine or remove the markings by right-clicking the square again once or twice.</li><li>If you have marked all the mines around a numbered square, you can uncover the remaining squares around it by clicking the numbered square with the left and right mouse buttons simultaneously.</li><li>Look for common patterns in numbers, which often indicate a corresponding pattern of mines. For example, the pattern 2-3-2 at the edge of a group of uncovered squares indicates a row of three mines next to the three numbers.</li></ul>",
+      "related": [
+       "customize",
+       "object",
+       "play"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

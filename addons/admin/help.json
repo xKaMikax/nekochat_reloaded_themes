@@ -1,0 +1,155 @@
+{
+ "title": {
+  "ru": "Панель администратора",
+  "en": "Admin Panel"
+ },
+ "first": "admin-overview",
+ "books": {
+  "ru": [
+   {
+    "title": "Панель администратора",
+    "topics": [
+     {
+      "id": "admin-overview",
+      "title": "Общие сведения о Панели администратора",
+      "keys": [
+       "администрирование",
+       "сервер"
+      ],
+      "html": "<h1>Общие сведения о Панели администратора</h1><p>Панель администратора управляет сервером Nekochat, к которому вы подключены: статистика, пользователи, комнаты и сообщения.</p><p>Кнопка панели появляется в окне профиля, если в Панели управления → Учётные записи → Конфиденциальность включено «Показывать кнопку панели администратора».</p>",
+      "related": [
+       "admin-login",
+       "admin-users",
+       "admin-rooms"
+      ]
+     },
+     {
+      "id": "admin-login",
+      "title": "Вход",
+      "keys": [
+       "хеш",
+       "вход"
+      ],
+      "html": "<p class=\"hh-proc\">Как войти</p><ol><li>Найдите хеш в консоли сервера: он печатается при запуске и меняется при каждом перезапуске.</li><li>Введите его в поле <b>Хеш</b> и нажмите <b>Войти</b>.</li></ol><p class=\"hh-note\">Примечание</p><ul><li>Если сервер перезапустили, вход прекращается — войдите с новым хешем.</li></ul>",
+      "related": [
+       "admin-overview"
+      ]
+     },
+     {
+      "id": "admin-users",
+      "title": "Пользователи",
+      "keys": [
+       "пользователи",
+       "бан",
+       "пароль",
+       "удалить"
+      ],
+      "html": "<h1>Пользователи</h1><ul><li><b>Найти</b> — поиск по имени.</li><li><b>Изменить</b> — отображаемое имя, статус, «О себе» и цвет профиля.</li><li><b>Забанить</b> / <b>Разбанить</b> — запретить или разрешить вход.</li><li><b>Сбросить пароль</b> — выдаёт временный пароль.</li><li><b>Удалить</b> — удаляет пользователя со всеми его сообщениями.</li></ul>",
+      "related": [
+       "admin-rooms",
+       "admin-messages"
+      ]
+     },
+     {
+      "id": "admin-rooms",
+      "title": "Комнаты",
+      "keys": [
+       "комнаты"
+      ],
+      "html": "<h1>Комнаты</h1><p>Список комнат с числом участников и сообщений. <b>Удалить</b> удаляет комнату со всеми сообщениями.</p>",
+      "related": [
+       "admin-users",
+       "admin-messages"
+      ]
+     },
+     {
+      "id": "admin-messages",
+      "title": "Сообщения",
+      "keys": [
+       "сообщения",
+       "удалить сообщение"
+      ],
+      "html": "<h1>Сообщения</h1><p>Последние сообщения в комнатах и личных чатах. Лишнее сообщение можно удалить.</p>",
+      "related": [
+       "admin-users",
+       "admin-rooms"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Admin Panel",
+    "topics": [
+     {
+      "id": "admin-overview",
+      "title": "Admin Panel overview",
+      "keys": [
+       "administration",
+       "server"
+      ],
+      "html": "<h1>Admin Panel overview</h1><p>The Admin Panel manages the Nekochat server you are connected to: statistics, users, rooms and messages.</p><p>Its button appears in the profile window when Control Panel → User Accounts → Privacy → \"Show the Server admin panel button\" is on.</p>",
+      "related": [
+       "admin-login",
+       "admin-users",
+       "admin-rooms"
+      ]
+     },
+     {
+      "id": "admin-login",
+      "title": "Signing in",
+      "keys": [
+       "hash",
+       "sign in"
+      ],
+      "html": "<p class=\"hh-proc\">To sign in</p><ol><li>Find the hash in the server's console: it is printed at start and changes on every restart.</li><li>Type it in <b>Hash</b> and click <b>Sign in</b>.</li></ol><p class=\"hh-note\">Note</p><ul><li>When the server restarts, the session ends; sign in with the new hash.</li></ul>",
+      "related": [
+       "admin-overview"
+      ]
+     },
+     {
+      "id": "admin-users",
+      "title": "Users",
+      "keys": [
+       "users",
+       "ban",
+       "password",
+       "delete"
+      ],
+      "html": "<h1>Users</h1><ul><li><b>Find</b> searches by name.</li><li><b>Edit</b> changes the display name, status, about and profile colour.</li><li><b>Ban</b> / <b>Unban</b> stops or allows signing in.</li><li><b>Reset password</b> gives a temporary password.</li><li><b>Delete</b> removes the user with all their messages.</li></ul>",
+      "related": [
+       "admin-rooms",
+       "admin-messages"
+      ]
+     },
+     {
+      "id": "admin-rooms",
+      "title": "Rooms",
+      "keys": [
+       "rooms"
+      ],
+      "html": "<h1>Rooms</h1><p>The rooms with their members and messages. <b>Delete</b> removes a room with all its messages.</p>",
+      "related": [
+       "admin-users",
+       "admin-messages"
+      ]
+     },
+     {
+      "id": "admin-messages",
+      "title": "Messages",
+      "keys": [
+       "messages",
+       "delete message"
+      ],
+      "html": "<h1>Messages</h1><p>The latest messages in rooms and direct chats. You can delete a message.</p>",
+      "related": [
+       "admin-users",
+       "admin-rooms"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
