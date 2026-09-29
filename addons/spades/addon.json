@@ -1,0 +1,14 @@
+{
+ "id": "spades",
+ "name": { "ru": "Пики", "en": "Spades" },
+ "version": "1.0",
+ "entry": "spades.html",
+ "icon": "icon.png",
+ "icon32": "icon-32.png",
+ "multiplayer": { "players": 4 },
+ "window": { "width": 720, "height": 560, "minWidth": 640, "minHeight": 480, "background": "#008000" },
+ "about": {
+  "ru": { "credits": "Из Windows XP: Internet Spades, Microsoft Corporation" },
+  "en": { "credits": "From Windows XP: Internet Spades, by Microsoft Corporation" }
+ }
+}

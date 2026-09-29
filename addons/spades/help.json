@@ -1,0 +1,129 @@
+{
+ "title": {
+  "ru": "Пики",
+  "en": "Spades"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Пики",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Пиках»",
+      "keys": [
+       "Пики"
+      ],
+      "html": "<h1>Общие сведения о «Пиках»</h1><p>Играют четверо, двумя парами: вы и игрок напротив против двух других. Козырь всегда пики. Игра идёт до 500 очков.</p>",
+      "related": [
+       "play",
+       "scoring",
+       "friends"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть",
+      "keys": [
+       "заказ",
+       "взятка",
+       "ноль"
+      ],
+      "html": "<p class=\"hh-proc\">Как играть</p><ol><li>В начале раздачи выберите, сколько взяток вы возьмёте (или «Ноль», чтобы не брать ни одной).</li><li>Щёлкайте карты, чтобы ходить. Нужно ходить в масть, если она есть.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Взятку берёт старшая карта масти захода, но любая пика бьёт другие масти.</li><li>Ходить пикой первым можно только после того, как пики уже открыты (или если других карт нет).</li></ul>",
+      "related": [
+       "object",
+       "scoring"
+      ]
+     },
+     {
+      "id": "scoring",
+      "title": "Подсчёт очков",
+      "keys": [
+       "очки",
+       "ноль",
+       "лишние взятки"
+      ],
+      "html": "<p class=\"hh-proc\">Как считаются очки</p><ul><li>Пара получает 10 очков за каждую назначенную взятку, если взяла не меньше, и по очку за каждую лишнюю.</li><li>Если взяток меньше заказанных, пара теряет 10 очков за каждую назначенную.</li><li>«Ноль» приносит 100 очков, если игрок не взял ни одной взятки, и штраф 100, если взял.</li><li>Каждые 10 лишних взяток стоят штраф 100 очков.</li></ul>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "friends",
+      "title": "Игра с друзьями",
+      "keys": [
+       "друзья",
+       "приглашение",
+       "чат"
+      ],
+      "html": "<p class=\"hh-proc\">Как сыграть с друзьями</p><ol><li>Щёлкните правой кнопкой чат с другом (или комнату) и выберите <b>Играть: Пики</b>.</li><li>Когда все пришли, нажмите <b>Игра → Начать игру</b> (F2): пустые места займут боты.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Игру ведёт хозяин: его окно должно оставаться открытым.</li><li>Нужен сервер Nekochat Reloaded версии 0.9 или новее.</li></ul>",
+      "related": [
+       "object"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Spades",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Spades overview",
+      "keys": [
+       "Spades"
+      ],
+      "html": "<h1>Spades overview</h1><p>Four players in two partnerships: you and the player across from you against the other two. Spades are always trump. The game goes to 500 points.</p>",
+      "related": [
+       "play",
+       "scoring",
+       "friends"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play",
+      "keys": [
+       "bid",
+       "trick",
+       "nil"
+      ],
+      "html": "<p class=\"hh-proc\">To play</p><ol><li>At the start of a hand, choose how many tricks you will take (or Nil to take none).</li><li>Click cards to play them. You must follow suit if you can.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The highest card of the led suit takes the trick, but any spade beats the other suits.</li><li>You can lead a spade only after spades have been broken (or when you hold nothing else).</li></ul>",
+      "related": [
+       "object",
+       "scoring"
+      ]
+     },
+     {
+      "id": "scoring",
+      "title": "Scoring",
+      "keys": [
+       "score",
+       "nil",
+       "bags"
+      ],
+      "html": "<p class=\"hh-proc\">How points are counted</p><ul><li>A pair scores 10 points per bid trick if it takes at least that many, and 1 point per extra trick (bag).</li><li>If it takes fewer tricks than it bid, it loses 10 points per bid trick.</li><li>A Nil bid earns 100 points if the player takes no tricks and costs 100 if they do.</li><li>Every 10 bags cost 100 points.</li></ul>",
+      "related": [
+       "play"
+      ]
+     },
+     {
+      "id": "friends",
+      "title": "Play with friends",
+      "keys": [
+       "friends",
+       "invitation",
+       "chat"
+      ],
+      "html": "<p class=\"hh-proc\">To play with friends</p><ol><li>Right-click the chat with a friend (or a room) and choose <b>Play Spades</b>.</li><li>When everyone is here, click <b>Game → Start Game</b> (F2): empty seats get bots.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The host runs the game: their window must stay open.</li><li>The Nekochat Reloaded server must be version 0.9 or later.</li></ul>",
+      "related": [
+       "object"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

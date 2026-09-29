@@ -2451,6 +2451,33 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "spades-addon",
+      "type": "addons",
+      "directory": "addons/spades",
+      "DisplayName": "Spades",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "cards.css",
+        "cards.png",
+        "cardshell.js",
+        "end.wav",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "netgame.js",
+        "play.wav",
+        "spades.css",
+        "spades.html",
+        "spades.js"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }

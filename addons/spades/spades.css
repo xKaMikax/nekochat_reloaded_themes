@@ -1,0 +1,22 @@
+/* Hearts: the four hands, the trick in the middle and the pass button. */
+.hh-name { position: absolute; z-index: 5; color: #fff; font: 700 12px Tahoma, Arial, sans-serif; text-shadow: 1px 1px #000; white-space: nowrap; pointer-events: none; }
+.hh-name.turn { color: #ff0; }
+.hh-pass { position: absolute; z-index: 10; min-width: 90px; height: 25px; padding: 0 12px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: var(--xp-theme-windowtext, #000); font: 11px Tahoma, Arial, sans-serif; cursor: default; }
+.hh-pass:hover:not(:disabled) { border-image-source: var(--xp-button-hover, var(--xp-button-normal)); }
+.hh-pass:active:not(:disabled) { border-image-source: var(--xp-button-pressed, var(--xp-button-normal)); }
+.hh-pass:disabled { color: #808080; }
+.hh-hint { position: absolute; z-index: 5; left: 0; right: 0; text-align: center; color: #fff; text-shadow: 1px 1px #000; font: 12px Tahoma, Arial, sans-serif; pointer-events: none; }
+.card.mine { cursor: pointer; }
+.card.disabled { cursor: default; }
+.hh-score { border-collapse: collapse; width: 100%; }
+.hh-score th, .hh-score td { padding: 2px 8px; text-align: right; border-bottom: 1px solid #d0d0bf; }
+.hh-score th:first-child, .hh-score td:first-child { text-align: left; }
+.hh-score tr.total td { font-weight: 700; border-top: 2px solid #aca899; }
+.card-status { justify-content: flex-start; }
+.sp-score { position: absolute; z-index: 5; left: 12px; top: 10px; padding: 4px 8px; border: 1px solid rgba(0, 0, 0, .35); background: rgba(0, 0, 0, .25); color: #fff; font: 11px Tahoma, Arial, sans-serif; line-height: 1.5; pointer-events: none; }
+.sp-bid { position: absolute; z-index: 6; display: grid; grid-template-columns: repeat(7, 34px); gap: 4px; padding: 8px; border: 1px solid #003c74; background: var(--xp-theme-window, #ece9d8); box-shadow: 2px 3px 6px rgba(0, 0, 0, .5); transform: translate(-50%, -50%); }
+.sp-bid b { grid-column: 1 / -1; color: var(--xp-theme-windowtext, #000); font: 11px Tahoma, Arial, sans-serif; }
+.sp-bid button { height: 24px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: var(--xp-theme-windowtext, #000); font: 11px Tahoma, Arial, sans-serif; padding: 0; cursor: default; }
+.sp-bid button:hover { border-image-source: var(--xp-button-hover, var(--xp-button-normal)); }
+.sp-bid button.nil { grid-column: span 2; }
+.hh-bidtag { position: absolute; z-index: 5; color: #ffe89a; font: 11px Tahoma, Arial, sans-serif; text-shadow: 1px 1px #000; white-space: nowrap; pointer-events: none; }
