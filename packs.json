@@ -2478,6 +2478,31 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "rover-assistant",
+      "type": "assistants",
+      "directory": "assistants/rover",
+      "DisplayName": "Rover",
+      "Files": [
+        "agent.json",
+        "frames.png",
+        "sound0.wav",
+        "sound1.wav",
+        "sound2.wav",
+        "sound3.wav",
+        "sound4.wav",
+        "sound5.wav",
+        "sound6.wav",
+        "sound7.wav",
+        "sound8.wav",
+        "sound9.wav"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }
