@@ -1,0 +1,14 @@
+{
+ "id": "checkers",
+ "name": { "ru": "Шашки", "en": "Checkers" },
+ "version": "1.0",
+ "entry": "checkers.html",
+ "icon": "icon.png",
+ "icon32": "icon-32.png",
+ "multiplayer": { "players": 2 },
+ "window": { "width": 556, "height": 456, "resizable": false, "background": "#000000" },
+ "about": {
+  "ru": { "credits": "Из Windows XP: Internet Checkers, Microsoft Corporation" },
+  "en": { "credits": "From Windows XP: Internet Checkers, by Microsoft Corporation" }
+ }
+}

@@ -1,0 +1,23 @@
+/* Internet Checkers, like Zone's: the 540 x 360 picture, red and white pieces of 37 x 37 on squares of 38. */
+.ck-table { display: grid; place-items: center; background: #000; overflow: hidden; }
+.ck-stage { position: relative; width: 540px; height: 360px; background: url('{{ADDON}}board.png') no-repeat; user-select: none; }
+.card-status { justify-content: flex-start; }
+.ck-cell { position: absolute; width: 38px; height: 38px; cursor: default; }
+.ck-cell.mine { cursor: pointer; }
+.ck-cell.sel { box-shadow: inset 0 0 0 3px #ffd800; }
+.ck-cell.step { cursor: pointer; }
+.ck-cell.hint::before { content: ''; position: absolute; left: 12px; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: rgba(255, 216, 0, .8); box-shadow: 0 0 3px #4b4000; }
+.ck-piece { position: absolute; left: 0; top: 0; width: 37px; height: 37px; background-size: 37px 37px; pointer-events: none; }
+.ck-piece.pr { background-image: url('{{ADDON}}piece-red.png'); }
+.ck-piece.prk { background-image: url('{{ADDON}}king-red.png'); }
+.ck-piece.pw { background-image: url('{{ADDON}}piece-white.png'); }
+.ck-piece.pwk { background-image: url('{{ADDON}}king-white.png'); }
+.ck-piece.last { filter: drop-shadow(0 0 3px #ff0); }
+.ck-name { position: absolute; width: 106px; height: 46px; display: grid; place-items: center; text-align: center; }
+.ck-name b { max-width: 96px; overflow: hidden; color: #2a1500; font: 700 12px Tahoma, Arial, sans-serif; text-overflow: ellipsis; white-space: nowrap; text-shadow: 0 1px rgba(255, 230, 160, .7); }
+.ck-name.left { left: 2px; top: 27px; }
+.ck-name.right { left: 428px; top: 285px; }
+.ck-turn { position: absolute; width: 39px; height: 39px; visibility: hidden; }
+.ck-turn.on { visibility: visible; }
+.ck-turn.red { left: 35px; top: 84px; background: url('{{ADDON}}turn-red.png'); }
+.ck-turn.white { left: 462px; top: 240px; background: url('{{ADDON}}turn-white.png'); }

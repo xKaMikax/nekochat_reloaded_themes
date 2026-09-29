@@ -1,0 +1,101 @@
+{
+ "title": {
+  "ru": "Шашки",
+  "en": "Checkers"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "Шашки",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о «Шашках»",
+      "keys": [
+       "Шашки"
+      ],
+      "html": "<h1>Общие сведения о «Шашках»</h1><p>Игра на двоих на доске 8×8. Ходите по тёмным клеткам по диагонали. Проигрывает тот, у кого не осталось ходов.</p>",
+      "related": [
+       "play",
+       "friend"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "Как играть",
+      "keys": [
+       "ход",
+       "бить",
+       "дамка"
+      ],
+      "html": "<p class=\"hh-proc\">Как сделать ход</p><ol><li>Щёлкните свою шашку: подсветятся клетки, куда она может пойти.</li><li>Щёлкните клетку назначения. Если удар продолжается, щёлкайте следующие клетки по очереди.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Простые шашки ходят и бьют только вперёд, дошедшая до последнего ряда становится дамкой.</li><li>Дамки ходят и бьют в обе стороны.</li><li>Бить обязательно, и удар продолжается, пока можно.</li></ul>",
+      "related": [
+       "object",
+       "friend"
+      ]
+     },
+     {
+      "id": "friend",
+      "title": "Игра с другом",
+      "keys": [
+       "друг",
+       "приглашение",
+       "чат"
+      ],
+      "html": "<p class=\"hh-proc\">Как пригласить друга</p><ol><li>Щёлкните правой кнопкой чат с другом и выберите <b>Играть: Шашки</b>.</li><li>Друг получит приглашение с кнопкой <b>Играть</b>.</li></ol><p class=\"hh-note\">Примечания</p><ul><li>Нужен сервер Nekochat Reloaded версии 0.9 или новее.</li><li>Цвета выбираются случайно. Меню <b>Игра → Сдаться</b> заканчивает партию, а <b>Сыграть ещё раз</b> начинает новую с обменом цветов.</li></ul>",
+      "related": [
+       "play"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Checkers",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Checkers overview",
+      "keys": [
+       "Checkers"
+      ],
+      "html": "<h1>Checkers overview</h1><p>A game for two on an 8×8 board. Move diagonally on the dark squares. You lose when you have no move left.</p>",
+      "related": [
+       "play",
+       "friend"
+      ]
+     },
+     {
+      "id": "play",
+      "title": "To play",
+      "keys": [
+       "move",
+       "jump",
+       "king"
+      ],
+      "html": "<p class=\"hh-proc\">To make a move</p><ol><li>Click one of your pieces: the squares it can go to light up.</li><li>Click the square to go to. If the jump goes on, click the next squares one by one.</li></ol><p class=\"hh-note\">Notes</p><ul><li>Men move and jump forward only; a man that reaches the last row becomes a king.</li><li>Kings move and jump both ways.</li><li>A jump is compulsory and goes on while it can.</li></ul>",
+      "related": [
+       "object",
+       "friend"
+      ]
+     },
+     {
+      "id": "friend",
+      "title": "Play a friend",
+      "keys": [
+       "friend",
+       "invitation",
+       "chat"
+      ],
+      "html": "<p class=\"hh-proc\">To invite a friend</p><ol><li>Right-click the chat with your friend and choose <b>Play Checkers</b>.</li><li>Your friend gets an invitation with a <b>Play</b> button.</li></ol><p class=\"hh-note\">Notes</p><ul><li>The Nekochat Reloaded server must be version 0.9 or later.</li><li>Colors are chosen at random. <b>Game → Resign</b> ends the game and <b>Rematch</b> starts another with the colors swapped.</li></ul>",
+      "related": [
+       "play"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

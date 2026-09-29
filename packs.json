@@ -2384,6 +2384,38 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "checkers-addon",
+      "type": "addons",
+      "directory": "addons/checkers",
+      "DisplayName": "Checkers",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "board.png",
+        "cards.css",
+        "cardshell.js",
+        "checkers.css",
+        "checkers.html",
+        "checkers.js",
+        "duel.js",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "king-red.png",
+        "king-white.png",
+        "netgame.js",
+        "piece-red.png",
+        "piece-white.png",
+        "turn-red.png",
+        "turn-white.png"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-29"
+      }
     }
   ]
 }
