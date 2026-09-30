@@ -14,3 +14,6 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; font: 11px 
 .pin-touch button { flex: 1; min-height: 48px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: #000; font: bold 13px Tahoma, Arial, sans-serif; touch-action: none; user-select: none; -webkit-user-select: none; }
 .pin-touch button:active, .pin-touch button.down { border-image-source: var(--xp-button-pressed, var(--xp-button-normal, linear-gradient(#ccc, #a9a598))); }
 #pin-plunger { flex: 1.4; }
+.pin-app .cp-menu { flex: none; margin: 0; }
+.cp-menu-popup button { display: flex; justify-content: space-between; gap: 28px; }
+.cp-menu-popup button i { font-style: normal; color: inherit; opacity: .75; }

@@ -9,6 +9,7 @@
   <div class="xp-window pin-window">
     <header class="xp-titlebar"><span class="xp-app-icon has-icon" style="background-image:url('{{ADDON}}icon.png')"></span><span class="xp-title">Pinball</span><div class="xp-window-controls"><button id="close" aria-label="Close"></button></div></header>
     <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="pin-app">
+      <nav class="cp-menu" id="pin-menu"><button type="button" data-menu="game"></button><button type="button" data-menu="options"></button><button type="button" data-menu="help"></button></nav>
       <div class="pin-status" id="pin-status">Loading…</div>
       <canvas id="canvas" class="pin-canvas" tabindex="-1" oncontextmenu="event.preventDefault()" hidden></canvas>
       <div class="pin-touch" id="pin-touch" hidden>
