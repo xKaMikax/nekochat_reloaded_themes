@@ -7,7 +7,7 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&a
 const LEVELS = { beginner: [9, 9, 10], intermediate: [16, 16, 40], expert: [30, 16, 99] };
 const words = {
   ru: { title: 'Сапёр', game: 'Игра', help: 'Справка', new: 'Новая игра', beginner: 'Новичок', intermediate: 'Любитель', expert: 'Профессионал', sound: 'Звук', best: 'Чемпионы...', exit: 'Выход', about: 'О программе «Сапёр»', rules: 'Вызов справки',
-    rulesText: 'Откройте все клетки без мин. Цифра — сколько мин рядом. Правая кнопка ставит флажок, повторно — «?». Двойной щелчок или средняя кнопка по цифре открывает соседние клетки, если флажков вокруг столько же.',
+    rulesText: 'Откройте все клетки без мин. Цифра — сколько мин рядом. Правая кнопка (или долгое нажатие пальцем) ставит флажок, повторно — «?». Двойной щелчок или средняя кнопка по цифре открывает соседние клетки, если флажков вокруг столько же.',
     bestTitle: 'Чемпионы', none: 'ещё никого', seconds: '{time} с', challenge: 'Вызов из чата: у всех одно и то же поле. Кто пройдёт быстрее?', won: '💣 Сапёр ({level}): прошёл за {time} с', lost: '💥 Сапёр ({level}): подорвался на {time} с', sent: 'Результат отправлен в чат.', close: 'Закрыть' },
   en: { title: 'Minesweeper', game: 'Game', help: 'Help', new: 'New', beginner: 'Beginner', intermediate: 'Intermediate', expert: 'Expert', sound: 'Sound', best: 'Best Times...', exit: 'Exit', about: 'About Minesweeper', rules: 'Contents',
     rulesText: 'Open every square that has no mine. A number tells how many mines touch it. Right-click (or hold your finger on) a square to flag it, again for "?". Double-click or middle-click a number to open its neighbours when as many flags are around it.',
