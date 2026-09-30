@@ -2503,6 +2503,30 @@
         "Version": "1.0",
         "Added": "2026-09-29"
       }
+    },
+    {
+      "pack_id": "pinball-addon",
+      "type": "addons",
+      "directory": "addons/pinball",
+      "DisplayName": "3D Pinball",
+      "Files": [
+        "Preview.png",
+        "SpaceCadetPinball.data",
+        "SpaceCadetPinball.js",
+        "SpaceCadetPinball.wasm",
+        "addon.json",
+        "help.json",
+        "icon-32.png",
+        "icon.png",
+        "pinball.css",
+        "pinball.html",
+        "pinball.js"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-09-30"
+      }
     }
   ]
 }

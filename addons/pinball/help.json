@@ -1,0 +1,99 @@
+{
+ "title": {
+  "ru": "3D-пинбол",
+  "en": "3D Pinball"
+ },
+ "first": "object",
+ "books": {
+  "ru": [
+   {
+    "title": "3D-пинбол",
+    "topics": [
+     {
+      "id": "object",
+      "title": "Общие сведения о пинболе",
+      "keys": [
+       "пинбол",
+       "игры"
+      ],
+      "html": "<h1>3D-пинбол «Космический кадет»</h1><p>Наберите как можно больше очков: отбивайте шар флиппером, попадайте в мишени, лампы и рампы и выполняйте миссии.</p>",
+      "related": [
+       "controls",
+       "tips"
+      ]
+     },
+     {
+      "id": "controls",
+      "title": "Управление",
+      "keys": [
+       "клавиши",
+       "флиппер",
+       "пружина"
+      ],
+      "html": "<p class=\"hh-proc\">Управление</p><ul><li><b>Пробел</b> — пружина: удерживайте и отпустите, чтобы запустить шар.</li><li><b>Z</b> — левый флиппер, <b>/</b> — правый флиппер.</li><li><b>X</b>, <b>.</b> и <b>стрелка вверх</b> — толчок стола слева, справа и снизу.</li><li><b>F2</b> — новая игра. Меню «Игра» и «Параметры» — над столом.</li><li>На сенсорном экране под столом есть кнопки «Левый», «Запуск» и «Правый».</li></ul>",
+      "related": [
+       "object"
+      ]
+     },
+     {
+      "id": "tips",
+      "title": "Советы",
+      "keys": [
+       "очки",
+       "миссии"
+      ],
+      "html": "<h1>Советы</h1><ul><li>Слегка толкайте стол, чтобы спасти шар, но не слишком часто: стол «наклонится» и флипперы отключатся.</li><li>Выполняйте миссии: они дают много очков и открывают бонусы.</li></ul>",
+      "related": [
+       "object"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "3D Pinball",
+    "topics": [
+     {
+      "id": "object",
+      "title": "About Pinball",
+      "keys": [
+       "pinball",
+       "games"
+      ],
+      "html": "<h1>3D Pinball for Windows - Space Cadet</h1><p>Score as many points as you can: keep the ball in play with the flippers, hit targets, lights and ramps, and complete missions.</p>",
+      "related": [
+       "controls",
+       "tips"
+      ]
+     },
+     {
+      "id": "controls",
+      "title": "Controls",
+      "keys": [
+       "keys",
+       "flipper",
+       "plunger"
+      ],
+      "html": "<p class=\"hh-proc\">Controls</p><ul><li><b>Space</b> — the plunger: hold it and let go to launch the ball.</li><li><b>Z</b> — the left flipper, <b>/</b> — the right flipper.</li><li><b>X</b>, <b>.</b> and <b>Up</b> — bump the table from the left, the right and below.</li><li><b>F2</b> — a new game. The Game and Options menus are above the table.</li><li>On a touch screen there are Left, Launch and Right buttons under the table.</li></ul>",
+      "related": [
+       "object"
+      ]
+     },
+     {
+      "id": "tips",
+      "title": "Tips",
+      "keys": [
+       "score",
+       "missions"
+      ],
+      "html": "<h1>Tips</h1><ul><li>Nudge the table to save the ball, but not too often: the table tilts and the flippers stop working.</li><li>Complete missions: they give many points and open bonuses.</li></ul>",
+      "related": [
+       "object"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

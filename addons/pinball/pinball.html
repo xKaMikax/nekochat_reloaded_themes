@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="{{APP}}">
+  <title>Pinball</title><link id="frame-style" rel="stylesheet" href="assets/css/style.css"><link id="frame-theme" rel="stylesheet" href="data:text/css,"><link rel="stylesheet" href="assets/css/control-panel.css"><link rel="stylesheet" href="{{ADDON}}pinball.css">
+{{BRIDGE}}
+</head>
+<body>
+  <div class="xp-window pin-window">
+    <header class="xp-titlebar"><span class="xp-app-icon has-icon" style="background-image:url('{{ADDON}}icon.png')"></span><span class="xp-title">Pinball</span><div class="xp-window-controls"><button id="close" aria-label="Close"></button></div></header>
+    <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="pin-app">
+      <div class="pin-status" id="pin-status">Loading…</div>
+      <canvas id="canvas" class="pin-canvas" tabindex="-1" oncontextmenu="event.preventDefault()" hidden></canvas>
+      <div class="pin-touch" id="pin-touch" hidden>
+        <button type="button" data-key="left" id="pin-left"></button>
+        <button type="button" data-key="plunger" id="pin-plunger"></button>
+        <button type="button" data-key="right" id="pin-right"></button>
+      </div>
+    </main><i class="xp-side xp-side-right"></i></div>
+    <i class="xp-bottom"></i>
+  </div>
+  <script src="assets/js/packs.js"></script>
+  <script src="{{ADDON}}pinball.js"></script>
+</body>
+</html>
