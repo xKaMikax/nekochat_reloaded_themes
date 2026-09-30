@@ -20,6 +20,18 @@
       </div>
     </main><i class="xp-side xp-side-right"></i></div>
     <i class="xp-bottom"></i>
+    <div class="pin-modal" id="pin-modal" hidden>
+      <div class="xp-window pin-dialog">
+        <header class="xp-titlebar"><span class="xp-title" id="pin-dlg-title"></span><div class="xp-window-controls"><button id="pin-dlg-close" aria-label="Close"></button></div></header>
+        <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="pin-dlg-body">
+          <p class="pin-dlg-note" id="pin-dlg-note"></p>
+          <div class="pin-scores-wrap"><table class="pin-scores"><thead><tr><th id="pin-th-rank"></th><th id="pin-th-name"></th><th id="pin-th-score"></th></tr></thead><tbody id="pin-scores"></tbody></table></div>
+          <p class="pin-dlg-mine" id="pin-dlg-mine"></p>
+          <div class="pin-dlg-buttons"><button type="button" id="pin-dlg-ok"></button></div>
+        </main><i class="xp-side xp-side-right"></i></div>
+        <i class="xp-bottom"></i>
+      </div>
+    </div>
   </div>
   <script src="assets/js/packs.js"></script>
   <script src="{{ADDON}}pinball.js"></script>

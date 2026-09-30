@@ -5,8 +5,8 @@ const controls = window.windowControls;
 const $ = selector => document.querySelector(selector);
 const files = window.NK_ADDON?.files || {};
 const words = {
-  ru: { hint: 'Флипперы: Z и / или стрелки ← →. Запуск шара: пробел (держите и отпустите).', game: 'Игра', options: 'Параметры', help: 'Справка', newGame: 'Новая игра\tF2', launch: 'Запуск шара', pause: 'Пауза / продолжить\tF3', scores: 'Лучшие результаты…', demo: 'Демонстрация', exit: 'Выход', players: 'Игроков: {n}', sound: 'Звук', music: 'Музыка', controls: 'Клавиши управления…\tF8', topics: 'Справка по игре', about: 'О программе «Пинбол»', title: 'Пинбол', loading: 'Загрузка…', failed: 'Не удалось запустить игру', left: 'Левый', right: 'Правый', plunger: 'Запуск', close: 'Закрыть', minimize: 'Свернуть' },
-  en: { hint: 'Flippers: Z and / or the arrow keys ← →. Launch the ball: Space (hold and release).', game: 'Game', options: 'Options', help: 'Help', newGame: 'New Game\tF2', launch: 'Launch Ball', pause: 'Pause/Resume Game\tF3', scores: 'High Scores...', demo: 'Demo', exit: 'Exit', players: '{n} Player(s)', sound: 'Sound', music: 'Music', controls: 'Player Controls...\tF8', topics: 'Pinball Help', about: 'About Pinball', title: '3D Pinball', loading: 'Loading…', failed: 'The game could not start', left: 'Left', right: 'Right', plunger: 'Launch', close: 'Close', minimize: 'Minimize' },
+  ru: { scoresTitle: 'Лучшие результаты', rank: 'Место', name: 'Имя', score: 'Очки', ok: 'ОК', noServer: 'Рейтинг общий для всех на сервере Nekochat Reloaded. Подключитесь к нему (Панель управления → Сеть), чтобы видеть его и отправлять результаты.', noScores: 'Пока нет ни одного результата.', loadFailed: 'Не удалось получить рейтинг с сервера.', gameOver: 'Игра окончена. Ваш результат: {score}.', newBest: 'Новый личный рекорд! Ваше место: {rank}.', notBest: 'Ваш лучший результат: {score}, место: {rank}.', mine: 'Ваше место: {rank} из {players}, очки: {score}', hint: 'Флипперы: Z и / или стрелки ← →. Запуск шара: пробел (держите и отпустите).', game: 'Игра', options: 'Параметры', help: 'Справка', newGame: 'Новая игра\tF2', launch: 'Запуск шара', pause: 'Пауза / продолжить\tF3', scores: 'Лучшие результаты…', demo: 'Демонстрация', exit: 'Выход', players: 'Игроков: {n}', sound: 'Звук', music: 'Музыка', controls: 'Клавиши управления…\tF8', topics: 'Справка по игре', about: 'О программе «Пинбол»', title: 'Пинбол', loading: 'Загрузка…', failed: 'Не удалось запустить игру', left: 'Левый', right: 'Правый', plunger: 'Запуск', close: 'Закрыть', minimize: 'Свернуть' },
+  en: { scoresTitle: 'High Scores', rank: 'Rank', name: 'Name', score: 'Score', ok: 'OK', noServer: 'The high scores are shared by everyone on the Nekochat Reloaded server. Connect to it (Control Panel → Network) to see them and to send your scores.', noScores: 'There are no scores yet.', loadFailed: 'The high scores could not be loaded from the server.', gameOver: 'Game over. Your score: {score}.', newBest: 'A new personal best! Your rank: {rank}.', notBest: 'Your best score: {score}, rank: {rank}.', mine: 'Your rank: {rank} of {players}, score: {score}', hint: 'Flippers: Z and / or the arrow keys ← →. Launch the ball: Space (hold and release).', game: 'Game', options: 'Options', help: 'Help', newGame: 'New Game\tF2', launch: 'Launch Ball', pause: 'Pause/Resume Game\tF3', scores: 'High Scores...', demo: 'Demo', exit: 'Exit', players: '{n} Player(s)', sound: 'Sound', music: 'Music', controls: 'Player Controls...\tF8', topics: 'Pinball Help', about: 'About Pinball', title: '3D Pinball', loading: 'Loading…', failed: 'The game could not start', left: 'Left', right: 'Right', plunger: 'Launch', close: 'Close', minimize: 'Minimize' },
 };
 let language = 'ru';
 const t = key => words[language][key];
@@ -68,8 +68,71 @@ document.addEventListener('click', event => {
 });
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 
+// ---- High scores: shared on the Nekochat Reloaded server, one best score per user (the user id),
+// shown with the user's display name. The game calls Module.nkScore(score) when a game ends and
+// Module.nkShowScores() for Game -> High Scores.
+const companion = () => {
+  try {
+    if (localStorage.getItem('nk_reloaded_enabled') === '0') return null;
+    const url = ((localStorage.getItem('nk_reloaded_server') || '').trim() || 'https://nekochat-reloaded.kamika.is-cool.dev').replace(/\/$/, '');
+    const token = localStorage.getItem(localStorage.getItem('nk_reloaded_active') || '');
+    return token ? { url, token } : null;
+  } catch { return null; }
+};
+async function scoreRequest(method, body) {
+  const server = companion(); if (!server) return null;
+  const response = await fetch(`${server.url}/scores/pinball${method === 'GET' ? '?limit=10' : ''}`, { method, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${server.token}` }, body: body === undefined ? undefined : JSON.stringify(body) });
+  if (!response.ok) throw Error(String(response.status));
+  return response.json();
+}
+const format = (text, values) => text.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ''));
+const number = value => Number(value).toLocaleString(language === 'en' ? 'en-US' : 'ru-RU');
+let pausedByDialog = false;
+function closeScores() {
+  $('#pin-modal').hidden = true;
+  if (pausedByDialog) { pausedByDialog = false; call('nk_command', [3]); }
+  canvas.focus?.();
+}
+function fillScores(data, note) {
+  $('#pin-dlg-title').textContent = t('scoresTitle');
+  $('#pin-th-rank').textContent = t('rank'); $('#pin-th-name').textContent = t('name'); $('#pin-th-score').textContent = t('score'); $('#pin-dlg-ok').textContent = t('ok');
+  $('#pin-dlg-note').textContent = note || '';
+  const body = $('#pin-scores'); body.textContent = '';
+  const rows = data?.scores || [];
+  for (const entry of rows) {
+    const row = document.createElement('tr'); if (entry.me) row.className = 'me';
+    for (const value of [entry.rank, entry.name, number(entry.score)]) { const cell = document.createElement('td'); cell.textContent = value; row.append(cell); }
+    body.append(row);
+  }
+  if (!rows.length) { const row = document.createElement('tr'), cell = document.createElement('td'); cell.colSpan = 3; cell.className = 'empty'; cell.textContent = data ? t('noScores') : ''; row.append(cell); body.append(row); }
+  $('#pin-dlg-mine').textContent = data?.me && !rows.some(entry => entry.me) ? format(t('mine'), { rank: data.me.rank, players: data.players, score: number(data.me.score) }) : '';
+}
+async function showScores(note = '', data) {
+  if (!pausedByDialog && !call('nk_state', [5])) { pausedByDialog = true; call('nk_command', [3]); }
+  fillScores(data, note || (companion() ? '' : t('noServer')));
+  $('#pin-modal').hidden = false; $('#pin-dlg-ok').focus();
+  if (data !== undefined || !companion()) return;
+  try { fillScores(await scoreRequest('GET'), note); } catch { fillScores(null, t('loadFailed')); }
+}
+$('#pin-dlg-ok').onclick = closeScores; $('#pin-dlg-close').onclick = closeScores;
+$('#pin-modal').addEventListener('click', event => { if (event.target === $('#pin-modal')) closeScores(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && !$('#pin-modal').hidden) closeScores(); });
+let lastBest = 0; try { lastBest = Number(localStorage.getItem('nk_pinball_best') || 0); } catch {}
+async function submitScore(score) {
+  if (!(score > 0)) return;
+  if (score > lastBest) { lastBest = score; try { localStorage.setItem('nk_pinball_best', String(score)); } catch {} }
+  if (!companion()) { setTimeout(() => showScores(format(t('gameOver'), { score: number(score) }), null), 600); return; }
+  try {
+    const data = await scoreRequest('POST', { score });
+    const note = format(t('gameOver'), { score: number(score) }) + ' ' + (data.new_best ? format(t('newBest'), { rank: data.me?.rank }) : format(t('notBest'), { score: number(data.me?.score), rank: data.me?.rank }));
+    showScores(note, data);
+  } catch { showScores(format(t('gameOver'), { score: number(score) }) + ' ' + t('loadFailed'), null); }
+}
+
 window.Module = {
   canvas,
+  nkScore: score => submitScore(score),
+  nkShowScores: () => showScores(),
   locateFile: name => files[name] || name,
   keyboardListeningElement: document,
   print: () => {},

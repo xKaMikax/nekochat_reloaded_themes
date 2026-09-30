@@ -19,3 +19,27 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; font: 11px 
 .cp-menu-popup button i { font-style: normal; color: inherit; opacity: .75; }
 .pin-hint { flex: none; padding: 3px 8px; background: var(--xp-theme-buttonface, #ece9d8); color: var(--xp-theme-windowtext, #000); font: 11px Tahoma, Arial, sans-serif; }
 @media (pointer: coarse) { .pin-hint { display: none; } }
+
+/* The high scores window: a small XP window over the game. */
+.pin-window { position: relative; }
+.pin-modal { position: absolute; inset: 0; z-index: 5; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, .35); }
+.pin-modal[hidden] { display: none; }
+.pin-dialog { width: min(420px, calc(100% - 24px)); height: auto; max-height: calc(100% - 24px); min-width: 0; min-height: 0; }
+.pin-dialog .xp-window-controls { width: var(--xp-control-width, 21px); }
+.pin-dialog #pin-dlg-close { flex-basis: var(--xp-control-width, 21px); background-image: var(--xp-close-normal); }
+.pin-dialog #pin-dlg-close::after { content: ''; display: block; width: var(--xp-glyph-width, 13px); height: var(--xp-glyph-height, 13px); margin: var(--xp-glyph-margin, 4px); background: var(--xp-close-glyph) center / var(--xp-glyph-width, 13px) var(--xp-glyph-height, 13px) no-repeat; }
+.pin-dlg-body { display: flex; flex: 1; flex-direction: column; gap: 8px; min-width: 0; min-height: 0; padding: 10px 12px; background: var(--xp-theme-window, #ece9d8); color: var(--xp-theme-windowtext, #000); overflow: hidden; }
+.pin-dlg-note, .pin-dlg-mine { margin: 0; }
+.pin-dlg-note:empty, .pin-dlg-mine:empty { display: none; }
+.pin-scores-wrap { flex: 1; min-height: 0; max-height: 260px; overflow: auto; border: 1px solid #7f9db9; background: #fff; }
+.pin-scores { width: 100%; border-collapse: collapse; font: 11px Tahoma, Arial, sans-serif; color: #000; }
+.pin-scores th { padding: 3px 6px; background: #ece9d8; border-bottom: 1px solid #aca899; text-align: left; font-weight: normal; }
+.pin-scores td { padding: 3px 6px; border-bottom: 1px solid #eee; }
+.pin-scores th:first-child, .pin-scores td:first-child { width: 36px; text-align: right; }
+.pin-scores th:last-child, .pin-scores td:last-child { text-align: right; white-space: nowrap; }
+.pin-scores tr.me td { background: var(--xp-theme-highlight, #316ac5); color: #fff; }
+.pin-scores .empty { padding: 14px 6px; color: #666; text-align: center; }
+.pin-dlg-buttons { display: flex; justify-content: flex-end; }
+.pin-dlg-buttons button { min-width: 78px; height: 27px; padding: 0 12px; border: 4px solid transparent; border-image: var(--xp-button-normal, linear-gradient(#fff, #d4d0c8)) 4 fill; background: transparent; color: #000; font: 11px Tahoma, Arial, sans-serif; }
+.pin-dlg-buttons button:hover { border-image-source: var(--xp-button-hover, var(--xp-button-normal, linear-gradient(#fff, #d4d0c8))); }
+.pin-dlg-buttons button:active { border-image-source: var(--xp-button-pressed, var(--xp-button-normal, linear-gradient(#ccc, #a9a598))); }

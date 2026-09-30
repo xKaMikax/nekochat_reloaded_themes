@@ -19,7 +19,8 @@
       "html": "<h1>3D-пинбол «Космический кадет»</h1><p>Наберите как можно больше очков: отбивайте шар флиппером, попадайте в мишени, лампы и рампы и выполняйте миссии.</p>",
       "related": [
        "controls",
-       "tips"
+       "tips",
+       "scores"
       ]
      },
      {
@@ -46,6 +47,19 @@
       "related": [
        "object"
       ]
+     },
+     {
+      "id": "scores",
+      "title": "Лучшие результаты",
+      "keys": [
+       "рейтинг",
+       "очки",
+       "рекорд"
+      ],
+      "html": "<h1>Лучшие результаты</h1><p>Рейтинг общий для всех пользователей вашего сервера Nekochat, если вы подключены к серверу Nekochat Reloaded (Панель управления → Сеть). Для каждого пользователя хранится лучший результат, он привязан к вашему аккаунту и показывается под вашим отображаемым именем.</p><p>Откройте рейтинг в меню <b>Игра → Лучшие результаты</b>. После каждой игры результат отправляется на сервер автоматически.</p>",
+      "related": [
+       "object"
+      ]
      }
     ]
    }
@@ -64,7 +78,8 @@
       "html": "<h1>3D Pinball for Windows - Space Cadet</h1><p>Score as many points as you can: keep the ball in play with the flippers, hit targets, lights and ramps, and complete missions.</p>",
       "related": [
        "controls",
-       "tips"
+       "tips",
+       "scores"
       ]
      },
      {
@@ -88,6 +103,19 @@
        "missions"
       ],
       "html": "<h1>Tips</h1><ul><li>Nudge the table to save the ball, but not too often: the table tilts and the flippers stop working.</li><li>Complete missions: they give many points and open bonuses.</li></ul>",
+      "related": [
+       "object"
+      ]
+     },
+     {
+      "id": "scores",
+      "title": "High Scores",
+      "keys": [
+       "ranking",
+       "score",
+       "record"
+      ],
+      "html": "<h1>High Scores</h1><p>The table is shared by everyone on your Nekochat server when you are connected to the Nekochat Reloaded server (Control Panel → Network). Each user has one best score, tied to your account and shown under your display name.</p><p>Open it from <b>Game → High Scores</b>. After every game your score is sent to the server automatically.</p>",
       "related": [
        "object"
       ]
