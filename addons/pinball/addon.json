@@ -1,13 +1,26 @@
 {
  "id": "pinball",
- "name": { "ru": "3D-пинбол «Космический кадет»", "en": "3D Pinball for Windows - Space Cadet" },
+ "name": {
+  "ru": "3D-пинбол «Космический кадет»",
+  "en": "3D Pinball for Windows - Space Cadet"
+ },
  "version": "1.0",
  "entry": "pinball.html",
  "icon": "icon.png",
  "icon32": "icon-32.png",
- "window": { "width": 640, "height": 510, "minWidth": 360, "minHeight": 420, "background": "#000000" },
+ "window": {
+  "width": 640,
+  "height": 530,
+  "minWidth": 360,
+  "minHeight": 420,
+  "background": "#000000"
+ },
  "about": {
-  "ru": { "credits": "Из Windows XP: Cinematronics и Maxis. Порт SpaceCadetPinball (открытый код) для браузера." },
-  "en": { "credits": "From Windows XP, by Cinematronics and Maxis. The open SpaceCadetPinball port, built for the browser." }
+  "ru": {
+   "credits": "Из Windows XP: игра Cinematronics и Maxis (Microsoft). Код игры — открытый проект SpaceCadetPinball (декомпилированная игра, перенесённая на SDL): https://github.com/k4zmu2a/SpaceCadetPinball. Сборка для браузера (WebAssembly) основана на форке https://github.com/alula/SpaceCadetPinball. Данные стола (PINBALL.DAT) взяты из Windows XP."
+  },
+  "en": {
+   "credits": "From Windows XP: the game by Cinematronics and Maxis (Microsoft). The game code is the open SpaceCadetPinball project (a decompiled game ported to SDL): https://github.com/k4zmu2a/SpaceCadetPinball. The browser (WebAssembly) build is based on the fork https://github.com/alula/SpaceCadetPinball. The table data (PINBALL.DAT) comes from Windows XP."
+  }
  }
 }

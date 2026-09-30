@@ -5,8 +5,8 @@ const controls = window.windowControls;
 const $ = selector => document.querySelector(selector);
 const files = window.NK_ADDON?.files || {};
 const words = {
-  ru: { game: 'Игра', options: 'Параметры', help: 'Справка', newGame: 'Новая игра\tF2', launch: 'Запуск шара', pause: 'Пауза / продолжить\tF3', scores: 'Лучшие результаты…', demo: 'Демонстрация', exit: 'Выход', players: 'Игроков: {n}', sound: 'Звук', music: 'Музыка', controls: 'Клавиши управления…\tF8', topics: 'Справка по игре', about: 'О программе «Пинбол»', title: 'Пинбол', loading: 'Загрузка…', failed: 'Не удалось запустить игру', left: 'Левый', right: 'Правый', plunger: 'Запуск', close: 'Закрыть', minimize: 'Свернуть' },
-  en: { game: 'Game', options: 'Options', help: 'Help', newGame: 'New Game\tF2', launch: 'Launch Ball', pause: 'Pause/Resume Game\tF3', scores: 'High Scores...', demo: 'Demo', exit: 'Exit', players: '{n} Player(s)', sound: 'Sound', music: 'Music', controls: 'Player Controls...\tF8', topics: 'Pinball Help', about: 'About Pinball', title: '3D Pinball', loading: 'Loading…', failed: 'The game could not start', left: 'Left', right: 'Right', plunger: 'Launch', close: 'Close', minimize: 'Minimize' },
+  ru: { hint: 'Флипперы: Z и / или стрелки ← →. Запуск шара: пробел (держите и отпустите).', game: 'Игра', options: 'Параметры', help: 'Справка', newGame: 'Новая игра\tF2', launch: 'Запуск шара', pause: 'Пауза / продолжить\tF3', scores: 'Лучшие результаты…', demo: 'Демонстрация', exit: 'Выход', players: 'Игроков: {n}', sound: 'Звук', music: 'Музыка', controls: 'Клавиши управления…\tF8', topics: 'Справка по игре', about: 'О программе «Пинбол»', title: 'Пинбол', loading: 'Загрузка…', failed: 'Не удалось запустить игру', left: 'Левый', right: 'Правый', plunger: 'Запуск', close: 'Закрыть', minimize: 'Свернуть' },
+  en: { hint: 'Flippers: Z and / or the arrow keys ← →. Launch the ball: Space (hold and release).', game: 'Game', options: 'Options', help: 'Help', newGame: 'New Game\tF2', launch: 'Launch Ball', pause: 'Pause/Resume Game\tF3', scores: 'High Scores...', demo: 'Demo', exit: 'Exit', players: '{n} Player(s)', sound: 'Sound', music: 'Music', controls: 'Player Controls...\tF8', topics: 'Pinball Help', about: 'About Pinball', title: '3D Pinball', loading: 'Loading…', failed: 'The game could not start', left: 'Left', right: 'Right', plunger: 'Launch', close: 'Close', minimize: 'Minimize' },
 };
 let language = 'ru';
 const t = key => words[language][key];
@@ -26,6 +26,14 @@ document.querySelectorAll('#pin-touch button').forEach(button => {
   button.addEventListener('pointerup', up); button.addEventListener('pointercancel', up); button.addEventListener('lostpointercapture', up);
   button.addEventListener('contextmenu', event => event.preventDefault());
 });
+// Arrow keys work as the flippers too (the game has Z and / for them).
+const ARROWS = { ArrowLeft: 'left', ArrowRight: 'right' };
+for (const type of ['keydown', 'keyup']) document.addEventListener(type, event => {
+  const name = ARROWS[event.key]; if (!name || event.isTrusted === false) return;
+  event.preventDefault(); event.stopImmediatePropagation();
+  if (type === 'keydown' && event.repeat) return;
+  press(name, type === 'keydown');
+}, true);
 if (matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window) $('#pin-touch').hidden = false;
 
 // The menu is Windows XP's; its commands are functions of the game (see nk_command in the port).
@@ -55,6 +63,7 @@ document.addEventListener('click', event => {
   const command = event.target.closest('.cp-menu-popup [data-command]')?.dataset.command; closeMenu(); if (!command) return;
   if (command === 'exit') controls.close();
   else if (command === 'topics') { if (controls.openHelpViewer) controls.openHelpViewer('addon:pinball'); }
+  else if (command === 'about' && controls.openAbout) controls.openAbout('addon:pinball');
   else if (COMMANDS[command]) { call('nk_command', [COMMANDS[command]]); canvas.focus?.(); }
 });
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
@@ -81,6 +90,7 @@ function applyText() {
   document.documentElement.lang = language; document.title = t('title'); $('.xp-title').textContent = t('title');
   $('#pin-left').textContent = t('left'); $('#pin-right').textContent = t('right'); $('#pin-plunger').textContent = t('plunger');
   document.querySelectorAll('[data-menu]').forEach(button => { button.textContent = t(button.dataset.menu); });
+  $('#pin-hint').textContent = t('hint');
   $('#close').setAttribute('aria-label', t('close')); $('#minimize').setAttribute('aria-label', t('minimize'));
   if (!status.hidden && !status.textContent) status.textContent = t('loading');
 }
