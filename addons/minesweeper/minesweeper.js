@@ -10,7 +10,7 @@ const words = {
     rulesText: 'Откройте все клетки без мин. Цифра — сколько мин рядом. Правая кнопка ставит флажок, повторно — «?». Двойной щелчок или средняя кнопка по цифре открывает соседние клетки, если флажков вокруг столько же.',
     bestTitle: 'Чемпионы', none: 'ещё никого', seconds: '{time} с', challenge: 'Вызов из чата: у всех одно и то же поле. Кто пройдёт быстрее?', won: '💣 Сапёр ({level}): прошёл за {time} с', lost: '💥 Сапёр ({level}): подорвался на {time} с', sent: 'Результат отправлен в чат.', close: 'Закрыть' },
   en: { title: 'Minesweeper', game: 'Game', help: 'Help', new: 'New', beginner: 'Beginner', intermediate: 'Intermediate', expert: 'Expert', sound: 'Sound', best: 'Best Times...', exit: 'Exit', about: 'About Minesweeper', rules: 'Contents',
-    rulesText: 'Open every square that has no mine. A number tells how many mines touch it. Right-click flags a square, again for "?". Double-click or middle-click a number to open its neighbours when as many flags are around it.',
+    rulesText: 'Open every square that has no mine. A number tells how many mines touch it. Right-click (or hold your finger on) a square to flag it, again for "?". Double-click or middle-click a number to open its neighbours when as many flags are around it.',
     bestTitle: 'Fastest Mine Sweepers', none: 'nobody yet', seconds: '{time} seconds', challenge: 'Challenge from a chat: everyone gets the same field. Who is fastest?', won: '💣 Minesweeper ({level}): cleared in {time} s', lost: '💥 Minesweeper ({level}): blew up at {time} s', sent: 'The result was sent to the chat.', close: 'Close' },
 };
 let language = 'ru';
@@ -113,20 +113,25 @@ function renderStatus() { led($('#mine-count'), mines - flags); led($('#mine-tim
 function setFace(name) { $('#mine-face').style.backgroundPosition = `0 -${FACE[name] * 24}px`; }
 
 // Mouse: left opens, right marks, double-click or middle-click or both buttons chords.
-let buttons = 0;
+// A finger has no right button: holding a square marks it, a tap opens it.
+let buttons = 0, holdTimer = 0, held = false;
+const stopHold = () => { clearTimeout(holdTimer); holdTimer = 0; };
 $('#mine-grid').addEventListener('contextmenu', event => event.preventDefault());
 $('#mine-grid').addEventListener('pointerdown', event => {
   const cell = event.target.closest('.mine-cell'); if (!cell || finished) return;
-  buttons = event.buttons;
+  buttons = event.buttons; held = false; stopHold();
+  if (event.pointerType !== 'mouse') holdTimer = setTimeout(() => { holdTimer = 0; held = true; mark(Number(cell.dataset.index)); setFace('smile'); navigator.vibrate?.(25); }, 380);
   if (event.button === 2 && !(event.buttons & 1)) { mark(Number(cell.dataset.index)); return; }
   setFace('ooh');
 });
 $('#mine-grid').addEventListener('pointerup', event => {
-  const cell = event.target.closest('.mine-cell'); if (!finished) setFace('smile'); if (!cell) return;
+  const cell = event.target.closest('.mine-cell'); if (!finished) setFace('smile'); stopHold(); if (!cell) return;
   const index = Number(cell.dataset.index);
+  if (held) { held = false; buttons = 0; return; }
   if (event.button === 1 || (buttons & 3) === 3) chord(index); else if (event.button === 0) open(index);
   buttons = 0;
 });
+for (const name of ['pointercancel', 'pointerleave', 'pointermove']) $('#mine-grid').addEventListener(name, event => { if (name !== 'pointermove' || event.pointerType === 'mouse' || !event.target.closest('.mine-cell')) stopHold(); });
 $('#mine-grid').addEventListener('dblclick', event => { const cell = event.target.closest('.mine-cell'); if (cell) chord(Number(cell.dataset.index)); });
 $('#mine-face').addEventListener('pointerdown', () => setFace('down'));
 $('#mine-face').addEventListener('click', () => newGame());
