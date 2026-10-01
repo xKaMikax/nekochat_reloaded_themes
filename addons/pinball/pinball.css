@@ -28,8 +28,8 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; font: 11px 
 .pin-modal[hidden] { display: none; }
 .pin-dialog { width: min(420px, calc(100% - 24px)); height: auto; max-height: calc(100% - 24px); min-width: 0; min-height: 0; }
 .pin-dialog .xp-window-controls { width: var(--xp-control-width, 21px); }
-.pin-dialog #pin-dlg-close { flex-basis: var(--xp-control-width, 21px); background-image: var(--xp-close-normal); }
-.pin-dialog #pin-dlg-close::after { content: ''; display: block; width: var(--xp-glyph-width, 13px); height: var(--xp-glyph-height, 13px); margin: var(--xp-glyph-margin, 4px); background: var(--xp-close-glyph) center / var(--xp-glyph-width, 13px) var(--xp-glyph-height, 13px) no-repeat; }
+.pin-dialog #pin-dlg-close, .pin-dialog #pin-vs-x { flex-basis: var(--xp-control-width, 21px); background-image: var(--xp-close-normal); }
+.pin-dialog #pin-dlg-close::after, .pin-dialog #pin-vs-x::after { content: ''; display: block; width: var(--xp-glyph-width, 13px); height: var(--xp-glyph-height, 13px); margin: var(--xp-glyph-margin, 4px); background: var(--xp-close-glyph) center / var(--xp-glyph-width, 13px) var(--xp-glyph-height, 13px) no-repeat; }
 .pin-dlg-body { display: flex; flex: 1; flex-direction: column; gap: 8px; min-width: 0; min-height: 0; padding: 10px 12px; background: var(--xp-theme-window, #ece9d8); color: var(--xp-theme-windowtext, #000); overflow: hidden; }
 .pin-dlg-note, .pin-dlg-mine { margin: 0; }
 .pin-dlg-note:empty, .pin-dlg-mine:empty { display: none; }
