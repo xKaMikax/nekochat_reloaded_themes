@@ -20,7 +20,8 @@
       "related": [
        "controls",
        "tips",
-       "scores"
+       "scores",
+       "challenge"
       ]
      },
      {
@@ -60,6 +61,20 @@
       "related": [
        "object"
       ]
+     },
+     {
+      "id": "challenge",
+      "title": "Челлендж с друзьями",
+      "keys": [
+       "челлендж",
+       "дуэль",
+       "друзья",
+       "соперник"
+      ],
+      "html": "<h1>Челлендж с друзьями</h1><p>Щёлкните правой кнопкой (на телефоне — долгое нажатие) по чату и выберите <b>Играть: 3D-пинбол…</b>. Друзья получат приглашение с кнопкой «Играть». Когда все пришли, хозяин игры нажимает <b>Начать игру</b>: после 3-2-1 все играют одновременно, каждый на своём столе.</p><ul><li>Шары соперников видны на вашем поле: цвет шара — цвет профиля игрока, а без цвета шар чёрный с серыми градиентами. Сверху показан счёт каждого.</li><li>Когда ваша игра окончена, сразу появляется таблица результатов: кто уже закончил, а кто ещё играет. Когда закончили все, показывается победитель, и можно предложить <b>Реванш</b>.</li><li>Вышедший из игры считается с тем счётом, который у него был.</li><li>Участвуют до четырёх игроков.</li></ul>",
+      "related": [
+       "object"
+      ]
      }
     ]
    }
@@ -79,7 +94,8 @@
       "related": [
        "controls",
        "tips",
-       "scores"
+       "scores",
+       "challenge"
       ]
      },
      {
@@ -116,6 +132,20 @@
        "record"
       ],
       "html": "<h1>High Scores</h1><p>The table is shared by everyone on your Nekochat server when you are connected to the Nekochat Reloaded server (Control Panel → Network). Each user has one best score, tied to your account and shown under your display name.</p><p>Open it from <b>Game → High Scores</b>. After every game your score is sent to the server automatically.</p>",
+      "related": [
+       "object"
+      ]
+     },
+     {
+      "id": "challenge",
+      "title": "Challenge with friends",
+      "keys": [
+       "challenge",
+       "duel",
+       "friends",
+       "opponent"
+      ],
+      "html": "<h1>Challenge with friends</h1><p>Right-click (long press on a phone) a chat and choose <b>Play: 3D Pinball…</b>. Your friends get an invitation with a Play button. When everybody is in, the host clicks <b>Start the game</b>: after 3-2-1 everyone plays at once, each at their own table.</p><ul><li>The others' balls show over your table: a ball has its player's profile colour, or is black with grey gradients if there is none. The score of each is shown above.</li><li>When your game is over a table of results appears at once: who is done and who still plays. When everybody is done the winner is shown, and you can ask for a <b>Rematch</b>.</li><li>A player who leaves counts with the score he had.</li><li>Up to four players take part.</li></ul>",
       "related": [
        "object"
       ]
