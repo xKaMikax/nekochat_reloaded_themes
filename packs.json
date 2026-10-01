@@ -2515,12 +2515,15 @@
         "SpaceCadetPinball.js",
         "SpaceCadetPinball.wasm",
         "addon.json",
+        "duel.js",
         "help.json",
         "icon-32.png",
         "icon.png",
+        "netgame.js",
         "pinball.css",
         "pinball.html",
-        "pinball.js"
+        "pinball.js",
+        "versus.js"
       ],
       "Details": {
         "Author": "Nekochat Reloaded Team",

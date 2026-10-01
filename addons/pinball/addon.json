@@ -22,5 +22,8 @@
   "en": {
    "credits": "From Windows XP: the game by Cinematronics and Maxis (Microsoft). The game code is the open SpaceCadetPinball project (a decompiled game ported to SDL): https://github.com/k4zmu2a/SpaceCadetPinball. The browser (WebAssembly) build is based on the fork https://github.com/alula/SpaceCadetPinball. The table data (PINBALL.DAT) comes from Windows XP."
   }
+ },
+ "multiplayer": {
+  "players": 2
  }
 }

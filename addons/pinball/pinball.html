@@ -11,7 +11,8 @@
     <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="pin-app">
       <nav class="cp-menu" id="pin-menu"><button type="button" data-menu="game"></button><button type="button" data-menu="options"></button><button type="button" data-menu="help"></button></nav>
       <div class="pin-status" id="pin-status">Loading…</div>
-      <canvas id="canvas" class="pin-canvas" tabindex="-1" oncontextmenu="event.preventDefault()" hidden></canvas>
+      <div class="pin-versus" id="pin-versus" hidden></div>
+      <div class="pin-stage"><canvas id="canvas" class="pin-canvas" tabindex="-1" oncontextmenu="event.preventDefault()" hidden></canvas><canvas id="pin-ghost" class="pin-ghost" aria-hidden="true"></canvas><div class="pin-wait" id="pin-wait" hidden></div></div>
       <div class="pin-hint" id="pin-hint"></div>
       <div class="pin-touch" id="pin-touch" hidden>
         <button type="button" data-key="left" id="pin-left"></button>
@@ -25,6 +26,7 @@
         <header class="xp-titlebar"><span class="xp-title" id="pin-dlg-title"></span><div class="xp-window-controls"><button id="pin-dlg-close" aria-label="Close"></button></div></header>
         <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="pin-dlg-body">
           <p class="pin-dlg-note" id="pin-dlg-note"></p>
+          <label class="pin-scope" id="pin-scope-row"><span id="pin-scope-label"></span> <select id="pin-scope"></select></label>
           <div class="pin-scores-wrap"><table class="pin-scores"><thead><tr><th id="pin-th-rank"></th><th id="pin-th-name"></th><th id="pin-th-score"></th></tr></thead><tbody id="pin-scores"></tbody></table></div>
           <p class="pin-dlg-mine" id="pin-dlg-mine"></p>
           <div class="pin-dlg-buttons"><button type="button" id="pin-dlg-ok"></button></div>
@@ -34,6 +36,9 @@
     </div>
   </div>
   <script src="assets/js/packs.js"></script>
+  <script src="{{ADDON}}netgame.js"></script>
+  <script src="{{ADDON}}duel.js"></script>
   <script src="{{ADDON}}pinball.js"></script>
+  <script src="{{ADDON}}versus.js"></script>
 </body>
 </html>

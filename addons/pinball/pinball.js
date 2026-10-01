@@ -5,8 +5,8 @@ const controls = window.windowControls;
 const $ = selector => document.querySelector(selector);
 const files = window.NK_ADDON?.files || {};
 const words = {
-  ru: { scoresTitle: 'Лучшие результаты', rank: 'Место', name: 'Имя', score: 'Очки', ok: 'ОК', noServer: 'Рейтинг общий для всех на сервере Nekochat Reloaded. Подключитесь к нему (Панель управления → Сеть), чтобы видеть его и отправлять результаты.', noScores: 'Пока нет ни одного результата.', loadFailed: 'Не удалось получить рейтинг с сервера.', gameOver: 'Игра окончена. Ваш результат: {score}.', newBest: 'Новый личный рекорд! Ваше место: {rank}.', notBest: 'Ваш лучший результат: {score}, место: {rank}.', mine: 'Ваше место: {rank} из {players}, очки: {score}', hint: 'Флипперы: Z и / или стрелки ← →. Запуск шара: пробел (держите и отпустите).', game: 'Игра', options: 'Параметры', help: 'Справка', newGame: 'Новая игра\tF2', launch: 'Запуск шара', pause: 'Пауза / продолжить\tF3', scores: 'Лучшие результаты…', demo: 'Демонстрация', exit: 'Выход', players: 'Игроков: {n}', sound: 'Звук', music: 'Музыка', controls: 'Клавиши управления…\tF8', topics: 'Справка по игре', about: 'О программе «Пинбол»', title: 'Пинбол', loading: 'Загрузка…', failed: 'Не удалось запустить игру', left: 'Левый', right: 'Правый', plunger: 'Запуск', close: 'Закрыть', minimize: 'Свернуть' },
-  en: { scoresTitle: 'High Scores', rank: 'Rank', name: 'Name', score: 'Score', ok: 'OK', noServer: 'The high scores are shared by everyone on the Nekochat Reloaded server. Connect to it (Control Panel → Network) to see them and to send your scores.', noScores: 'There are no scores yet.', loadFailed: 'The high scores could not be loaded from the server.', gameOver: 'Game over. Your score: {score}.', newBest: 'A new personal best! Your rank: {rank}.', notBest: 'Your best score: {score}, rank: {rank}.', mine: 'Your rank: {rank} of {players}, score: {score}', hint: 'Flippers: Z and / or the arrow keys ← →. Launch the ball: Space (hold and release).', game: 'Game', options: 'Options', help: 'Help', newGame: 'New Game\tF2', launch: 'Launch Ball', pause: 'Pause/Resume Game\tF3', scores: 'High Scores...', demo: 'Demo', exit: 'Exit', players: '{n} Player(s)', sound: 'Sound', music: 'Music', controls: 'Player Controls...\tF8', topics: 'Pinball Help', about: 'About Pinball', title: '3D Pinball', loading: 'Loading…', failed: 'The game could not start', left: 'Left', right: 'Right', plunger: 'Launch', close: 'Close', minimize: 'Minimize' },
+  ru: { scope: 'Показать:', scopeAll: 'Все на сервере', roomOf: 'Комната «{name}»', scoresTitle: 'Лучшие результаты', rank: 'Место', name: 'Имя', score: 'Очки', ok: 'ОК', noServer: 'Рейтинг общий для всех на сервере Nekochat Reloaded. Подключитесь к нему (Панель управления → Сеть), чтобы видеть его и отправлять результаты.', noScores: 'Пока нет ни одного результата.', loadFailed: 'Не удалось получить рейтинг с сервера.', gameOver: 'Игра окончена. Ваш результат: {score}.', newBest: 'Новый личный рекорд! Ваше место: {rank}.', notBest: 'Ваш лучший результат: {score}, место: {rank}.', mine: 'Ваше место: {rank} из {players}, очки: {score}', hint: 'Флипперы: Z и / или стрелки ← →. Запуск шара: пробел (держите и отпустите).', game: 'Игра', options: 'Параметры', help: 'Справка', newGame: 'Новая игра\tF2', launch: 'Запуск шара', pause: 'Пауза / продолжить\tF3', scores: 'Лучшие результаты…', demo: 'Демонстрация', exit: 'Выход', players: 'Игроков: {n}', sound: 'Звук', music: 'Музыка', controls: 'Клавиши управления…\tF8', topics: 'Справка по игре', about: 'О программе «Пинбол»', title: 'Пинбол', loading: 'Загрузка…', failed: 'Не удалось запустить игру', left: 'Левый', right: 'Правый', plunger: 'Запуск', close: 'Закрыть', minimize: 'Свернуть' },
+  en: { scope: 'Show:', scopeAll: 'Everyone on the server', roomOf: 'Room "{name}"', scoresTitle: 'High Scores', rank: 'Rank', name: 'Name', score: 'Score', ok: 'OK', noServer: 'The high scores are shared by everyone on the Nekochat Reloaded server. Connect to it (Control Panel → Network) to see them and to send your scores.', noScores: 'There are no scores yet.', loadFailed: 'The high scores could not be loaded from the server.', gameOver: 'Game over. Your score: {score}.', newBest: 'A new personal best! Your rank: {rank}.', notBest: 'Your best score: {score}, rank: {rank}.', mine: 'Your rank: {rank} of {players}, score: {score}', hint: 'Flippers: Z and / or the arrow keys ← →. Launch the ball: Space (hold and release).', game: 'Game', options: 'Options', help: 'Help', newGame: 'New Game\tF2', launch: 'Launch Ball', pause: 'Pause/Resume Game\tF3', scores: 'High Scores...', demo: 'Demo', exit: 'Exit', players: '{n} Player(s)', sound: 'Sound', music: 'Music', controls: 'Player Controls...\tF8', topics: 'Pinball Help', about: 'About Pinball', title: '3D Pinball', loading: 'Loading…', failed: 'The game could not start', left: 'Left', right: 'Right', plunger: 'Launch', close: 'Close', minimize: 'Minimize' },
 };
 let language = 'ru';
 const t = key => words[language][key];
@@ -81,13 +81,40 @@ const companion = () => {
 };
 async function scoreRequest(method, body) {
   const server = companion(); if (!server) return null;
-  const response = await fetch(`${server.url}/scores/pinball${method === 'GET' ? '?limit=10' : ''}`, { method, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${server.token}` }, body: body === undefined ? undefined : JSON.stringify(body) });
+  const response = await fetch(`${server.url}/scores/pinball${method === 'GET' ? `?limit=10${scopeUsers ? `&users=${scopeUsers}` : ''}` : ''}`, { method, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${server.token}` }, body: body === undefined ? undefined : JSON.stringify(body) });
   if (!response.ok) throw Error(String(response.status));
   return response.json();
 }
 const format = (text, values) => text.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ''));
 const number = value => Number(value).toLocaleString(language === 'en' ? 'en-US' : 'ru-RU');
 let pausedByDialog = false;
+// Who the table shows: everyone on the server, or the members of one of your rooms.
+let scopeUsers = '', scopeRooms = null;
+const nekochat = () => { try { return { api: (localStorage.getItem('nk_server_url') || 'https://nekochat.komdu.is-cool.dev').replace(/\/$/, ''), token: localStorage.getItem('nk_token') || '' }; } catch { return { api: '', token: '' }; } };
+async function nekochatGet(path) {
+  const { api, token } = nekochat(); if (!api || !token) throw Error('no session');
+  const response = await fetch(`${api}${path}`, { headers: { Authorization: `Bearer ${token}` } });
+  if (!response.ok) throw Error(String(response.status)); return response.json();
+}
+async function loadScopes() {
+  const select = $('#pin-scope'); $('#pin-scope-label').textContent = t('scope');
+  if (scopeRooms === null) {
+    try {
+      const [me, rooms] = await Promise.all([nekochatGet('/api/me'), nekochatGet('/rooms')]);
+      scopeRooms = rooms.filter(room => (room.members || []).some(member => member.id === me.id)).map(room => ({ id: room.id, name: room.name, users: (room.members || []).map(member => member.id).join(',') }));
+    } catch { scopeRooms = []; }
+  }
+  $('#pin-scope-row').hidden = !scopeRooms.length;
+  let chosen = ''; try { chosen = localStorage.getItem('nk_pinball_scope') || ''; } catch {}
+  select.innerHTML = `<option value="">${esc(t('scopeAll'))}</option>` + scopeRooms.map(room => `<option value="${room.id}">${esc(format(t('roomOf'), { name: room.name }))}</option>`).join('');
+  if (!scopeRooms.some(room => String(room.id) === chosen)) chosen = '';
+  select.value = chosen; scopeUsers = scopeRooms.find(room => String(room.id) === chosen)?.users || '';
+}
+$('#pin-scope').addEventListener('change', async event => {
+  const room = scopeRooms?.find(item => String(item.id) === event.target.value);
+  scopeUsers = room?.users || ''; try { localStorage.setItem('nk_pinball_scope', room ? String(room.id) : ''); } catch {}
+  try { fillScores(await scoreRequest('GET'), ''); } catch { fillScores(null, t('loadFailed')); }
+});
 function closeScores() {
   $('#pin-modal').hidden = true;
   if (pausedByDialog) { pausedByDialog = false; call('nk_command', [3]); }
@@ -112,21 +139,23 @@ async function showScores(note = '', data) {
   fillScores(data, note || (companion() ? '' : t('noServer')));
   $('#pin-modal').hidden = false; $('#pin-dlg-ok').focus();
   if (data !== undefined || !companion()) return;
-  try { fillScores(await scoreRequest('GET'), note); } catch { fillScores(null, t('loadFailed')); }
+  try { await loadScopes(); fillScores(await scoreRequest('GET'), note); } catch { fillScores(null, t('loadFailed')); }
 }
 $('#pin-dlg-ok').onclick = closeScores; $('#pin-dlg-close').onclick = closeScores;
 $('#pin-modal').addEventListener('click', event => { if (event.target === $('#pin-modal')) closeScores(); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && !$('#pin-modal').hidden) closeScores(); });
 let lastBest = 0; try { lastBest = Number(localStorage.getItem('nk_pinball_best') || 0); } catch {}
 async function submitScore(score) {
-  if (!(score > 0)) return;
+  if (!(score > 0)) { window.pinVersus?.finished(0); return; }
+  const duel = window.pinVersus?.finished(score);
   if (score > lastBest) { lastBest = score; try { localStorage.setItem('nk_pinball_best', String(score)); } catch {} }
-  if (!companion()) { setTimeout(() => showScores(format(t('gameOver'), { score: number(score) }), null), 600); return; }
+  if (!companion()) { if (!duel) setTimeout(() => showScores(format(t('gameOver'), { score: number(score) }), null), 600); return; }
   try {
     const data = await scoreRequest('POST', { score });
+    if (duel) return;
     const note = format(t('gameOver'), { score: number(score) }) + ' ' + (data.new_best ? format(t('newBest'), { rank: data.me?.rank }) : format(t('notBest'), { score: number(data.me?.score), rank: data.me?.rank }));
     showScores(note, data);
-  } catch { showScores(format(t('gameOver'), { score: number(score) }) + ' ' + t('loadFailed'), null); }
+  } catch { if (!duel) showScores(format(t('gameOver'), { score: number(score) }) + ' ' + t('loadFailed'), null); }
 }
 
 window.Module = {
