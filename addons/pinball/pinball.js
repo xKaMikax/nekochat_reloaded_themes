@@ -183,7 +183,7 @@ function applyText() {
   $('#pin-left').textContent = t('left'); $('#pin-right').textContent = t('right'); $('#pin-plunger').textContent = t('plunger');
   document.querySelectorAll('[data-menu]').forEach(button => { button.textContent = t(button.dataset.menu); });
   $('#pin-hint').textContent = t('hint');
-  $('#close').setAttribute('aria-label', t('close')); $('#minimize').setAttribute('aria-label', t('minimize'));
+  $('#close').setAttribute('aria-label', t('close')); $('#minimize').setAttribute('aria-label', t('minimize')); $('#pin-dlg-close')?.setAttribute('aria-label', t('close'));
   if (!status.hidden && !status.textContent) status.textContent = t('loading');
 }
 const checkClassic = () => document.documentElement.classList.toggle('cp-classic-look', getComputedStyle(document.documentElement).getPropertyValue('--classic-raised').trim() !== '');

@@ -4,11 +4,11 @@
 // both must use as many dice as they can, and can bear off once all their checkers are home.
 const net = window.NetGame;
 const WORDS = {
-  ru: { title: 'Нарды', newGame: 'Новая игра с компьютером', rematch: 'Сыграть ещё раз', resign: 'Сдаться', sound: 'Звук', roll: 'Бросить кости',
+  ru: { pips: 'очков', title: 'Нарды', newGame: 'Новая игра с компьютером', rematch: 'Сыграть ещё раз', resign: 'Сдаться', sound: 'Звук', roll: 'Бросить кости',
     rulesText: 'Переведите все свои шашки в дом и снимите их с доски раньше соперника. Светлые ходят с 24-го пункта к 1-му, тёмные с 1-го к 24-му. Бросьте кости и играйте выпавшие очки. Одинокую шашку можно выбить: она встанет на бар и должна войти обратно раньше других ходов.',
     light: 'Светлые', dark: 'Тёмные', you: 'Вы', computer: 'Компьютер', waitJoin: 'Ждём, когда соперник присоединится…', joining: 'Подключаемся к игре…', yourRoll: 'Ваш бросок', yourMove: 'Ваш ход', theirRoll: 'Бросает {name}', theirMove: 'Ходит {name}', noMoves: 'Нет ходов: ход передан.',
     youWin: 'Вы выиграли!', youLose: 'Вы проиграли.', winner: 'Победил игрок {name}.', watching: 'Вы наблюдаете за игрой.', gameEnded: 'Партия закончена.', opponentResigned: '{name} сдался.', youResigned: 'Вы сдались.', rematchAsked: 'Ждём согласия соперника на ещё одну партию…', off: 'снято', bar: 'на баре', bearOff: 'Снять шашку' },
-  en: { title: 'Backgammon', newGame: 'New Game against the Computer', rematch: 'Rematch', resign: 'Resign', sound: 'Sound', roll: 'Roll',
+  en: { pips: 'pips', title: 'Backgammon', newGame: 'New Game against the Computer', rematch: 'Rematch', resign: 'Resign', sound: 'Sound', roll: 'Roll',
     rulesText: 'Bring all your checkers home and bear them off before your opponent. Light moves from point 24 to 1, dark from 1 to 24. Roll the dice and play the numbers. A lone checker can be hit: it goes to the bar and must come back in before any other move.',
     light: 'Light', dark: 'Dark', you: 'You', computer: 'Computer', waitJoin: 'Waiting for your opponent to join…', joining: 'Joining the game…', yourRoll: 'Your roll', yourMove: 'Your move', theirRoll: '{name} to roll', theirMove: '{name} to move', noMoves: 'No legal move: the turn passed.',
     youWin: 'You win!', youLose: 'You lose.', winner: '{name} wins.', watching: 'You are watching this game.', gameEnded: 'The game is over.', opponentResigned: '{name} resigned.', youResigned: 'You resigned.', rematchAsked: 'Waiting for your opponent to agree to a rematch…', off: 'off', bar: 'on the bar', bearOff: 'Bear off' },
@@ -204,7 +204,7 @@ function render() {
   html += `<div class="bg-dice">${G.shown.length ? G.shown.map(n => face(n, darkDice)).join('') : ''}</div>`;
   if (isMyTurn() && G.phase === 'roll') html += `<button type="button" class="bg-roll">${esc(t('roll'))}</button>`;
   // the right panel: names, checkers borne off, pips
-  const line = side => `<div class="bg-side ${tokens(side)}"><b>${esc(nameOf(side))}</b><span>${esc(t(side === 1 ? 'light' : 'dark'))}</span><span>${G.s.off[side]} ${esc(t('off'))}${G.s.bar[side] ? `, ${G.s.bar[side]} ${esc(t('bar'))}` : ''}</span><span>${pips(G.s, side)} pips</span></div>`;
+  const line = side => `<div class="bg-side ${tokens(side)}"><b>${esc(nameOf(side))}</b><span>${esc(t(side === 1 ? 'light' : 'dark'))}</span><span>${G.s.off[side]} ${esc(t('off'))}${G.s.bar[side] ? `, ${G.s.bar[side]} ${esc(t('bar'))}` : ''}</span><span>${pips(G.s, side)} ${esc(t('pips'))}</span></div>`;
   html += `<div class="bg-panel">${line(-1)}${line(1)}</div>`;
   if (targets.has('off')) html += `<button type="button" class="bg-off" data-off="1">${esc(t('bearOff'))}</button>`;
   $('#stage').innerHTML = html;

@@ -167,6 +167,7 @@ function applyText() {
   document.querySelectorAll('[data-menu]').forEach(button => { button.textContent = t(button.dataset.menu); });
   $('#minimize')?.setAttribute('aria-label', language === 'en' ? 'Minimize' : 'Свернуть');
   $('#close').setAttribute('aria-label', t('close'));
+  $('#mine-face')?.setAttribute('aria-label', t('new'));
   if (challenge.chat) { const note = $('#mine-challenge'); note.hidden = false; note.textContent = t('challenge'); }
 }
 const checkClassic = () => document.documentElement.classList.toggle('cp-classic-look', getComputedStyle(document.documentElement).getPropertyValue('--classic-raised').trim() !== '');
