@@ -30,6 +30,8 @@
     pump(); post({ cmd: 'sync' });
     window.addEventListener('storage', event => { if (event.key === key) { pumps += 1; pump(); } });
     setInterval(() => { pumps += 1; pump(); }, 2000);
+    // A stream that silently died would hide the others' entries: ask the chat window to fetch the log now and then.
+    setInterval(() => { if (!ended) post({ cmd: 'sync' }); }, 8000);
     setTimeout(() => { pumps += 3; pump(); }, 1200);
   };
   window.NetGame = api;
