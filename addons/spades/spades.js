@@ -9,19 +9,19 @@ const WORDS = {
     rulesText: 'Играют две пары: вы с партнёром напротив против двух других. Назовите, сколько взяток возьмёте. Козырь: пики. Пары получают 10 очков за назначенную взятку и по очку за лишнюю, а за недобор теряют 10 очков за каждую назначенную. «Ноль» даёт 100 очков, если не взять ни одной взятки, и штраф 100, если взять. Игра до 500 очков.',
     bidTitle: 'Сколько взяток вы возьмёте?', nil: 'Ноль', bidSays: 'заказ {n}', bidNil: 'ноль', won: 'взято {n}', waiting: 'Ждём ход игрока {name}...', yourMove: 'Выберите карту для хода.', yourBid: 'Ваш заказ: выберите число взяток.', waitingBid: 'Заказывает {name}...',
     follow: 'Нужно ходить в масть. Сыграйте {suit}.', spadesLocked: 'Пики ещё не открыты. Выберите другую масть.', club: 'трефу', diamond: 'бубну', heart: 'черву', spade: 'пику',
-    lobbyHost: 'Игроков подключилось: {n}. Нажмите F2 (или «Начать игру»): пустые места займут боты.', lobbyGuest: 'Ждём, когда хозяин начнёт игру…',
+    lobbyHost: 'Игроков подключилось: {n}. Нажмите F2 (или «Начать игру»): пустые места займут боты.', lobbyGuest: 'Ждём, когда хозяин начнёт игру…', watching: 'Вы наблюдаете за игрой.',
     optionsTitle: 'Параметры', playerName: 'Ваше имя:', soundOn: 'Звук', scoreTitle: 'Таблица очков', total: 'Итого', round: 'Раздача {n}', us: 'Мы', them: 'Они', bags: 'взяток сверх заказа: {n}',
     handOver: 'Раздача окончена', gameOverWin: 'Игра окончена. Ваша пара выиграла!\n\nСыграть ещё раз?', gameOverLose: 'Игра окончена. Победила другая пара.\n\nСыграть ещё раз?', next: 'Дальше', nilMade: 'Ноль удался: {name}', nilBroken: 'Ноль провален: {name}' },
   en: { title: 'Spades', newGame: 'New Game', startGame: 'Start Game', options: 'Options...', sound: 'Sound', score: 'Score...', you: 'You',
     rulesText: 'Two partnerships play: you and the player across from you against the other two. Bid how many tricks you will take. Spades are trump. A pair scores 10 points per bid trick and 1 for each extra, and loses 10 per bid trick if it falls short. A "nil" bid earns 100 points if you take no tricks and costs 100 if you do. The game goes to 500 points.',
     bidTitle: 'How many tricks will you take?', nil: 'Nil', bidSays: 'bid {n}', bidNil: 'nil', won: 'won {n}', waiting: 'Waiting for {name} to move...', yourMove: 'Select a card to play.', yourBid: 'Your bid: choose the number of tricks.', waitingBid: '{name} is bidding...',
     follow: 'You must follow suit. Play a {suit}.', spadesLocked: 'Spades have not been broken. Choose another suit.', club: 'club', diamond: 'diamond', heart: 'heart', spade: 'spade',
-    lobbyHost: 'Players joined: {n}. Press F2 (or Start Game): empty seats get bots.', lobbyGuest: 'Waiting for the host to start the game…',
+    lobbyHost: 'Players joined: {n}. Press F2 (or Start Game): empty seats get bots.', lobbyGuest: 'Waiting for the host to start the game…', watching: 'You are watching this game.',
     optionsTitle: 'Options', playerName: 'Your name:', soundOn: 'Sound', scoreTitle: 'Score Sheet', total: 'Total', round: 'Hand {n}', us: 'We', them: 'They', bags: 'bags: {n}',
     handOver: 'Hand over', gameOverWin: 'Game over. Your partnership wins!\n\nPlay again?', gameOverLose: 'Game over. The other partnership wins.\n\nPlay again?', next: 'Next', nilMade: 'Nil made: {name}', nilBroken: 'Nil broken: {name}' },
 };
-const online = net.online, host = online && net.isHost, guestMode = online && !net.isHost;
-let seats = [null, null, null, null], pendingJoin = [], readySeq = 0, lastEvent = 0, eventCounter = 0, lastSent = ['', '', '', ''];
+const online = net.online, host = online && net.isHost, guestMode = online && !net.isHost, spectator = guestMode && net.me < 0; // a spectator (the website) has a negative id
+let seats = [null, null, null, null], pendingJoin = [], readySeq = 0, lastEvent = 0, eventCounter = 0, lastSent = ['', '', '', ''], lastView = '';
 let S = null, token = 0, booted = false;
 const shell = window.CardShell.init({
   id: 'spades', words: WORDS,
@@ -201,15 +201,18 @@ function aiChoose(p) {
 
 // ---- drawing: the same table as Hearts ---------------------------------------------------------------------------
 const rotate = (list, v) => [0, 1, 2, 3].map(rp => list[(rp + v) % 4]);
-function snapshotFor(v) {
+function snapshotFor(v, hideAll = false) {
   const rel = p => (p - v + 4) % 4, mine = v % 2;
   return { round: S.round, phase: S.phase, turn: rel(S.turn), trick: S.trick.map(entry => ({ p: rel(entry.p), card: entry.card })), broken: S.broken, over: S.over,
-    hands: rotate(S.hands.map((hand, p) => (p === v ? hand : hand.map(() => ({})))), v), names: rotate(S.names, v), bids: rotate(S.bids, v), tricks: rotate(S.tricks, v),
+    hands: rotate(S.hands.map((hand, p) => (p === v && !hideAll ? hand : hand.map(() => ({})))), v), names: rotate(S.names, v), bids: rotate(S.bids, v), tricks: rotate(S.tricks, v),
     scores: [S.scores[mine], S.scores[1 - mine]], bags: [S.bags[mine], S.bags[1 - mine]], history: S.history.map(row => [row[mine], row[1 - mine]]),
     event: S.event ? { ...S.event, team: S.event.team >= 0 ? (S.event.team === mine ? 0 : 1) : -1, nils: (S.event.nils || []).map(n => ({ made: n.made, p: rel(n.p) })) } : null };
 }
 function pushStates() {
   for (let p = 1; p < 4; p += 1) if (seats[p]) { const snap = snapshotFor(p), text = JSON.stringify(snap); if (text !== lastSent[p]) { lastSent[p] = text; net.send('state', snap, [seats[p].id]); } }
+  // For spectators: the table as seen from the host's seat, every hand hidden (not addressed to anybody, so the server shows it to spectators).
+  const view = snapshotFor(0, true), viewText = JSON.stringify(view);
+  if (viewText !== lastView) { lastView = viewText; net.send('view', view); }
 }
 function guestSnapshot(snap, live) {
   S = { ...snap, message: '', lobby: false };
@@ -223,6 +226,7 @@ function renderLobby() {
   $('#status').innerHTML = `<span>${esc(host ? t('lobbyHost', { n: pendingJoin.length }) : t('lobbyGuest'))}</span>`;
 }
 function statusText() {
+  if (spectator) return S.phase === 'bid' ? t('waitingBid', { name: playerName(S.turn) }) : S.trick.length === 4 ? '' : t('waiting', { name: playerName(S.turn) });
   if (S.phase === 'bid') return S.turn === 0 ? t('yourBid') : t('waitingBid', { name: playerName(S.turn) });
   if (S.trick.length === 4) return '';
   return S.turn === 0 ? (S.message || t('yourMove')) : t('waiting', { name: playerName(S.turn) });
@@ -242,7 +246,8 @@ function render() {
   };
   const my = S.hands[0], step = Math.min(28, (W - 60 - CARD.width) / 12), x0 = (W - (12 * step + CARD.width)) / 2, y0 = H - CARD.height - 16;
   const canPlay = card => S.phase === 'play' && S.turn === 0 && !check(0, card);
-  my.forEach((card, i) => add(`card mine${canPlay(card) ? '' : ' disabled'}`, x0 + i * step, y0, i + 1, { i }, cardOffset(cardIndex(card))));
+  if (spectator) my.forEach((_, i) => add('card back', x0 + i * step, y0, i + 1, {}, backOffset(options.back)));
+  else my.forEach((card, i) => add(`card mine${canPlay(card) ? '' : ' disabled'}`, x0 + i * step, y0, i + 1, { i }, cardOffset(cardIndex(card))));
   const backs = options.back, sideTop = (H - (12 * 16 + CARD.height)) / 2;
   S.hands[2].forEach((_, i) => add('card back', (W - (S.hands[2].length - 1) * 16 - CARD.width) / 2 + i * 16, 12, i + 1, {}, backOffset(backs)));
   S.hands[1].forEach((_, i) => add('card back', 14, sideTop + i * 16, i + 1, {}, backOffset(backs)));
@@ -256,7 +261,7 @@ function render() {
   label(playerName(0), cx, y0 - 22, turnAt(0), 'center'); tag(0, cx, y0 - 8, 'center');
   nodes.push(`<div class="sp-score">${esc(t('us'))}: <b>${S.scores[0]}</b> (${esc(t('bags', { n: S.bags[0] }))})<br>${esc(t('them'))}: <b>${S.scores[1]}</b> (${esc(t('bags', { n: S.bags[1] }))})</div>`);
   table.innerHTML = nodes.join('');
-  if (S.phase === 'bid' && S.turn === 0 && S.bids[0] === null && !S.over) {
+  if (S.phase === 'bid' && S.turn === 0 && S.bids[0] === null && !S.over && !spectator) {
     const panel = document.createElement('div'); panel.className = 'sp-bid'; panel.style.left = `${Math.round(cx)}px`; panel.style.top = `${Math.round(cy)}px`;
     panel.innerHTML = `<b>${esc(t('bidTitle'))}</b><button type="button" class="nil" data-bid="0">${esc(t('nil'))}</button>${Array.from({ length: 13 }, (_, i) => `<button type="button" data-bid="${i + 1}">${i + 1}</button>`).join('')}`;
     panel.onclick = event => { const b = event.target.closest('[data-bid]'); if (b) humanBid(Number(b.dataset.bid)); };
@@ -282,7 +287,7 @@ table.addEventListener('pointerdown', event => {
 
 // ---- online: the host answers the friends' entries; a friend's window only shows snapshots --------------------------
 function onNetEntry(entry, live) {
-  if (guestMode) { if (entry.kind === 'state' && entry.from === net.hostId) guestSnapshot(entry.payload, live); return; }
+  if (guestMode) { if (entry.kind === (spectator ? 'view' : 'state') && entry.from === net.hostId) guestSnapshot(entry.payload, live); return; }
   if (!live) return;
   const seat = seats.findIndex(item => item && item.id === entry.from);
   if (entry.kind === 'join') {
@@ -299,4 +304,4 @@ function onNetEntry(entry, live) {
   }
 }
 newGame();
-if (online) net.connect({ onEntry: onNetEntry, onReady: () => { readySeq = net.seq(); if (guestMode) net.send('join'); } });
+if (online) net.connect({ onEntry: onNetEntry, onReady: () => { readySeq = net.seq(); if (guestMode && !spectator) net.send('join'); } });

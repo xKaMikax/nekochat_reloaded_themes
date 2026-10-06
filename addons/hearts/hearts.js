@@ -4,22 +4,22 @@ const { CARD, cardOffset, backOffset, store } = window.CardShell;
 const WORDS = {
   ru: { title: 'Червы', newGame: 'Новая игра', options: 'Параметры...', sound: 'Звук', score: 'Счёт...', you: 'Вы',
     rulesText: 'Берите как можно меньше взяток с червами и не берите даму пик (13 очков). Каждая черва стоит 1 очко. Если взять все черви и даму пик, остальные получат по 26. Игра заканчивается, когда у кого-то 100 очков. Выигрывает тот, у кого их меньше.',
-    lobbyHost: 'Игроков подключилось: {n}. Нажмите F2 (или «Начать игру»): пустые места займут боты.', lobbyGuest: 'Ждём, когда хозяин начнёт игру…', startGame: 'Начать игру', hostLeft: 'Ждём ход хозяина игры…', passLeft: 'Влево', passRight: 'Вправо', passAcross: 'Напротив', passSelect: 'Выберите три карты, чтобы передать игроку {name}.', passWait: 'Нажмите кнопку, чтобы передать карты.',
+    lobbyHost: 'Игроков подключилось: {n}. Нажмите F2 (или «Начать игру»): пустые места займут боты.', lobbyGuest: 'Ждём, когда хозяин начнёт игру…', watching: 'Вы наблюдаете за игрой.', startGame: 'Начать игру', hostLeft: 'Ждём ход хозяина игры…', passLeft: 'Влево', passRight: 'Вправо', passAcross: 'Напротив', passSelect: 'Выберите три карты, чтобы передать игроку {name}.', passWait: 'Нажмите кнопку, чтобы передать карты.',
     yourMove: 'Выберите карту для хода.', waiting: 'Ждём ход игрока {name}...', follow: 'Нужно ходить в масть. Сыграйте {suit}.', notBroken: 'Червы ещё не открыты. Выберите другую масть.', lead2c: 'Нужно ходить двойкой треф.', firstPoint: 'В первой взятке нельзя класть очковую карту. Выберите другую.',
     club: 'трефу', diamond: 'бубну', heart: 'черву', spade: 'пику',
     optionsTitle: 'Параметры', playerName: 'Ваше имя:', soundOn: 'Звук', scoreTitle: 'Таблица очков', total: 'Итого', round: 'Кон {n}', moon: '{name} взял всё: «Луна»! Остальные получают по 26.',
     gameOver: 'Игра окончена. Победитель: {name}.\n\nСыграть ещё раз?', gameOverWin: 'Игра окончена. Вы выиграли!\n\nСыграть ещё раз?', next: 'Дальше' },
   en: { title: 'Hearts', newGame: 'New Game', options: 'Options...', sound: 'Sound', score: 'Score...', you: 'You',
     rulesText: 'Take as few tricks with hearts as you can, and avoid the queen of spades (13 points). Each heart is 1 point. If you take every heart and the queen of spades, the others get 26 each. The game ends when someone reaches 100 points. The lowest score wins.',
-    lobbyHost: 'Players joined: {n}. Press F2 (or Start Game): empty seats get bots.', lobbyGuest: 'Waiting for the host to start the game…', startGame: 'Start Game', hostLeft: 'Waiting for the host…', passLeft: 'Pass Left', passRight: 'Pass Right', passAcross: 'Pass Across', passSelect: 'Select three cards to pass to {name}.', passWait: 'Click the button to pass the cards.',
+    lobbyHost: 'Players joined: {n}. Press F2 (or Start Game): empty seats get bots.', lobbyGuest: 'Waiting for the host to start the game…', watching: 'You are watching this game.', startGame: 'Start Game', hostLeft: 'Waiting for the host…', passLeft: 'Pass Left', passRight: 'Pass Right', passAcross: 'Pass Across', passSelect: 'Select three cards to pass to {name}.', passWait: 'Click the button to pass the cards.',
     yourMove: 'Select a card to play.', waiting: 'Waiting for {name} to move...', follow: 'You must follow suit. Play a {suit}.', notBroken: 'Hearts has not been broken. Choose another suit.', lead2c: 'You must lead the two of clubs.', firstPoint: 'You cannot play a point card on the first trick. Select again.',
     club: 'club', diamond: 'diamond', heart: 'heart', spade: 'spade',
     optionsTitle: 'Options', playerName: 'Your name:', soundOn: 'Sound', scoreTitle: 'Score Sheet', total: 'Total', round: 'Hand {n}', moon: '{name} took everything: shooting the moon! The others get 26.',
     gameOver: 'Game over. {name} wins.\n\nDo you want to play again?', gameOverWin: 'Game over. You win!\n\nDo you want to play again?', next: 'Next' },
 };
 const net = window.NetGame;
-const online = net.online, host = online && net.isHost, guestMode = online && !net.isHost;
-let seats = [null, null, null, null], pendingJoin = [], readySeq = 0, lastEvent = 0, eventCounter = 0, lastSent = ['', '', '', ''];
+const online = net.online, host = online && net.isHost, guestMode = online && !net.isHost, spectator = guestMode && net.me < 0; // a spectator (the website) has a negative id
+let seats = [null, null, null, null], pendingJoin = [], readySeq = 0, lastEvent = 0, eventCounter = 0, lastSent = ['', '', '', ''], lastView = '';
 let S = null, token = 0, animation = null;
 const shell = window.CardShell.init({
   id: 'hearts', words: WORDS,
@@ -190,15 +190,18 @@ function aiChoose(p) {
 // Drawing
 // A friend's window shows what the host sends: their hand and the table as seen from their seat.
 const rotate = (list, v) => [0, 1, 2, 3].map(rp => list[(rp + v) % 4]);
-function snapshotFor(v) {
+function snapshotFor(v, hideAll = false) {
   const rel = p => (p - v + 4) % 4;
   return { round: S.round, phase: S.phase, passDir: S.passDir, turn: rel(S.turn), trick: S.trick.map(entry => ({ p: rel(entry.p), card: entry.card })), broken: S.broken, first: S.first, over: S.over,
-    hands: rotate(S.hands.map((hand, p) => (p === v ? hand : hand.map(() => ({})))), v), names: rotate(S.names, v), scores: rotate(S.scores, v), history: S.history.map(row => rotate(row, v)),
+    hands: rotate(S.hands.map((hand, p) => (p === v && !hideAll ? hand : hand.map(() => ({})))), v), names: rotate(S.names, v), scores: rotate(S.scores, v), history: S.history.map(row => rotate(row, v)),
     passed: rotate([0, 1, 2, 3].map(p => Boolean(S.passes?.[p])), v),
     event: S.event ? { ...S.event, moon: S.event.moon >= 0 ? rel(S.event.moon) : -1, winner: S.event.winner >= 0 ? rel(S.event.winner) : -1 } : null };
 }
 function pushStates() {
   for (let p = 1; p < 4; p += 1) if (seats[p]) { const snap = snapshotFor(p), text = JSON.stringify(snap); if (text !== lastSent[p]) { lastSent[p] = text; net.send('state', snap, [seats[p].id]); } }
+  // For spectators: the table as seen from the host's seat, every hand hidden (not addressed to anybody, so the server shows it to spectators).
+  const view = snapshotFor(0, true), viewText = JSON.stringify(view);
+  if (viewText !== lastView) { lastView = viewText; net.send('view', view); }
 }
 function guestSnapshot(snap, live) {
   const changed = !S || S.phase !== snap.phase || S.round !== snap.round;
@@ -208,6 +211,7 @@ function guestSnapshot(snap, live) {
 }
 function guestMessage() {
   if (S.over) return '';
+  if (spectator) return S.turn >= 0 && S.phase === 'play' ? t('waiting', { name: playerName(S.turn) }) : t('watching');
   if (S.phase === 'pass') return passedFlags()[0] ? t('passWait') : S.selected.size === 3 ? t('passWait') : t('passSelect', { name: playerName(passTarget(0)) });
   return S.turn === 0 ? t('yourMove') : t('waiting', { name: playerName(S.turn) });
 }
@@ -226,7 +230,8 @@ function render() {
   const add = (className, x, y, z, data, position) => nodes.push(`<div class="${className}" ${Object.entries(data).map(([k, v]) => `data-${k}="${v}"`).join(' ')} style="left:${Math.round(x)}px;top:${Math.round(y)}px;z-index:${z};background-position:${position}"></div>`);
   const label = (text, x, y, turn, align = 'left') => nodes.push(`<span class="hh-name${turn ? ' turn' : ''}" style="left:${Math.round(x)}px;top:${Math.round(y)}px;${align === 'center' ? 'transform:translateX(-50%)' : align === 'right' ? 'transform:translateX(-100%)' : ''}">${esc(text)}</span>`);
   const my = S.hands[0], step = Math.min(28, (W - 60 - CARD.width) / 12), x0 = (W - (12 * step + CARD.width)) / 2, y0 = H - CARD.height - 16;
-  my.forEach((card, i) => add(`card mine${S.phase === 'play' && S.turn === 0 && !check(0, card) ? '' : ' disabled'}`, x0 + i * step, y0 - (S.selected.has(i) ? 18 : 0), i + 1, { i }, cardOffset(cardIndex(card))));
+  if (spectator) my.forEach((_, i) => add('card back', x0 + i * step, y0, i + 1, {}, backOffset(options.back)));
+  else my.forEach((card, i) => add(`card mine${S.phase === 'play' && S.turn === 0 && !check(0, card) ? '' : ' disabled'}`, x0 + i * step, y0 - (S.selected.has(i) ? 18 : 0), i + 1, { i }, cardOffset(cardIndex(card))));
   const backs = options.back;
   S.hands[2].forEach((_, i) => add('card back', (W - (S.hands[2].length - 1) * 16 - CARD.width) / 2 + i * 16, 12, i + 1, {}, backOffset(backs)));
   const sideTop = (H - ((13 - 1) * 16 + CARD.height)) / 2;
@@ -239,7 +244,7 @@ function render() {
   label(playerName(3), W - 14, sideTop - 20, S.turn === 3 && S.phase === 'play', 'right');
   label(playerName(0), cx, y0 - 22, S.turn === 0 && S.phase === 'play', 'center');
   table.innerHTML = nodes.join('');
-  if (S.phase === 'pass') {
+  if (S.phase === 'pass' && !spectator) {
     const button = document.createElement('button'); button.type = 'button'; button.className = 'hh-pass'; button.textContent = t(['passLeft', 'passRight', 'passAcross'][S.passDir]); button.disabled = S.selected.size !== 3 || passedFlags()[0];
     button.style.left = `${Math.round(cx - 45)}px`; button.style.top = `${Math.round(cy - 10)}px`; button.onclick = humanPass; table.append(button);
   }
@@ -263,7 +268,7 @@ function stopAnimation() { animation?.stop(); animation = null; }
 
 // Online: the host runs the game and answers the friends' entries; a friend's window only shows snapshots.
 function onNetEntry(entry, live) {
-  if (guestMode) { if (entry.kind === 'state' && entry.from === net.hostId) guestSnapshot(entry.payload, live); return; }
+  if (guestMode) { if (entry.kind === (spectator ? 'view' : 'state') && entry.from === net.hostId) guestSnapshot(entry.payload, live); return; }
   if (!live) return; // the host does not replay an older game
   const seat = seats.findIndex(item => item && item.id === entry.from);
   if (entry.kind === 'join') {
@@ -282,4 +287,4 @@ function onNetEntry(entry, live) {
   }
 }
 newGame();
-if (online) net.connect({ onEntry: onNetEntry, onReady: () => { readySeq = net.seq(); if (guestMode) net.send('join'); } });
+if (online) net.connect({ onEntry: onNetEntry, onReady: () => { readySeq = net.seq(); if (guestMode && !spectator) net.send('join'); } });
