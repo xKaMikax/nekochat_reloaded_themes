@@ -50,7 +50,7 @@
   wait.addEventListener('click', event => {
     const action = event.target.closest('[data-do]')?.dataset.do; if (!action) return;
     if (action === 'start' && vs.players.size >= 2) net.send('start', { players: [...vs.players.keys()] });
-    if (action === 'alone') { vs.active = false; wait.hidden = true; bar.hidden = true; call('nk_command', [1]); }
+    if (action === 'alone') { vs.active = false; vs.alone = true; wait.hidden = true; bar.hidden = true; call('nk_command', [1]); }   // alone: the ball and the score still go to the session, spectators see them
     if (action === 'close') controls.close();
   });
   vs.active = true;
@@ -148,7 +148,7 @@
     return { scale, ox: (box.width - cw * scale) / 2, oy: (box.height - ch * scale) / 2 };
   }
   function sampleMine() {
-    if (vs.phase !== 'play' || !call('nk_ball_count')) return;
+    if ((vs.phase !== 'play' && !vs.alone) || !call('nk_ball_count')) return;
     const v = view(); if (!v) return;
     const x = call('nk_ball_info', [0, 0]) / v.vw, y = call('nk_ball_info', [0, 1]) / v.vh, d = call('nk_ball_info', [0, 2]) / v.vw;
     const score = call('nk_score_now'); const key = `${x.toFixed(3)},${y.toFixed(3)},${score}`;
@@ -165,6 +165,7 @@
     let item; try { item = JSON.parse(event.newValue); } catch { return; }
     const id = Number(item.from); if (!id || id === Number(net.me)) return;
     addPlayer(id, item.name); const player = vs.players.get(id); const p = item.payload || {};
+    if (spectator) { if (vs.phase === 'lobby') { vs.phase = 'play'; wait.hidden = true; } if (!vs.order.includes(id)) vs.order.push(id); }   // somebody plays (with or without a start)
     if (typeof p.s === 'number') player.live = p.s;
     if (typeof p.x === 'number') { const g = ghosts.get(id) || {}; g.target = { x: p.x, y: p.y, d: p.d || .035, at: Date.now() }; if (!g.shown) g.shown = { ...g.target }; ghosts.set(id, g); }
     renderBar(); if (vs.phase === 'finished') renderStandings();
@@ -222,7 +223,7 @@
     if (!vs.active || vs.phase === 'lobby') return;
     const dot = id => { const color = vs.colors.get(id); return `<span class="dot" style="background:${valid(color) ? color : 'radial-gradient(circle at 35% 30%, #bbb, #333 55%, #000)'}"></span>`; };
     bar.hidden = false;
-    bar.innerHTML = `<b>${esc(s('versus', { names: othersNames() }))}</b><span class="grow"></span>`
+    bar.innerHTML = `<b>${esc(spectator ? othersNames() : s('versus', { names: othersNames() }))}</b><span class="grow"></span>`
       + others().map(id => { const player = vs.players.get(id); return `<span>${dot(id)} ${esc(player?.name || '…')}: ${esc(number(player && player.final !== null ? player.final : (player?.live || 0)))}</span>`; }).join(' ');
   }
   booted = true; if (spectatorStart) beginSpectator(spectatorStart);
