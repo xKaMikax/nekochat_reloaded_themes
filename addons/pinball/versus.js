@@ -28,6 +28,9 @@
   const valid = color => /^#[0-9a-f]{6}$/i.test(String(color || ''));
   const hostId = () => Number(net.hostId) || (net.isHost ? net.me : 0);
   const iAmHost = () => hostId() === Number(net.me);
+  // A spectator (the website, or Watch games) has a negative id no player has: the table stays idle and shows everybody's balls.
+  const spectator = Number(net.me) < 0;
+  let booted = false, spectatorStart = null;
 
   // ---- the lobby ------------------------------------------------------------------------------------------------
   function addPlayer(id, name) {
@@ -37,6 +40,7 @@
   }
   function renderLobby() {
     if (vs.phase !== 'lobby') return;
+    if (spectator) { wait.hidden = true; return; }
     const names = [...vs.players.values()].map(player => player.name || '…');
     const host = iAmHost();
     const buttons = host ? [['start', s('start')], ['alone', s('alone')], ['close', s('close')]] : [['close', s('close')]];
@@ -50,7 +54,7 @@
     if (action === 'close') controls.close();
   });
   vs.active = true;
-  addPlayer(net.me, net.name);
+  if (!spectator) addPlayer(net.me, net.name);
   if (hostId()) addPlayer(hostId(), net.isHost ? net.name : net.hostName);
 
   function onEntry(entry, ready) {
@@ -60,7 +64,8 @@
     if (entry.kind === 'join') { addPlayer(from, entry.name); renderLobby(); }
     else if (entry.kind === 'start' && from === hostId()) {
       const ids = Array.isArray(payload.players) ? payload.players.map(Number) : [...vs.players.keys()];
-      if (ready === false) vs.startedBefore = true; else begin(ids);   // a start in the history: the game began before this window opened
+      if (spectator) { if (booted) beginSpectator(ids); else spectatorStart = ids; }
+      else if (ready === false) vs.startedBefore = true; else begin(ids);   // a start in the history: the game began before this window opened
     }
     else if (entry.kind === 'final' && vs.phase !== 'lobby') { const player = vs.players.get(from); if (player && player.final === null) { player.final = Number(payload.score) || 0; afterFinal(); } }
     else if (entry.kind === 'left' && vs.phase !== 'lobby') { const player = vs.players.get(from); if (player && player.final === null) { player.final = player.live || 0; player.left = true; afterFinal(); } }
@@ -68,7 +73,14 @@
   }
   net.connect({ onEntry, onReady: () => { if (vs.startedBefore && vs.phase === 'lobby') { vs.phase = 'late'; wait.hidden = false; wait.innerHTML = `<div>${esc(s('late'))}</div><div><button type="button" data-do="alone">${esc(s('alone'))}</button> <button type="button" data-do="close">${esc(s('close'))}</button></div>`; return; } if (!iAmHost() && vs.phase === 'lobby') net.send('join'); renderLobby(); }, onEnd: () => {} });
   renderLobby();
-  window.addEventListener('pagehide', () => { if (vs.active && (vs.phase === 'play' || vs.phase === 'countdown') && vs.myFinal === null) net.send('left'); });
+  window.addEventListener('pagehide', () => { if (!spectator && vs.active && (vs.phase === 'play' || vs.phase === 'countdown') && vs.myFinal === null) net.send('left'); });
+
+  // A spectator: no countdown and no ball of his own; the others' balls are drawn over the idle table.
+  function beginSpectator(ids) {
+    vs.order = ids.map(Number); vs.phase = 'play'; vs.votes = new Set();
+    for (const id of vs.order) { addPlayer(id); const player = vs.players.get(id); player.final = null; player.left = false; player.live = 0; ghosts.delete(id); }
+    wait.hidden = true; renderBar();
+  }
 
   // ---- the start -----------------------------------------------------------------------------------------------
   function begin(ids) {
@@ -213,4 +225,5 @@
     bar.innerHTML = `<b>${esc(s('versus', { names: othersNames() }))}</b><span class="grow"></span>`
       + others().map(id => { const player = vs.players.get(id); return `<span>${dot(id)} ${esc(player?.name || '…')}: ${esc(number(player && player.final !== null ? player.final : (player?.live || 0)))}</span>`; }).join(' ');
   }
+  booted = true; if (spectatorStart) beginSpectator(spectatorStart);
 })();
