@@ -134,6 +134,7 @@ async function endHand() {
   S.history.push([S.scores[0] - before[0], S.scores[1] - before[1]]);
   const finished = S.scores.some(score => score >= 500) || S.scores.some(score => score <= -200);
   const winnerTeam = finished ? (S.scores[0] >= S.scores[1] ? 0 : 1) : -1;
+  if (finished) S.over = true;   // nothing more can be played; a new game starts from newGame()
   S.event = { id: ++eventCounter, type: finished ? 'over' : 'round', team: winnerTeam, nils: results.flatMap(r => r.nils) };
   S.message = ''; render();
   await handDialog(S.event, 0, my);

@@ -97,10 +97,13 @@ $('#image-file').onchange = async () => {
   const file = $('#image-file').files[0]; $('#image-file').value = ''; if (!file || !replacing) return;
   const name = replacing; replacing = null;
   // Stored as PNG whatever the source format, so saved themes only hold PNG pictures.
-  const bitmap = await createImageBitmap(file);
-  const canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height; canvas.getContext('2d').drawImage(bitmap, 0, 0);
-  const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-  const data = new Uint8Array(await blob.arrayBuffer()); const dataUrl = canvas.toDataURL('image/png');
+  let bitmap, canvas, data, dataUrl;
+  try {
+    bitmap = await createImageBitmap(file);
+    canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height; canvas.getContext('2d').drawImage(bitmap, 0, 0);
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    data = new Uint8Array(await blob.arrayBuffer()); dataUrl = canvas.toDataURL('image/png');
+  } catch (error) { status(String(error?.message || error), true); return; }   // not a picture the browser can read
   const original = declarations.find(item => item.name === name);
   const old = await new Promise(resolve => { const img = new Image(); img.onload = () => resolve(img); img.onerror = () => resolve(null); img.src = urlOf(original.value); });
   images.set(name, { data, dataUrl }); changed(); renderList();
