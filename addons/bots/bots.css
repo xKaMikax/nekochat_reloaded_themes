@@ -32,17 +32,10 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background:
 .bots-dialog input[readonly] { width: 100%; font-family: Consolas, monospace; }
 
 /* Layout like an XP Explorer window: a task pane on the left, details on the right, a status bar. */
-.bots-split { display: flex; flex: 1; min-height: 0; gap: 10px; }
-.bots-side { display: flex; flex: none; width: 210px; flex-direction: column; gap: 10px; min-height: 0; }
-.bots-box { overflow: hidden; border-radius: 4px 4px 0 0; background: color-mix(in srgb, var(--xp-theme-highlight, #316ac5) 14%, #fff); }
-.bots-box h2 { margin: 0; padding: 5px 8px; background: linear-gradient(90deg, #fff, color-mix(in srgb, var(--xp-theme-highlight, #316ac5) 30%, #fff)); color: var(--xp-theme-highlight, #215dc6); font-size: 11px; font-weight: bold; }
-.bots-box-body { display: flex; flex-direction: column; gap: 3px; padding: 8px 8px 10px; }
-.bots-link { display: flex; align-items: center; gap: 6px; color: var(--xp-theme-highlight, #215dc6); cursor: pointer; }
-.bots-link:hover span, .bots-link:focus-visible span { text-decoration: underline; }
-.bots-link[hidden] { display: none; }
-.bots-glyph { display: inline-grid; place-items: center; flex: none; width: 16px; height: 16px; border-radius: 50%; background: var(--xp-theme-highlight, #215dc6); color: var(--xp-theme-highlighttext, #fff); font: bold 11px/1 Tahoma, sans-serif; font-style: normal; }
-.bots-box-list { display: flex; flex: 1; min-height: 0; flex-direction: column; }
-.bots-list-wrap { flex: 1; min-height: 0; overflow: auto; margin: 0 1px 1px; border: 1px solid #7f9db9; background: #fff; }
+.bots-split { display: flex; flex: 1; min-height: 0; gap: 8px; }
+.bots-list-wrap { flex: none; width: 210px; overflow: auto; border: 1px solid #7f9db9; background: #fff; }
+.bots-toolbar { display: flex; flex: none; gap: 6px; }
+.bots-spacer { flex: 1; }
 .bots-list-wrap .bots-table td { padding: 3px 6px; border-bottom: 0; }
 .bots-list-wrap .bots-table tr[data-id] { cursor: default; }
 .bots-list-wrap .bots-table tr[data-id]:hover td { background: color-mix(in srgb, var(--xp-theme-highlight, #316ac5) 12%, #fff); }
