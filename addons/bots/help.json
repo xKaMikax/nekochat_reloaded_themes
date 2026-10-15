@@ -1,0 +1,125 @@
+{
+ "title": {
+  "ru": "Боты",
+  "en": "Bots"
+ },
+ "first": "bots-overview",
+ "books": {
+  "ru": [
+   {
+    "title": "Боты",
+    "topics": [
+     {
+      "id": "bots-overview",
+      "title": "Общие сведения о Ботах",
+      "keys": [
+       "бот",
+       "bot api",
+       "токен"
+      ],
+      "html": "<h1>Общие сведения о Ботах</h1><p>Бот — обычный пользователь Nekochat с флагом бота. Вместо пароля у него долгоживущий токен. Токен подходит везде, где сервер ждёт обычный токен входа, поэтому бот ходит по тому же протоколу, что и клиент.</p><p>В этом окне вы создаёте ботов своего аккаунта, выпускаете и отзываете их токены и подключаете вебхуки. То же самое делает страница <b>/devpanel</b> на сервере.</p><p>Сообщения ботов в чате помечены меткой «БОТ», а ИИ сервера @neko — меткой «ИИ».</p>",
+      "related": [
+       "bots-create",
+       "bots-tokens",
+       "bots-webhooks"
+      ]
+     },
+     {
+      "id": "bots-create",
+      "title": "Создание бота",
+      "keys": [
+       "создать",
+       "имя бота"
+      ],
+      "html": "<h1>Создание бота</h1><p>Войдите своим аккаунтом Nekochat и нажмите «Новый бот». Имя бота — от 3 до 32 символов: буквы, цифры, «_», «.» и «-».</p><p>Сразу после создания показывается токен. <b>Скопируйте его сразу</b>: потом он не показывается. Если токен потерян, выпустите новый и отзовите старый.</p><p>На аккаунт можно завести ограниченное число ботов, предел задаёт сервер.</p>",
+      "related": [
+       "bots-tokens"
+      ]
+     },
+     {
+      "id": "bots-tokens",
+      "title": "Токены",
+      "keys": [
+       "токен",
+       "отозвать"
+      ],
+      "html": "<h1>Токены</h1><p>Токен передают так же, как обычный: заголовком <code>Authorization: Bearer nkc_bot_…</code> или в адресе сокета <code>/ws?token=…</code>.</p><p>Токен — секрет: не кладите его в публичный репозиторий. Если он утёк, нажмите «Отозвать»: бот с этим токеном перестанет работать.</p>",
+      "related": [
+       "bots-webhooks"
+      ]
+     },
+     {
+      "id": "bots-webhooks",
+      "title": "Вебхуки",
+      "keys": [
+       "вебхук",
+       "подпись"
+      ],
+      "html": "<h1>Вебхуки</h1><p>Вебхук нужен боту без постоянного соединения: сервер сам отправляет ему события запросом POST.</p><p>Укажите адрес и, при желании, типы событий через запятую (например <code>room_message,direct_message</code>); пусто — все события. Секрет показывается один раз: им подписан каждый вызов (<code>X-Neko-Signature: sha256=HMAC-SHA256</code>).</p><p>Кнопка «Проверить» отправляет тестовый вызов, а в таблице видно статус последней доставки.</p>",
+      "related": [
+       "bots-tokens"
+      ]
+     }
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Bots",
+    "topics": [
+     {
+      "id": "bots-overview",
+      "title": "About Bots",
+      "keys": [
+       "bot",
+       "bot api",
+       "token"
+      ],
+      "html": "<h1>About Bots</h1><p>A bot is an ordinary Nekochat user with a bot flag. Instead of a password it has a long-lived token. The token works wherever the server expects a normal sign-in token, so a bot uses the same protocol as the client.</p><p>In this window you create bots of your account, issue and revoke their tokens and connect webhooks. The <b>/devpanel</b> page of the server does the same.</p><p>Messages of bots are marked BOT in the chat, and the server's AI @neko is marked AI.</p>",
+      "related": [
+       "bots-create",
+       "bots-tokens",
+       "bots-webhooks"
+      ]
+     },
+     {
+      "id": "bots-create",
+      "title": "Creating a bot",
+      "keys": [
+       "create",
+       "bot name"
+      ],
+      "html": "<h1>Creating a bot</h1><p>Sign in with your Nekochat account and click “New bot”. A bot name is 3 to 32 characters: letters, digits, “_”, “.” and “-”.</p><p>The token is shown right after creation. <b>Copy it at once</b>: it is not shown again. If you lose it, issue a new one and revoke the old one.</p><p>An account can have a limited number of bots; the server sets the limit.</p>",
+      "related": [
+       "bots-tokens"
+      ]
+     },
+     {
+      "id": "bots-tokens",
+      "title": "Tokens",
+      "keys": [
+       "token",
+       "revoke"
+      ],
+      "html": "<h1>Tokens</h1><p>A token is passed like a normal one: the header <code>Authorization: Bearer nkc_bot_…</code> or the socket address <code>/ws?token=…</code>.</p><p>A token is a secret: never put it in a public repository. If it leaks, click “Revoke”: the bot using that token stops working.</p>",
+      "related": [
+       "bots-webhooks"
+      ]
+     },
+     {
+      "id": "bots-webhooks",
+      "title": "Webhooks",
+      "keys": [
+       "webhook",
+       "signature"
+      ],
+      "html": "<h1>Webhooks</h1><p>A webhook is for a bot without a constant connection: the server sends it events with a POST request.</p><p>Give the address and, if you like, event types separated by commas (for example <code>room_message,direct_message</code>); empty means all events. The secret is shown once: every call is signed with it (<code>X-Neko-Signature: sha256=HMAC-SHA256</code>).</p><p>“Test” sends a test call, and the table shows the status of the last delivery.</p>",
+      "related": [
+       "bots-tokens"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

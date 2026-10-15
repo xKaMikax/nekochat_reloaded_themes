@@ -2249,6 +2249,26 @@
       ]
     },
     {
+      "pack_id": "bots-addon",
+      "type": "addons",
+      "directory": "addons/bots",
+      "DisplayName": "Bots",
+      "Files": [
+        "Preview.png",
+        "addon.json",
+        "bots.css",
+        "bots.html",
+        "bots.js",
+        "help.json",
+        "icon.png"
+      ],
+      "Details": {
+        "Author": "Nekochat Reloaded Team",
+        "Version": "1.0",
+        "Added": "2026-10-15"
+      }
+    },
+    {
       "pack_id": "solitaire-addon",
       "type": "addons",
       "directory": "addons/solitaire",

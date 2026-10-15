@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="{{APP}}">
+  <title>Nekochat Reloaded Bots</title><link id="frame-style" rel="stylesheet" href="assets/css/style.css"><link id="frame-theme" rel="stylesheet" href="data:text/css,"><link rel="stylesheet" href="assets/css/theme-settings.css"><link rel="stylesheet" href="{{ADDON}}bots.css"><link rel="stylesheet" href="assets/css/theme-controls.css">
+{{BRIDGE}}
+</head>
+<body>
+  <div class="xp-window settings-window bots-window">
+    <header class="xp-titlebar"><span class="xp-app-icon has-icon" style="background-image:url('{{ADDON}}icon.png')"></span><span class="xp-title" id="bots-title">Боты</span><div class="xp-window-controls"><button id="minimize" aria-label="Свернуть"></button><button id="maximize" aria-label="Развернуть"></button><button id="close" aria-label="Закрыть"></button></div></header>
+    <div class="xp-body-frame"><i class="xp-side xp-side-left"></i><main class="properties bots">
+      <form class="bots-login" id="bots-login">
+        <h1 data-t="loginTitle">Вход</h1>
+        <p data-t="loginHint">Войдите своим аккаунтом Nekochat: боты принадлежат аккаунту.</p>
+        <p class="bots-server" id="bots-server"></p>
+        <label><span data-t="username">Имя пользователя</span><input id="bots-username" autocomplete="username" required></label>
+        <label><span data-t="password">Пароль</span><input id="bots-password" type="password" autocomplete="current-password" required></label>
+        <div class="bots-actions"><button type="submit" data-t="signIn">Войти</button></div>
+        <p class="bots-error" id="bots-login-error" role="alert"></p>
+      </form>
+      <section class="bots-panel" id="bots-panel" hidden>
+        <div class="bots-toolbar"><button type="button" id="bots-new" data-t="newBot">＋ Новый бот</button><button type="button" id="bots-refresh" data-t="refresh">Обновить</button><span class="bots-spacer"></span><button type="button" id="bots-help" data-t="help">Справка</button><button type="button" id="bots-logout" data-t="logout">Выйти</button></div>
+        <div class="bots-split">
+          <div class="bots-list-wrap"><table class="bots-table" id="bots-list"></table></div>
+          <div class="bots-detail" id="bots-detail"></div>
+        </div>
+        <p class="bots-status" id="bots-status" role="status"></p>
+      </section>
+    </main><i class="xp-side xp-side-right"></i></div>
+    <i class="xp-bottom"></i>
+  </div>
+  <dialog class="bots-dialog" id="bots-create"><form method="dialog" id="bots-create-form"><h2 data-t="newBot">＋ Новый бот</h2>
+    <label><span data-t="botUsername">Имя бота (3–32 символа: буквы, цифры, _ . -)</span><input id="new-bot-username" maxlength="32" pattern="[A-Za-z0-9_.\-]{3,32}" required></label>
+    <label><span data-t="botName">Отображаемое имя</span><input id="new-bot-name" maxlength="100"></label>
+    <div class="bots-actions"><button value="create" data-t="create">Создать</button><button value="cancel" formnovalidate data-t="cancel">Отмена</button></div></form></dialog>
+  <dialog class="bots-dialog" id="bots-secret"><form method="dialog"><h2 id="bots-secret-title"></h2><p id="bots-secret-note"></p>
+    <input id="bots-secret-value" readonly>
+    <div class="bots-actions"><button type="button" id="bots-secret-copy" data-t="copy">Копировать</button><button value="close" data-t="close">Закрыть</button></div></form></dialog>
+  <dialog class="bots-dialog" id="bots-ask"><form method="dialog" id="bots-ask-form"><p id="bots-ask-text"></p>
+    <input id="bots-ask-input" maxlength="60" hidden>
+    <div class="bots-actions"><button value="ok" data-t="ok">OK</button><button value="cancel" formnovalidate data-t="cancel">Отмена</button></div></form></dialog>
+  <script src="assets/js/packs.js"></script>
+  <script src="{{ADDON}}bots.js"></script>
+</body>
+</html>
