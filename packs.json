@@ -2252,7 +2252,7 @@
       "pack_id": "bots-addon",
       "type": "addons",
       "directory": "addons/bots",
-      "DisplayName": "Bots",
+      "DisplayName": "Developer Console",
       "Files": [
         "Preview.png",
         "addon.json",

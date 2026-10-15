@@ -22,10 +22,11 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background:
 .bots-detail { flex: 1; min-width: 0; overflow: auto; padding: 0 2px; }
 .bots-detail h2 { margin: 0 0 4px; font-size: 14px; color: var(--xp-theme-highlight, #0a246a); }
 .bots-detail h2 small { color: var(--xp-theme-graytext, #666); font-weight: normal; }
-.bots-detail h3 { margin: 10px 0 4px; font-size: 12px; }
+.bots-group { margin: 8px 0 0; padding: 4px 8px 8px; border: 1px solid var(--xp-theme-buttonshadow, #d0d0bf); border-radius: 3px; }
+.bots-group legend { padding: 0 4px; color: var(--xp-theme-highlight, #0046d5); font-weight: normal; }
 .bots-table-wrap { overflow: auto; border: 1px solid #7f9db9; background: #fff; }
 .bots-table { width: 100%; border-collapse: collapse; color: #000; }
-.bots-table th { padding: 3px 6px; border-bottom: 1px solid #d6d2c2; background: var(--xp-theme-buttonface, #ebeadb); text-align: left; font-weight: normal; white-space: nowrap; }
+.bots-table th { padding: 3px 6px; border-right: 1px solid #d6d2c2; border-bottom: 1px solid #aca899; background: linear-gradient(#fff, var(--xp-theme-buttonface, #ebeadb) 85%, #d6d2c2); text-align: left; font-weight: normal; white-space: nowrap; }
 .bots-table td { padding: 3px 6px; border-bottom: 1px solid #f0efe7; vertical-align: top; }
 .bots-list-wrap .bots-table tr[data-id] { cursor: default; }
 .bots-list-wrap .bots-table tr[data-id]:hover td { background: color-mix(in srgb, var(--xp-theme-highlight, #316ac5) 12%, #fff); }
