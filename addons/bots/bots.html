@@ -19,12 +19,19 @@
         <p class="bots-error" id="bots-login-error" role="alert"></p>
       </form>
       <section class="bots-panel" id="bots-panel" hidden>
-        <div class="bots-toolbar"><button type="button" id="bots-new" data-t="newBot">＋ Новый бот</button><button type="button" id="bots-refresh" data-t="refresh">Обновить</button><span class="bots-spacer"></span><button type="button" id="bots-help" data-t="help">Справка</button><button type="button" id="bots-logout" data-t="logout">Выйти</button></div>
         <div class="bots-split">
-          <div class="bots-list-wrap"><table class="bots-table" id="bots-list"></table></div>
+          <aside class="bots-side">
+            <div class="bots-box"><h2 data-t="tasks">Задачи</h2><div class="bots-box-body">
+              <a class="bots-link" id="bots-new" role="button" tabindex="0"><i class="bots-glyph">＋</i><span data-t="newBot">Новый бот</span></a>
+              <a class="bots-link" id="bots-refresh" role="button" tabindex="0"><i class="bots-glyph">↻</i><span data-t="refresh">Обновить</span></a>
+              <a class="bots-link" id="bots-help" role="button" tabindex="0"><i class="bots-glyph">?</i><span data-t="help">Справка</span></a>
+              <a class="bots-link" id="bots-logout" role="button" tabindex="0"><i class="bots-glyph">⏻</i><span data-t="logout">Выйти</span></a>
+            </div></div>
+            <div class="bots-box bots-box-list"><h2 data-t="botsTitle">Боты</h2><div class="bots-list-wrap"><table class="bots-table" id="bots-list"></table></div></div>
+          </aside>
           <div class="bots-detail" id="bots-detail"></div>
         </div>
-        <p class="bots-status" id="bots-status" role="status"></p>
+        <div class="bots-statusbar"><span class="bots-status" id="bots-status" role="status"></span><span class="bots-count" id="bots-count"></span></div>
       </section>
     </main><i class="xp-side xp-side-right"></i></div>
     <i class="xp-bottom"></i>
