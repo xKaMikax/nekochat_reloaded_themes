@@ -1,8 +1,8 @@
 {
  "id": "bots",
  "name": {
-  "ru": "Консоль разработчика",
-  "en": "Developer Console"
+  "ru": "Nekochat Developer Console",
+  "en": "Nekochat Developer Console"
  },
  "version": "1.0",
  "entry": "bots.html",

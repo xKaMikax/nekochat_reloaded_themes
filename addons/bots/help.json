@@ -1,23 +1,23 @@
 {
  "title": {
-  "ru": "Консоль разработчика",
-  "en": "Developer Console"
+  "ru": "Nekochat Developer Console",
+  "en": "Nekochat Developer Console"
  },
  "first": "bots-overview",
  "books": {
   "ru": [
    {
-    "title": "Консоль разработчика",
+    "title": "Nekochat Developer Console",
     "topics": [
      {
       "id": "bots-overview",
-      "title": "Общие сведения о Консоли разработчика",
+      "title": "Общие сведения о Nekochat Developer Console",
       "keys": [
        "бот",
        "bot api",
        "токен"
       ],
-      "html": "<h1>Общие сведения о Консоли разработчика</h1><p>Бот — обычный пользователь Nekochat с флагом бота. Вместо пароля у него долгоживущий токен. Токен подходит везде, где сервер ждёт обычный токен входа, поэтому бот ходит по тому же протоколу, что и клиент.</p><p>В Консоли разработчика вы создаёте ботов своего аккаунта, выпускаете и отзываете их токены и подключаете вебхуки. То же самое делает страница <b>/devpanel</b> на сервере.</p><p>Сообщения ботов в чате помечены меткой «БОТ», а ИИ сервера @neko — меткой «ИИ».</p>",
+      "html": "<h1>Общие сведения о Nekochat Developer Console</h1><p>Бот — обычный пользователь Nekochat с флагом бота. Вместо пароля у него долгоживущий токен. Токен подходит везде, где сервер ждёт обычный токен входа, поэтому бот ходит по тому же протоколу, что и клиент.</p><p>В Nekochat Developer Console вы создаёте ботов своего аккаунта, выпускаете и отзываете их токены и подключаете вебхуки. То же самое делает страница <b>/devpanel</b> на сервере.</p><p>Сообщения ботов в чате помечены меткой «БОТ», а ИИ сервера @neko — меткой «ИИ».</p>",
       "related": [
        "bots-create",
        "bots-tokens",
@@ -65,17 +65,17 @@
   ],
   "en": [
    {
-    "title": "Developer Console",
+    "title": "Nekochat Developer Console",
     "topics": [
      {
       "id": "bots-overview",
-      "title": "About the Developer Console",
+      "title": "About the Nekochat Developer Console",
       "keys": [
        "bot",
        "bot api",
        "token"
       ],
-      "html": "<h1>About the Developer Console</h1><p>A bot is an ordinary Nekochat user with a bot flag. Instead of a password it has a long-lived token. The token works wherever the server expects a normal sign-in token, so a bot uses the same protocol as the client.</p><p>In the Developer Console you create bots of your account, issue and revoke their tokens and connect webhooks. The <b>/devpanel</b> page of the server does the same.</p><p>Messages of bots are marked BOT in the chat, and the server's AI @neko is marked AI.</p>",
+      "html": "<h1>About the Nekochat Developer Console</h1><p>A bot is an ordinary Nekochat user with a bot flag. Instead of a password it has a long-lived token. The token works wherever the server expects a normal sign-in token, so a bot uses the same protocol as the client.</p><p>In the Nekochat Developer Console you create bots of your account, issue and revoke their tokens and connect webhooks. The <b>/devpanel</b> page of the server does the same.</p><p>Messages of bots are marked BOT in the chat, and the server's AI @neko is marked AI.</p>",
       "related": [
        "bots-create",
        "bots-tokens",
